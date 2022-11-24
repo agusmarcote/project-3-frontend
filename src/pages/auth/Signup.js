@@ -44,7 +44,7 @@ export default function Signup() {
    return (
       <div>
          <form onSubmit={handleSubmit}>
-            <label>Username</label>
+            <label>Name</label>
             <input required type="text" name="username" value={user.username} onChange={handleChange} />
             <label>Email</label>
             <input required type="email" name="email" value={user.email} onChange={handleChange} />
