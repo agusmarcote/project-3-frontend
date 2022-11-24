@@ -32,8 +32,9 @@ export default function Signup() {
 
    const handleSubmit = async (e) => {
       e.preventDefault();
+      console.log(user.email)
       try {
-         await axios.post(`${process.env.REACT_APP_API_URL}/auth/signup`, { username: user.username, email: user.email, password });
+         await axios.post(`${process.env.REACT_APP_API_URL}/auth/signup`, { name: user.username, email: user.email, password });
          navigate('/login');
       } catch (error) {
          setErrorMessage(error.response.data.error)
@@ -43,7 +44,7 @@ export default function Signup() {
    return (
       <div>
          <form onSubmit={handleSubmit}>
-            <label>Username</label>
+            <label>Name</label>
             <input required type="text" name="username" value={user.username} onChange={handleChange} />
             <label>Email</label>
             <input required type="email" name="email" value={user.email} onChange={handleChange} />
