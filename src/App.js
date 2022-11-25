@@ -8,6 +8,10 @@ import Signup from './pages/auth/Signup';
 import Login from './pages/auth/Login';
 import PrivateView from './pages/PrivateView';
 import IsPrivate from './components/IsPrivate';
+import Classes from './pages/classes/Classes';
+import CreateClass from './pages/classes/CreateClass';
+import SingleClass from './pages/classes/SingleClass';
+import EditClass from './pages/classes/EditClass';
 
 import Profile from './pages/profile/Profile';
 import ProfileEdit from './pages/profile/ProfileEdit';
@@ -41,15 +45,23 @@ function App() {
             {/* <Route path="/sales" element={<Sales />} />
             <Route path="/create-sale" element={<CreateSale />} />
             <Route path="/sales/:saleId" element={<SingleSale />} />
-            <Route path="/sales/edit/:saleId" element={<EditSale />} />
+            <Route path="/sales/edit/:saleId" element={<EditSale />} /> */}
             <Route path="/classes" element={<Classes />} />
             <Route path="/create-class" element={<CreateClass />} />
             <Route path="/classes/:classId" element={<SingleClass />} />
+
+            <Route path="/classes/edit/:classId" element={<EditClass />} />
+            {/* <Route path="/profile" element={<Profile />} />
+            <Route path="/profile/edit/:userId" element={<EditProfile />} />
+            <Route path="/profile/links" element={<ProfileLinks />} />
+            <Route path="/profile/links/edit" element={<ProfileLinksEdit/>} /> */}
+
             <Route path="/classes/edit/:classId" element={<EditClass />} /> */}
             <Route path="/profile" element={<Profile />} />
             <Route path="/profile/edit" element={<ProfileEdit />} />
             <Route path="/profile/links" element={<ProfileLinks />} />
             <Route path="/profile/links/edit" element={<ProfileLinksEdit/>} />  */}
+
 
          </Routes>
       </div>
