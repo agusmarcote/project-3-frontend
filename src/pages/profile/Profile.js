@@ -2,6 +2,8 @@ import "./Profile.css"
 import axios from "axios";
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
+import ProfileLinks from "./ProfileLinks";
+import ProfileLinksEdit from "./ProfileLinksEdit";
 
 
 
@@ -19,7 +21,7 @@ function Profile() {
             console.log(res.data)
         }
         apiCall()
-    },[])
+    }, [])
 
     return (
         <div>
@@ -27,9 +29,20 @@ function Profile() {
                 <button>Edit Profile</button>
             </Link>
             <img src={profile.picture} alt="" />
-            <h1>{profile.name}</h1>
+            <div className="profileNameRate">
+                <h1>{profile.name}</h1>
+                <h1>{profile.rate}</h1>
+            </div>
             <p>{profile.email}</p>
+            <p>{profile.username}</p>
+            <p>{profile.telephone}</p>
+            <p>{profile.style}</p>
+            <p>{profile.instruments}</p>
             <h4>{profile.description}</h4>
+            <Link to="">Create Presentation Card
+                <ProfileLinks />
+            </Link>
+             
         </div>
     )
 }

@@ -1,4 +1,10 @@
 img {
     border-radius: 50%;
     object-fit: cover;
+    width: 150px;
+}
+
+.profileNameRate{
+    display: flex;
+    justify-content: space-around;
 }
