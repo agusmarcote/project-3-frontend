@@ -28,7 +28,7 @@ function SingleSale(){
             <div>
                 <section>
                     <h1>DETAIL <span>SALE</span></h1>
-                    <p>{sale.creator.email}</p>
+                    {/* <p>{sale.creator.email}</p> */}
 
                     <img src={sale.picture}/>
                    

@@ -109,7 +109,7 @@ export default function CreateEvent() {
                         <input type='text' value={phoneNumber} onChange={phoneNumberHandler} />
                         <br />
                         <label>Address</label>
-                        <input type='text' value={address} onChange={coordinatesHandler} />
+                        <input type='text' value={address} onChange={addressHandler} />
                         <br />
                         <label>Picture</label>
                         <input type='text' value={picture} onChange={pictureHandler} />

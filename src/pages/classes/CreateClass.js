@@ -15,7 +15,6 @@ export default function CreateClass() {
     const [picture, setPicture] = useState('')
     const [price, setPrice] = useState('')
     const [description, setDescription] = useState('')
-    const [coordinates, setCoordinates] = useState('')
     const [level, setLevel] = useState('')
 
     const navigate = useNavigate()
@@ -38,10 +37,6 @@ export default function CreateClass() {
 
     const descriptionHandler = (event) => {
         setDescription(event.target.value)
-    }
-
-    const coordinatesHandler = (event) => {
-        setCoordinates(event.target.value)
     }
 
     const levelHandler = (event) => {
