@@ -112,9 +112,9 @@ function ProfileEdit(){
                 <label>Picture</label>
                 <input type="text" name='picture' value={picture} onChange={pictureHandler}/>
                 <br />
-                <label>Presentation Card</label>
+                {/* <label>Presentation Card</label>
                 <input type="text" name='presentationCard' value={presentationcard} onChange={presentationCardHandler}/>
-                <br />
+                <br /> */}
                 <label>Telephone</label>
                 <input type="text" name='telephone' value={telephone} onChange={telephoneHandler}/>
                 <br />
