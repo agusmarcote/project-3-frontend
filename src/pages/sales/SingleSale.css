@@ -5,3 +5,42 @@
 span{
     color:red
 }
+.photoDetails{
+    width:100vw;
+    height: 300px;
+    border-radius: 20px;
+    align-items: center;
+    text-align: center;
+    align-content: center;   
+    border-bottom-left-radius:0px ;
+    border-bottom-right-radius:0px;
+    /* NEED TO ADD TOP SHADOW */
+}
+p{
+    color:grey
+}
+.button-class{
+  background:linear-gradient(to top left, rgb(253, 133, 133), #e3446e);
+  /* border: 1px solid grey; */
+  border-radius: 15px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 10px;
+  padding: 6px 12px;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 14%;
+  margin: 0px 10px 10px 5px;
+}
+.priceStyleLits{
+    color: black;
+}
+.textStyle{
+    padding: 5px 10px;
+}
+.logoDetailPage{
+    width: 160px;
+    margin: 0 118px;
+
+}

@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import './SingleEvent.css';
 
 const apiEndPoint = "http://localhost:8000/api/v1/events/"
 
@@ -25,20 +27,25 @@ function SingleEvent() {
     return (
         <div>
 
-            <h1>Hello Motherfucker!! This Is Samuel L Jackson</h1>
-            <li key={event._id}>
-                <img src={event.picture} />
-                <h2>{event.title}</h2>,
-                <h3>{event.description}</h3>
-                <h3>Date: {event.date}</h3>
-                <h3>Type Of Event: {event.typeOfEvent}</h3>
-                <h3>Style: {event.style}</h3>
-                <h3>Price: {event.price}</h3>
-                <h3>Job: {event.instruments}</h3>
-                <h3>Contact: {event.phoneNumber}</h3>
-                <h3>Location: {event.coordinates}</h3>
-                
-            </li>
+            <h4>HARMONEY A SPACE FOR MUSICIANS BY <span>MUSICIANS</span></h4>
+
+            <div>
+                <section>
+                    <h1>DETAIL <span>EVENT</span></h1>
+                    {/* <p>{sale.creator.email}</p> */}
+                    <img className="photoDetails" src={event.picture} alt="Instrument"/>
+                    <h3 className="textStyle">{event.title}</h3>
+                    <p className="textStyle"><i>{event.description}</i></p>
+                    <p className="textStyle">{event.instruments}</p>
+                    <p className="priceStyleLits textStyle">{event.price}€</p>
+                    <p>Contact: {event.phoneNumber}</p>
+                    <p>Type Of Event: {event.typeOfEvent}</p>
+                    <p>{event.date}</p>
+                    <Link className = "button-class" to={`/events/edit/${event._id}`}>Edit Event</Link>
+                    <br></br>
+                    <img className ="logoDetailPage" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo"/>
+                </section>  
+            </div>
 
 
         </div>
