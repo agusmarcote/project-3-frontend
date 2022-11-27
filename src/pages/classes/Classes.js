@@ -23,13 +23,26 @@ export default function Classes() {
             {classes.map((element) => {
                 return (
                     <div key={element._id}>
-                        <h1>{element.title}</h1>
-                        <img src={element.picture}/>
-                        <p>{element.description}</p>
-                        <p>{element.level}</p>
-                        <p>{element.price}€</p>
-                        <Link to={`/classes/${element._id}`}>See More</Link>
+                    <Link className="cardLink flex" to={`/classes/${element._id}`}>
+                        <div className = "CardStyle">
+                            <img className = "photoCard"src={element.picture} alt="instrument"/>
+                            <h3 className="textStyle">{element.title}</h3>
+                            <p className="textStyle">{element.instruments}</p>
+                            <p className="textStyle"><i>{element.description}</i></p>
+                            <h4 className="priceStyleLits textStyle">price: <span className="spanPrice">${element.price}</span></h4>
+                            <img className ="smallLogo" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo"/>
+                        </div>
+                    </Link>
                     </div>
+
+                    // <div key={element._id}>
+                    //     <h1>{element.title}</h1>
+                    //     <img src={element.picture}/>
+                    //     <p>{element.description}</p>
+                    //     <p>{element.level}</p>
+                    //     <p>{element.price}€</p>
+                    //     <Link to={`/classes/${element._id}`}>See More</Link>
+                    // </div>
                 ) 
             })}
         </div>

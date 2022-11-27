@@ -1,0 +1,30 @@
+.LogoImgHome{
+    width:200px;
+}
+.LogoHomeFlex{
+    display:flex;
+    flex-direction: row; 
+    flex-wrap: nowrap; 
+    justify-content: center;
+    align-items: center;
+    padding: 20px 20px;
+    margin: 10px 50px 10px 0px;
+    gap:0px 
+}
+
+.missionStatement{
+    text-align: center;
+
+}
+.titleHome{
+    margin:0px 10px 0px 20px;
+}
+.smallLogo{
+    width:80px;
+    text-align: center;
+    align-items: center;
+    margin: 0px 129px;
+}
+.textStyleHome{
+    padding: 5px 10px;
+}

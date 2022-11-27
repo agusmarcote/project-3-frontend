@@ -5,3 +5,65 @@
 span{
     color:red
 }
+
+.CardStyle{
+  /* text-align: justify; */
+  color: black;
+  padding: 0px 0px 0px 0px;
+  height: 610px;
+  width: 350px;
+  background: white;
+  border-radius: 15px;
+  cursor: pointer;
+
+  box-shadow: 0 0 5px 0px #d0d0d0;
+}
+.photoCard{
+    width:350px;
+    height: 300px;
+    border-radius: 15px;
+    align-items: center;
+    text-align: center;
+    align-content: center;   
+    border-bottom-left-radius:0px ;
+    border-bottom-right-radius:0px;
+
+}
+.flex{
+    display:flex;
+    flex-direction:row; 
+    flex-wrap: wrap; 
+    justify-content: center;
+    /* align-items: center; */
+    padding: 0px;
+    margin: 20px 10px 20px 10px;
+    gap:0px 
+
+}
+p{
+    color: gray;
+}
+/* .button-class {
+    background:linear-gradient(to top left, #FFD372, #FF99D7);
+    border: 1px solid #33D0FF;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    padding: 8px 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.3s ease background;
+    width: 100%;
+  } */
+  .spanPrice{
+    color: white;
+    font-size: 0.9rem;
+    background-color: rgb(253, 133, 133);
+    padding: 2px 6px;
+    border-radius: 10px;
+  }
+  .textStyle{
+    padding: 5px 10px;
+}

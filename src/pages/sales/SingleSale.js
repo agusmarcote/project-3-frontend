@@ -23,19 +23,20 @@ function SingleSale(){
     
     return(
         <div>
-            <h1>HARMONEY A SPACE FOR MUSICIANS BY <span>MUSICIANS</span></h1>
+            <h4>HARMONEY A SPACE FOR MUSICIANS BY <span>MUSICIANS</span></h4>
             
             <div>
                 <section>
                     <h1>DETAIL <span>SALE</span></h1>
                     {/* <p>{sale.creator.email}</p> */}
-
-                    <img src={sale.picture}/>
-                   
-                    <p>{sale.description}</p>
-                    <p>{sale.instruments}</p>
-                    <p>{sale.price}€</p>
-                    <Link to={`/sales/edit/${sale._id}`}>Edit Sale</Link>
+                    <img className="photoDetails" src={sale.picture} alt="Instrument"/>
+                    <h3 className="textStyle">{sale.title}</h3>
+                    <p className="textStyle"><i>{sale.description}</i></p>
+                    <p className="textStyle">{sale.instruments}</p>
+                    <p className="priceStyleLits textStyle">{sale.price}€</p>
+                    <Link className = "button-class" to={`/sales/edit/${sale._id}`}>Edit Sale</Link>
+                    <br></br>
+                    <img className ="logoDetailPage" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo"/>
                 </section>
             </div>
         </div>
