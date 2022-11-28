@@ -53,7 +53,7 @@ export default function CreateClass() {
             picture: picture,
             price: price,
             description: description,
-            level: level
+            level: level 
         }
         console.log(newClasses)
 

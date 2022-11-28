@@ -29,7 +29,9 @@ import Events from './pages/events/Events';
 import CreateEvent from './pages/events/CreateEvent'
 import EditEvent from './pages/events/EditEvent'
 
-
+import Favorites from './pages/favorites/Favorites-Classes';
+import FavoritesEvents from './pages/favorites/Favorites-Events';
+import FavoriteSales from './pages/favorites/Favorites-Sales';
 
 
 
@@ -68,7 +70,9 @@ function App() {
             <Route path="/profile/links" element={<ProfileLinks />} />
             <Route path="/profile/links/edit" element={<ProfileLinksEdit/>} />  
 
-
+            <Route path="/favorites-classes" element={<Favorites />} />
+            <Route path="/favorites-events" element={<FavoritesEvents />} />
+            <Route path="/favorites-sales" element={<FavoriteSales />} />
          </Routes>
       </div>
    );
