@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
+import Footbar from './components/Footbar';
 import ErrorPage from './pages/ErrorPage';
 import Signup from './pages/auth/Signup';
 import Login from './pages/auth/Login';
@@ -38,6 +39,7 @@ function App() {
       <div className="App">
          <Toaster />
          <Navbar />
+         
          <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/signup" element={<Signup />} />
@@ -70,6 +72,7 @@ function App() {
 
 
          </Routes>
+         <Footbar/>
       </div>
    );
 }
