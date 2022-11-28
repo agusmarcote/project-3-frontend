@@ -1,0 +1,27 @@
+.footBarComponents {
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: sticky;
+    bottom: 0;
+    background-color: white;
+
+}
+
+.footbar-icons {
+    font-size: 20px;
+}
+
+.buttonBack {
+    color: #d3d3d3;
+
+}
+
+
+.btnHome {
+    height: 10px;
+    width: 1opx;
+
+
+}

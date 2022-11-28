@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import './SingleEvent.css';
 
 const apiEndPoint = "http://localhost:8000/api/v1/events/"
-
+const apiFAV = 'http://localhost:8000/api/v1/favorites/addEvent/'
 
 
 function SingleEvent() {
@@ -22,7 +22,20 @@ function SingleEvent() {
         apiCall()
     }, [eventId])
 
+    const favoriteHandler = () => {  
 
+        const apiPost = async () => {
+            const storedToken = localStorage.getItem("authToken");
+
+            try {
+                const res = await axios.post(apiFAV + eventId, {}, { headers: { Authorization: `Bearer ${storedToken}` }})
+                console.log(res)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        apiPost()
+    }
 
     return (
         <div>
@@ -44,6 +57,7 @@ function SingleEvent() {
                     <Link className = "button-class" to={`/events/edit/${event._id}`}>Edit Event</Link>
                     <br></br>
                     <img className ="logoDetailPage" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo"/>
+                    <button onClick={favoriteHandler}>Favorite</button>
                 </section>  
             </div>
 

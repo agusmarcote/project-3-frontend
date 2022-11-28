@@ -1,5 +1,8 @@
 .selected {
-   color: red;
+   color: black;
+}
+.unSelected{
+   color: #d3d3d3;
 }
 /* body{
    background:linear-gradient(to top left, #FFD372, #FF99D7);

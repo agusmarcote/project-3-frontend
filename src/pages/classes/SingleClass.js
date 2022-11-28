@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import './SingleClass.css';
 
 const apiURL = 'http://localhost:8000/api/classes/'
+const apiFAV = 'http://localhost:8000/api/v1/favorites/addClass/'
 
 export default function SingleClass() {
     const { classId } = useParams()
@@ -20,7 +21,23 @@ export default function SingleClass() {
 
         apiCall()
     }, [classId])
-    return (
+
+    const favoriteHandler = (event) => {  
+
+        const apiPost = async () => {
+            const storedToken = localStorage.getItem("authToken");
+
+            try {
+                const res = await axios.post(apiFAV + classId, {}, { headers: { Authorization: `Bearer ${storedToken}` }})
+                console.log(res)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        apiPost()
+    }
+
+    return (    
             <div>
                     <h1>CLASS <span>DETAILS</span></h1>
                     {/* <p>{sale.creator.email}</p> */}
@@ -33,6 +50,7 @@ export default function SingleClass() {
                     <Link className = "button-class" to={`/classes/edit/${klass._id}`}>Edit Class</Link>
                     <br></br>
                     <img id ="logoDetailPage" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo"/>
+                    <button onClick={favoriteHandler}>Favorite</button>
             </div>
     )
 }
