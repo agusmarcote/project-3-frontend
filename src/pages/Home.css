@@ -28,3 +28,9 @@
 .textStyleHome{
     padding: 5px 10px;
 }
+
+div.CardStyle:hover{
+    box-shadow: 0 0 10px;
+
+
+}
