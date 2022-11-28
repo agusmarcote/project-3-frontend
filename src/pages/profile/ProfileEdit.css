@@ -1,0 +1,174 @@
+/* .formEditP {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    margin: 50px;
+}
+
+.divFormEditP {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+} */
+
+
+/* 
+.divFormEditP input {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border: 5px solid red;
+    border-radius: 5px;
+    background-color: lightblue;
+} */
+
+/* input[type=text]:focus,
+textarea:focus {
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    padding: 3px 0px 3px 3px;
+    margin: 5px 1px 3px 0px;
+    border: 1px solid rgba(81, 203, 238, 1);
+    border-radius: 30px;
+    box-shadow: 3px 6px #888888;
+} */
+/* 
+.editProfileTitle {
+    text-align: center;
+}
+
+input:placeholder-shown {
+    border-color: teal;
+    color: purple;
+    font-style: italic;
+    background-color: #D3D3D3;
+    box-shadow: 1px 2px #888888;
+}
+
+textarea:placeholder-shown {
+    border-color: teal;
+    color: purple;
+    font-style: italic;
+    background-color: #D3D3D3;
+    box-shadow: 1px 2px #888888;
+}
+
+select{
+    border-radius: 30px;
+}
+
+
+.divFormEditPCheckBox {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.divFormEditPCheckBox select {
+    display: flex;
+}
+
+.divFormEditPCheckBox label {
+    display: flex;
+} */
+
+.editProfileTitle {
+    text-align: center;
+}
+
+.formEditP{
+    display: flex;
+    flex-flow: column;
+    /* margin-left: 50px; */
+    justify-content: center;
+    align-items: center;
+}
+
+
+.divFormEditP{
+    margin-top: 10px;
+    display: flex;
+    border-radius: 30px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.divFormEditP input{
+    border-radius: 30px;
+    border: 0;
+    box-shadow: 0 0 3px;
+    text-align: center;
+    width: 280px;
+    text-overflow: ellipsis;
+    background-color: lightskyblue;
+}
+
+.divFormEditP :placeholder-shown{
+    background-color: white !important;
+}
+
+.divFormEditP input:hover{
+    border: 2px solid rgb(128,128,128, 0.1);
+    background-color: rgb(173,213,230, 0.4);;
+    box-shadow: 0 0 20px;
+}
+
+.divFormEditP input:focus{
+    /* border: 2px solid rgb(128,128,128, 0.1); */
+    background-color: rgb(173,213,230, 0.4);;
+    box-shadow: 0 0 20px;
+}
+
+.divFormEditP textarea{
+    width: 280px;
+    box-shadow: 0 0 5px;
+    border-radius: 10px;
+    text-align: center;
+    border: 0;
+    background-color: lightskyblue;
+}
+
+.divFormEditP textarea:hover{
+    border: 2px solid rgb(128,128,128, 0.1);
+    background-color: rgb(173,213,230, 0.4);;
+    box-shadow: 0 0 20px;
+}
+
+.divFormEditP textarea:focus{
+    border: 2px solid rgb(128,128,128, 0.1);
+    background-color: rgb(173,213,230, 0.4);;
+    box-shadow: 0 0 20px;
+}
+
+.divFormEditPCheckBox {
+    margin-top: 10px;
+    display: flex;
+}
+
+.divFormEditPCheckBox select{
+    border-radius: 30px;
+    background-color: lightskyblue;
+}
+
+.divFormEditPCheckBox select:hover{
+    border: 2px solid rgb(128,128,128, 0.1);
+    background-color: rgb(173,213,230, 0.4);;
+    box-shadow: 0 0 20px;
+}
+
+.formProfileButton{
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.formProfileButton button{
+    border-radius: 50px;
+    border: 0;
+    background-color: lightgreen;
+}
+
+.formProfileButton button:hover{
+    border: 2px solid rgb(128,128,128, 0.1);
+    background-color: rgb(173,213,230, 0.4);;
+    box-shadow: 0 0 20px;
+}
