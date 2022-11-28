@@ -30,18 +30,46 @@ import Events from './pages/events/Events';
 import CreateEvent from './pages/events/CreateEvent'
 import EditEvent from './pages/events/EditEvent'
 
+
+import styled from 'styled-components';
+import Modal from './components/Modal';
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+// import { faBars } from "@fortawesome/free-solid-svg-icons"
+
+import { useState } from "react";
+
 import Favorites from './pages/favorites/Favorites-Classes';
 import FavoritesEvents from './pages/favorites/Favorites-Events';
 import FavoriteSales from './pages/favorites/Favorites-Sales';
 
 
-
 function App() {
+
+   const [modal, setModal]  = useState(false);
+
    return (
       <div className="App">
          <Toaster />
+
+         <Modal
+            state= {modal}
+            changeState = {setModal}
+         
+         >
+            <Contenido>
+               <Navbar/>
+            </Contenido>
+         </Modal>
+
+         <h1 onClick={() => setModal(!modal)}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+               <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+            </svg>
+         </h1>       
+
          <Navbar />
          
+
          <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/signup" element={<Signup />} />
@@ -82,3 +110,9 @@ function App() {
 }
 
 export default App;
+
+const Contenido = styled.div`
+   display: flex;
+   flex-direction:columns;
+   align-items:center;
+`;
