@@ -146,6 +146,7 @@ export default function EditClass() {
                     })}
                 </select>
                 <br />
+                
                 <button type='submit'>Save your edit</button>
                 <button onClick={deleteHandler}>Delete the class</button>
             </form>
