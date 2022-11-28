@@ -70,18 +70,18 @@ function EditSale(){
         }
         console.log(newSale)
 
-        const postApi = async () => {
+        const putApi = async () => {
             const storedToken = localStorage.getItem("authToken");//NEED SOMEONE TO EXPLAIN THIA SHIT HERE
 
             try {
-                const res = await axios.put(apiURL, newSale, { headers: { Authorization: `Bearer ${storedToken}` } })
+                const res = await axios.put(apiURL + saleId, newSale, { headers: { Authorization: `Bearer ${storedToken}` } })
                 console.log(res)
                 navigate('/Sales')
             } catch (error) {
                 console.log(error.response.data)
             } 
         }
-        postApi()
+        putApi()
     }
 
     const deleteHandler = () => {
@@ -135,7 +135,7 @@ function EditSale(){
                 <button className="button-class" type='submit'>Edit</button>
                 <br></br>
                 <br></br>
-                <button className="button-class" onClick={deleteHandler}>Delete the class</button>
+                <button className="button-class" type='submit' onClick={deleteHandler}>Delete the instrument</button>
                 
             </form>
         </div>

@@ -39,13 +39,6 @@ function Events() {
                         </div>
                         </Link>
                         </div>
-
-                        // <li key={event._id}>
-                        //     <img src={event.picture} />
-                        //     <h2>{event.title}</h2>
-                        //     <h3>{event.description}</h3>
-                        //     <Link to={`/events/${event._id}`}>Details of this event</Link>
-                        // </li>
                     )
                 })}
             </ul>
