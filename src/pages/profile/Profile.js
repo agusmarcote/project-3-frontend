@@ -3,6 +3,9 @@ import axios from "axios";
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import ProfileLinks from "./ProfileLinks";
+import ProfileSales from "./ProfileSales";
+import ProfileClasses from "./ProfileClasses";
+import ProfileEvent from "./ProfileEvent";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 import { faPhone } from "@fortawesome/free-solid-svg-icons"
@@ -29,6 +32,9 @@ function Profile() {
     }, [])
 
     const [viewLinks, setViewLinks] = useState(false)
+    const [viewSales, setViewSales] = useState(false)
+    const [viewEvents, setViewEvents] = useState(false)
+    const [viewClasses, setViewClasses] = useState(false)
 
 
 
@@ -41,23 +47,54 @@ function Profile() {
             </div>
             <div className="profileDetails">
                 <div className="proUsername"><FontAwesomeIcon icon={faVolumeHigh}><p>{profile.username}</p></FontAwesomeIcon></div>
-                <div className="proPhone"><FontAwesomeIcon icon={faPhone}/><p>{profile.telephone}</p></div>
+                <div className="proPhone"><FontAwesomeIcon icon={faPhone} /><p>{profile.telephone}</p></div>
                 <p>{profile.style}</p>
                 <div className="proInstrument"><FontAwesomeIcon icon={faGuitar}><p>{profile.instruments}</p></FontAwesomeIcon></div>
-                <div className="proMail"><FontAwesomeIcon icon={faEnvelope}/><p>{profile.email}</p></div>
+                <div className="proMail"><FontAwesomeIcon icon={faEnvelope} /><p>{profile.email}</p></div>
             </div>
-            
+
             <div className="profileEdit">
                 <Link to={`/profile/edit`}>
                     <button>Edit Profile</button>
                 </Link>
             </div>
-            <h4>{profile.description}</h4>
-            <button onClick={() => setViewLinks(!viewLinks)}>
-                Presentation Card
-            </button>
-               {viewLinks && <ProfileLinks />} 
-       
+            <div className="profileDescription">
+                <h4>{profile.description}</h4>
+            </div>
+            <div>
+                <div className="profileButtons">
+                    <div className="buttonPresentationCard">
+                        <button onClick={() => setViewLinks(!viewLinks)}>
+                            Presentation Card
+                        </button>
+                    </div>
+
+                    <div className="buttonViewSales">
+                        <button onClick={() => setViewSales(!viewSales)}>
+                            Sales
+                        </button>
+                    </div>
+
+                    <div className="buttonViewEvent">
+                        <button onClick={() => setViewEvents(!viewEvents)}>
+                            Events
+                        </button>
+                    </div>
+
+                    <div className="buttonViewClasses">
+                        <button onClick={() => setViewClasses(!viewClasses)}>
+                            Classes
+                        </button>
+                    </div>
+                </div>
+                <div className="profileInformation">
+                    {viewLinks && <ProfileLinks />}
+                    {viewSales && <ProfileSales />}
+                    {viewClasses && <ProfileClasses />}
+                    {viewEvents && <ProfileEvent />}
+                </div>
+
+            </div>
 
         </div>
     )

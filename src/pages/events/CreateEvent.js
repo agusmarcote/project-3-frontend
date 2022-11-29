@@ -1,9 +1,14 @@
+import "./CreateEvent.css"
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const apiEndPoint = "http://localhost:8000/api/v1/events/create"
 
+const instrumentsArr = ['DJ', 'Piano', 'Guitar', 'Violin', 'Drums', 'Saxophone', 'Flute', 'Cello',
+    'Clarinet', 'Trumpet', 'Harp', 'Ukelele', 'Electric Guitar', 'Banjo', 'Accordion', 'Microphone']
+const styleArr = ["Dance", "Folk", "Bachata", "Rock", "Reggaeton", "Rap", "Flamenco", "Classic", "Tango", "Indie", "Trap", "Pop", "Electronic", "Blues", "Punk", "Jazz", "Techno", "Choir", "Trance",]
+const typeOfArr = ["Party", "Concert", "Join a Band", "Hiring a Member", "Jamming"]
 
 
 export default function CreateEvent() {
@@ -75,53 +80,108 @@ export default function CreateEvent() {
                 console.log(error)
             }
             postApi()
-        }}
-        return (
+        }
+    }
+    return (
+        <div>
+
+            <h1>Hey, Jackass!!! </h1>
             <div>
 
-                <h1>Hey, Jackass!!! </h1>
-                <div>
-                  
-                    <h1>Create a new Event</h1>
-                    <form onSubmit={submitHandler}>
+                <h1>Create a new Event</h1>
+                <form className="formEditP" onSubmit={submitHandler}>
+                    <div className="divFormEditP">
                         <label>Title</label>
                         <input type='text' value={title} onChange={titleHandler} />
                         <br />
+                    </div>
+                    <div className="divFormEditP">
                         <label>Description</label>
                         <input type='text' value={description} onChange={descriptionHandler} />
                         <br />
+                    </div>
+                    <div className="divFormEditP">
                         <label>Date</label>
                         <input type='textarea' value={date} onChange={dateHandler} />
                         <br />
-                        <label>Type Of Event</label>
-                        <input type='text' value={typeOfEvent} onChange={typeOfEventHandler} />
-                        <br />
-                        <label>Style</label>
-                        <input type='text' value={style} onChange={styleHandler} />
-                        <br />
+                    </div>
+                    
+                    <div className="divFormEditP">
                         <label>Price</label>
                         <input type='number' value={price} onChange={priceHandler} />
                         <br />
-                        <label>Instruments</label>
+                    </div>
+
+                    {/* <label>Type Of Event</label>
+                    <input type='text' value={typeOfEvent} onChange={typeOfEventHandler} />
+                    <br /> */}
+
+                    {/* <label>Style</label>
+                    <input type='text' value={style} onChange={styleHandler} />
+                    <br /> */}
+
+                    
+                    {/* <label>Instruments</label>
                         <input type='text' value={instruments} onChange={instrumentsHandler} />
-                        <br />
+                        <br /> */}
+                    <div className="divFormEditP">
                         <label>Phone Number</label>
                         <input type='text' value={phoneNumber} onChange={phoneNumberHandler} />
                         <br />
+                    </div>
+                    <div className="divFormEditP">
                         <label>Address</label>
                         <input type='text' value={address} onChange={addressHandler} />
                         <br />
+                    </div>
+                    <div className="divFormEditP">
                         <label>Picture</label>
                         <input type='text' value={picture} onChange={pictureHandler} />
                         <br />
+                    </div>
+                    <div className="divFormEditECheckBox">
+                        <label>Instruments</label>
+                        <select onChange={instrumentsHandler}>
+                            {instrumentsArr.map((instrument) => {
+                                return (
+                                    <option value={instrument}>{instrument}</option>
+                                )
+                            })}
+                        </select>
+                        <br />
+                    </div>
+                    <div className="divFormEditECheckBox">
+                        <label>Type of </label>
+                        <select onChange={typeOfEventHandler}>
+                            {typeOfArr.map((type) => {
+                                return (
+                                    <option value={type}>{type}</option>
+                                )
+                            })}
+                        </select>
+                        <br />
+                    </div>
+                    <div className="divFormEditECheckBox">
+                        <label>Style</label>
+                        <select onChange={styleHandler}>
+                            {styleArr.map((style) => {
+                                return (
+                                    <option value={style}>{style}</option>
+                                )
+                            })}
+                        </select>
+                        <br />
+                    </div>
+                    <div className="formProfileButton">
                         <button type='submit'>Create</button>
-                    </form>
-                </div>
-
-
+                    </div>
+                </form>
             </div>
 
 
-        )
+        </div>
 
-    }
+
+    )
+
+}

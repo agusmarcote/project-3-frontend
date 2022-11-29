@@ -28,7 +28,7 @@ function Footbar() {
             {isLoggedIn && <NavLink className={(element) => element.isActive ? 'selected' : 'unSelected'} to="/profile"><FontAwesomeIcon icon={faUser} className="footbar-icons" /></NavLink>}
 
             
-                {isLoggedIn && <NavLink className={(element) => element.isActive ? 'selected' : 'unSelected'} to="/PresentationCard"><FontAwesomeIcon icon={faAddressCard}/></NavLink>}
+                {isLoggedIn && <NavLink className={(element) => element.isActive ? 'selected' : 'unSelected'} to="/profile/links"><FontAwesomeIcon icon={faAddressCard}/></NavLink>}
 
         </div>
     )
