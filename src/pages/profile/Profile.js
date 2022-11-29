@@ -39,7 +39,7 @@ function Profile() {
 
 
     return (
-        <div>
+        <div className="profileHeight">
             <div id="profilePicNameRate">
                 <h1>{profile.name}</h1>
                 <img className="profileImage" src={profile.picture} alt="" />
