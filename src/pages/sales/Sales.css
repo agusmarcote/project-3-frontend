@@ -10,7 +10,7 @@ span{
   /* text-align: justify; */
   color: black;
   padding: 0px 0px 0px 0px;
-  height: 610px;
+  height: 660px;
   width: 350px;
   background: white;
   border-radius: 15px;
@@ -68,4 +68,8 @@ p{
   }
   .textStyle{
     padding: 5px 10px;
+}
+.userNameStyle{
+  font-size: 0.8rem;
+  margin: 17px 0px;
 }
