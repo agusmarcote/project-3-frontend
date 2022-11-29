@@ -1,3 +1,4 @@
+import "./CreateClass.css"
 import axios from "axios"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
@@ -5,7 +6,7 @@ import { useNavigate } from "react-router-dom"
 const apiURL = "http://localhost:8000/api/classes"
 
 const instrumentsArr = ['DJ', 'Piano', 'Guitar', 'Violin', 'Drums', 'Saxophone', 'Flute', 'Cello',
-'Clarinet', 'Trumpet', 'Harp', 'Ukelele', 'Electric Guitar', 'Banjo', 'Accordion', 'Microphone']
+    'Clarinet', 'Trumpet', 'Harp', 'Ukelele', 'Electric Guitar', 'Banjo', 'Accordion', 'Microphone']
 
 const levelArr = ['Beginner', 'Intermediate', 'Advanced']
 
@@ -30,7 +31,7 @@ export default function CreateClass() {
     const pictureHandler = (event) => {
         setPicture(event.target.value)
     }
-    
+
     const priceHandler = (event) => {
         setPrice(event.target.value)
     }
@@ -42,18 +43,18 @@ export default function CreateClass() {
     const levelHandler = (event) => {
         setLevel(event.target.value)
     }
-    
+
     const submitHandler = (event) => {
         event.preventDefault()
 
-    
+
         const newClasses = {
             title: title,
             instruments: instruments,
             picture: picture,
             price: price,
             description: description,
-            level: level 
+            level: level
         }
         console.log(newClasses)
 
@@ -66,7 +67,7 @@ export default function CreateClass() {
                 navigate('/classes')
             } catch (error) {
                 console.log(error.response.data)
-            } 
+            }
         }
         postApi()
     }
@@ -74,47 +75,61 @@ export default function CreateClass() {
     return (
         <div>
             <h1>Create a new Class</h1>
-            <form onSubmit={submitHandler}>
-                <label>Title</label>
-                <input type='text' value={title} onChange={titleHandler}/>
-                <br />
+            <form className="formEditP" onSubmit={submitHandler}>
+                <div className="divFormEditP">
+                    <label>Title</label>
+                    <input type='text' value={title} onChange={titleHandler} />
+                    <br />
+                </div>
+                <div className="divFormEditP">
+                    <label>Picture</label>
+                    <input type='text' value={picture} onChange={pictureHandler} />
+                    <br />
+                </div>
+                <div className="divFormEditP">
+                    <label>Price</label>
+                    <input type='number' value={price} onChange={priceHandler} />
+                    <br />
+                </div>
+                <div className="divFormEditP">
+                    <label>Description</label>
+                    <input type='text' value={description} onChange={descriptionHandler} />
+                    <br />
+                </div>
+                <div className="divFormEditECheckBox">
+                    <label>Level</label>
+                    <select onChange={levelHandler}>
+                        {levelArr.map((lev) => {
+                            return (
+                                <option value={lev}>{lev}</option>
+                            )
+                        })}
+                    </select>
+                    <br />
+                </div>
+                <div className="divFormEditECheckBox">
+                    <label>Instruments</label>
+                    <select onChange={instrumentsHandler}>
+                        {instrumentsArr.map((instrument) => {
+                            return (
+                                <option value={instrument}>{instrument}</option>
+                            )
+                        })}
+                    </select>
+                    <br />
+                </div>
+                <div className="formProfileButton">
+                    <button type='submit'>Create</button>
+                </div>
 
-                <label>Instruments</label>
-                <select onChange={instrumentsHandler}>
-                    {instrumentsArr.map((instrument)=> {
-                        return (
-                            <option value={instrument}>{instrument}</option>
-                        )
-                    })}
-                </select>
-                <br />
 
-                <label>Picture</label>
-                <input type='text' value={picture} onChange={pictureHandler}/>
-                <br />
-
-                <label>Price</label>
-                <input type='number' value={price} onChange={priceHandler}/>
-                <br />
-
-                <label>Description</label>
-                <input type='text' value={description} onChange={descriptionHandler}/>
-                <br />
-{/* 
+                {/* 
                 <label>Address</label>
                 <input type='text' value={coordinates} onChange={coordinatesHandler}/>
                 <br /> */}
 
-                <label>Level</label>
-                <select onChange={levelHandler}>
-                    {levelArr.map((lev)=> {
-                        return (
-                            <option value={lev}>{lev}</option>
-                        )
-                    })}
-                </select>
-                <br />
-                <button type='submit'>Create</button>
+
+
             </form>
         </div>
     )

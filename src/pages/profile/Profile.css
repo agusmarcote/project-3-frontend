@@ -63,7 +63,7 @@
     width: 80%;
     left: 50%;
     border-radius: 30px;
-    background-color: lightgrey;
+    background-color: rgb(0, 255, 255, 0.3);;
 }
 
 .profileEdit a{
@@ -71,4 +71,59 @@
     align-items: center;
     justify-content: center;
     margin-top: 30px;
+}
+
+.profileDescription {
+    text-align: center;
+    font-style: italic;
+}
+
+.profileButtons{
+    display: flex;
+    justify-content: space-around;
+    height: 30px;
+}
+
+.buttonPresentationCard button{
+    display: flex;
+    background-color: aliceblue;
+    border-bottom: 0;
+    border-radius: 15px 15px 0px 0px;
+    margin-left: 10px;
+    height: 25px;
+    align-items: center;
+    padding-top: 5px;
+}
+
+.buttonViewSales button{
+    display: flex;
+    background-color: aliceblue;
+    border-bottom: 0;
+    border-radius: 15px 15px 0px 0px;
+    margin-left: 10px;
+    height: 25px;
+    align-items: center;
+    padding-top: 5px;
+}
+
+.buttonViewEvent button{
+    display: flex;
+    background-color: aliceblue;
+    border-bottom: 0;
+    border-radius: 15px 15px 0px 0px;
+    margin-left: 10px;
+    height: 25px;
+    align-items: center;
+    padding-top: 5px;
+}
+
+.buttonViewClasses button{
+    display: flex;
+    background-color: aliceblue;
+    border-bottom: 0;
+    border-radius: 15px 15px 0px 0px;
+    margin-left: 10px;
+    height: 25px;
+    align-items: center;
+    padding-top: 5px;
 }
