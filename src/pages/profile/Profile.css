@@ -82,6 +82,7 @@
     display: flex;
     justify-content: space-around;
     height: 30px;
+    align-items: flex-end;
 }
 
 .buttonPresentationCard button{
@@ -93,6 +94,19 @@
     height: 25px;
     align-items: center;
     padding-top: 5px;
+}
+
+.buttonPresentationCard button:active{
+    border-color: yellow;
+}
+.buttonViewClasses button:active{
+    border-color: yellow;
+}
+.buttonViewEvent button:active{
+    border-color: yellow;
+}
+.buttonViewSales button:active{
+    border-color: yellow;
 }
 
 .buttonViewSales button{
@@ -126,4 +140,13 @@
     height: 25px;
     align-items: center;
     padding-top: 5px;
+}
+
+.profileInformation{
+    border-radius: 10px;
+    border: black;
+    display: flex;
+    flex-flow: column;
+    /* margin: 10px; */
+    box-shadow: 0 0 20px;
 }
