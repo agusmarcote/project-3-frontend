@@ -7,6 +7,10 @@
     width: 150px;
 } */
 
+.profileHeight{
+height: 95vh;
+}
+
 .profileImage{
     display: flex;
     border-radius: 50%;
