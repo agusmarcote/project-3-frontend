@@ -121,15 +121,6 @@ export default function CreateClass() {
                 <div className="formProfileButton">
                     <button type='submit'>Create</button>
                 </div>
-
-
-                {/* 
-                <label>Address</label>
-                <input type='text' value={coordinates} onChange={coordinatesHandler}/>
-                <br /> */}
-
-
-
             </form>
         </div>
     )

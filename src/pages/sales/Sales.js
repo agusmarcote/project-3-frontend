@@ -9,6 +9,7 @@ const apiEndpoint = "http://localhost:8000/api/v1/sales/instrument"
 function Sales(){
 
     const [sales, setSales] = useState([])
+    console.log(sales)
 
     useEffect(() => {
         const apiCall = async () => {
