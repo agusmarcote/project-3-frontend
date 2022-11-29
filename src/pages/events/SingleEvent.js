@@ -44,7 +44,13 @@ function SingleEvent() {
 
             <div>
                 <section>
-                    <h1>DETAIL <span>EVENT</span></h1>
+                    {/* <h1>DETAIL <span>EVENT</span></h1> */}
+                    {event.creator &&<Link className="cardLink" to={`/profile/${event.creator._id}`}>
+                                             <div className="userFlex">
+                                                {event.creator && <img className ="userImage" src={event.creator.picture}/>}
+                                                <p className="userNameStyle">{event.creator && event.creator.name}</p>
+                                            </div>
+                                        </Link>}
                     {/* <p>{sale.creator.email}</p> */}
                     <img className="photoDetails" src={event.picture} alt="Instrument"/>
                     <h3 className="textStyle">{event.title}</h3>

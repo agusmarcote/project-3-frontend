@@ -24,6 +24,7 @@ import Profile from './pages/profile/Profile';
 import ProfileEdit from './pages/profile/ProfileEdit';
 import ProfileLinks from './pages/profile/ProfileLinks';
 import ProfileLinksEdit from './pages/profile/ProfileLinksEdit';
+import ProfileByID from './pages/profile/ProfileByID';
 
 import SingleEvent from './pages/events/SingleEvent';
 import Events from './pages/events/Events';
@@ -89,12 +90,12 @@ function App() {
             <Route path="/classes/:classId" element={<SingleClass />} />
             <Route path="/classes/edit/:classId" element={<EditClass />} />
 
-
             <Route path="/classes/edit/:classId" element={<EditClass />} /> 
             <Route path="/profile" element={<Profile />} />
             <Route path="/profile/edit" element={<ProfileEdit />} />
             <Route path="/profile/links" element={<ProfileLinks />} />
             <Route path="/profile/links/edit" element={<ProfileLinksEdit/>} />  
+            <Route path="/profile/:userId" element={<ProfileByID/>} /> 
 
             <Route path="/favorites-classes" element={<Favorites />} />
             <Route path="/favorites-events" element={<FavoritesEvents />} />

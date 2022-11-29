@@ -42,5 +42,17 @@ p{
 .logoDetailPage{
     width: 160px;
     margin: 0 118px;
-
+}
+.userImage{
+    width: 25px;
+    height:25px;
+    border-radius: 25px;
+    margin: 13px 0;
+}
+.userFlex{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    gap:8px;
+    margin: 10px 10px;
 }

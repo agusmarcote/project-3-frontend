@@ -40,6 +40,12 @@ export default function SingleClass() {
     return (    
             <div>
                     <h1>CLASS <span>DETAILS</span></h1>
+                    {klass.creator &&<Link className="cardLink" to={`/profile/${klass.creator._id}`}>
+                                             <div className="userFlex">
+                                                {klass.creator && <img className ="userImage" src={klass.creator.picture}/>}
+                                                <p className="userNameStyle">{klass.creator && klass.creator.name}</p>
+                                            </div>
+                                        </Link>}
                     {/* <p>{sale.creator.email}</p> */}
                     <img className="photoDetails" src={klass.picture} alt="Instrument"/>
                     <h3 className="textStyle">{klass.title}</h3>
@@ -49,8 +55,10 @@ export default function SingleClass() {
                     <p className="textStyle">Level: {klass.level}</p>
                     <Link className = "button-class" to={`/classes/edit/${klass._id}`}>Edit Class</Link>
                     <br></br>
-                    <img id ="logoDetailPage" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo"/>
+                    
                     <button onClick={favoriteHandler}>Favorite</button>
+                    <br></br>
+                    <img className="logoImageHere" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo"/>
             </div>
     )
 }
