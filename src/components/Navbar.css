@@ -17,9 +17,14 @@
     margin: 0;
     padding: 0;
 
+
     /* margin:5px 5px; */
-    
 }
+NavLink{
+    text-decoration: none !important;
+
+}
+
 .navLinksFlex{
     display: flex;
     flex-direction: row;
