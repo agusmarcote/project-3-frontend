@@ -11,8 +11,8 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 import { faPhone } from "@fortawesome/free-solid-svg-icons"
 import { faGuitar } from "@fortawesome/free-solid-svg-icons";
 import { faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
+import ButtonMailto from "./Mailto";
 // import ProfileLinksEdit from "./ProfileLinksEdit";
-
 
 
 const apiURL = "http://localhost:8000/api/v1/users/profile"
@@ -20,6 +20,9 @@ const apiURL = "http://localhost:8000/api/v1/users/profile"
 function Profile() {
     const storedToken = localStorage.getItem("authToken");
     const [profile, setProfile] = useState({})
+
+    const teleph = `https://wa.me/${profile.telephone}?text=My+name+is+${profile.name}+I+got+your+number+from+Harmoney.+May+I+Call+you?`
+
 
 
     useEffect(() => {
@@ -31,12 +34,17 @@ function Profile() {
         apiCall()
     }, [])
 
+    useEffect(() => {
+
+    })
+
+
     const [viewLinks, setViewLinks] = useState(false)
     const [viewSales, setViewSales] = useState(false)
     const [viewEvents, setViewEvents] = useState(false)
     const [viewClasses, setViewClasses] = useState(false)
 
-
+    // `text=Hi!%20my%20name%20is%2${profile.username}`
 
     return (
         <div className="profileHeight">
@@ -47,10 +55,15 @@ function Profile() {
             </div>
             <div className="profileDetails">
                 <div className="proUsername"><FontAwesomeIcon icon={faVolumeHigh}><p>{profile.username}</p></FontAwesomeIcon></div>
-                <div className="proPhone"><FontAwesomeIcon icon={faPhone} /><p>{profile.telephone}</p></div>
+                <div className="proPhone">
+                    <a href={teleph}>
+                        <FontAwesomeIcon icon={faPhone} />
+                    </a>
+                </div>
                 <p>{profile.style}</p>
                 <div className="proInstrument"><FontAwesomeIcon icon={faGuitar}><p>{profile.instruments}</p></FontAwesomeIcon></div>
-                <div className="proMail"><FontAwesomeIcon icon={faEnvelope} /><p>{profile.email}</p></div>
+                {/* <div className="proMail"><FontAwesomeIcon icon={faEnvelope} /><p>{profile.email}</p></div> */}
+                <ButtonMailto  mailto={`mailto:${profile.email}`} />
             </div>
 
             <div className="profileEdit">
