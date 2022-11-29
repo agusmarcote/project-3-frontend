@@ -27,6 +27,8 @@ span{
     align-content: center;   
     border-bottom-left-radius:0px ;
     border-bottom-right-radius:0px;
+    object-fit: cover; 
+    /* ALL PHOTOS SHOULL DHAVE THIS TO FIX ISSUE */
 
 }
 .flex{
