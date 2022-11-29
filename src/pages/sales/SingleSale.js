@@ -40,11 +40,16 @@ function SingleSale(){
     return(
         <div>
             <h4>HARMONEY A SPACE FOR MUSICIANS BY <span>MUSICIANS</span></h4>
-            
             <div>
                 <section>
-                    <h1>DETAIL <span>SALE</span></h1>
-                    {/* <p>{sale.creator.email}</p> */}
+                    {/* <h1>DETAIL <span>SALE</span></h1> */}
+                    {sale.creator &&<Link className="cardLink" to={`/profile/${sale.creator._id}`}>
+                    <div className="userFlex">
+                        {sale.creator && <img className ="userImage" src={sale.creator.picture}/>}
+                        <p className="userNameStyle">{sale.creator && sale.creator.name}</p>
+                    </div>
+                    </Link>}
+
                     <img className="photoDetails" src={sale.picture} alt="Instrument"/>
                     <h3 className="textStyle">{sale.title}</h3>
                     <p className="textStyle"><i>{sale.description}</i></p>
