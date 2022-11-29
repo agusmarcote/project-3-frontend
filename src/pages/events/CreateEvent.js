@@ -1,15 +1,20 @@
 import "./CreateEvent.css"
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const apiEndPoint = "http://localhost:8000/api/v1/events/create"
+const apiEndPoint = "http://localhost:8000/api/v1/events/"
 
 const instrumentsArr = ['DJ', 'Piano', 'Guitar', 'Violin', 'Drums', 'Saxophone', 'Flute', 'Cello',
     'Clarinet', 'Trumpet', 'Harp', 'Ukelele', 'Electric Guitar', 'Banjo', 'Accordion', 'Microphone']
+
 const styleArr = ["Dance", "Folk", "Bachata", "Rock", "Reggaeton", "Rap", "Flamenco", "Classic", "Tango", "Indie", "Trap", "Pop", "Electronic", "Blues", "Punk", "Jazz", "Techno", "Choir", "Trance",]
 const typeOfArr = ["Party", "Concert", "Join a Band", "Hiring a Member", "Jamming"]
 
+
+const styleArr = ["Dance", "Folk", "Bachata", "Rock", "Reggaeton", "Rap", "Flamenco", "Classic", "Tango", "Indie", "Trap", "Pop", "Electronic", "Blues", "Punk", "Jazz", "Techno", "Choir", "Trance"]
+
+const typeArr = ["Party", "Concert", "Join a Band", "Hiring a Member", "Jamming"]
 
 export default function CreateEvent() {
     const [title, setTitle] = useState('')
@@ -59,6 +64,7 @@ export default function CreateEvent() {
 
     const submitHandler = (event) => {
         event.preventDefault()
+
         const newEvent = {
             title: title,
             description: description,
@@ -69,24 +75,42 @@ export default function CreateEvent() {
             instruments: instruments,
             picture: picture,
             phoneNumber: phoneNumber,
-            address: address,
-
+            address: address
         }
         const postApi = async () => {
+            const storedToken = localStorage.getItem("authToken")
+
             try {
-                const res = await axios.post(apiEndPoint, newEvent)
+                const res = await axios.post(apiEndPoint, newEvent, { headers: { Authorization: `Bearer ${storedToken}` } })
                 navigate('/events')
             } catch (error) {
                 console.log(error)
             }
+
             postApi()
         }
     }
     return (
         <div>
+        
+    return (
+        <div>
 
-            <h1>Hey, Jackass!!! </h1>
             <div>
+                <h1>Create a new Event</h1>
+                <form onSubmit={submitHandler}>
+                    <label>Title</label>
+                    <input type='text' value={title} onChange={titleHandler} />
+                    <br />
+
+                    <label>Description</label>
+                    <textarea value={description} onChange={descriptionHandler} />
+                    <br />
+
+                    <label>Date</label>
+                    <input type='date' value={date} onChange={dateHandler} />
+                    <br />
+
 
                 <h1>Create a new Event</h1>
                 <form className="formEditP" onSubmit={submitHandler}>
@@ -175,6 +199,63 @@ export default function CreateEvent() {
                     <div className="formProfileButton">
                         <button type='submit'>Create</button>
                     </div>
+                </form>
+            </div>
+
+                    <label>Type Of Event</label>
+                    <select onChange={typeOfEventHandler}>
+                        {typeArr.map((el) => {
+                            return (
+                                <option value={el}>{el}</option>
+                            )
+                        })}
+                    </select>
+
+
+                    <label>Style</label>
+                    <select onChange={styleHandler}>
+                        {styleArr.map((el)=> {
+                            return (
+                                <option value={el}>{el}</option>
+                            )
+                        })}
+                    </select>
+                    <br />
+
+
+        </div>
+
+
+    )
+
+
+                    <label>Price</label>
+                    <input type='number' value={price} onChange={priceHandler} />
+                    <br />
+
+                    <label>Address</label>
+                    <input type='text' value={address} onChange={instrumentsHandler} />
+                    <br />
+
+                    <label>Phone Number</label>
+                    <input type='number' value={phoneNumber} onChange={phoneNumberHandler} />
+                    <br />
+
+                    <label>Instruments</label>
+                    <select onChange={instrumentsHandler}>
+                        {instrumentsArr.map((instrument) => {
+                            return (
+                                <option value={instrument}>{instrument}</option>
+                            )
+                        })}
+                    </select>
+                    <br />
+
+                    <label>Picture</label>
+                    <input type='text' value={picture} onChange={pictureHandler} />
+                    <br />
+
+                    <button onClick={submitHandler}>Create</button>
                 </form>
             </div>
 

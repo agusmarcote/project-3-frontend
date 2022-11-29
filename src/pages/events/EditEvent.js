@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { useParams } from "react-router-dom"
 
-const apiURL = "http://localhost:8000/api/classes/"
+const apiURL = "http://localhost:8000/api/v1/events/"
 
 const instrumentsArr = ['DJ', 'Piano', 'Guitar', 'Violin', 'Drums', 'Saxophone', 'Flute', 'Cello',
     'Clarinet', 'Trumpet', 'Harp', 'Ukelele', 'Electric Guitar', 'Banjo', 'Accordion', 'Microphone']
@@ -41,10 +41,7 @@ function EditEvent() {
             setInstruments(res.data.instruments)
             setPhoneNumber(res.data.phoneNumber)
             setAddress(res.data.address)
-            setPicture(res.data.picture)
-
-
-        
+            setPicture(res.data.picture)        
         }
         apiFind()
     }, [eventId])
@@ -85,8 +82,8 @@ function EditEvent() {
 
     const submitHandler = (event) => {
         event.preventDefault()
-        const submitHandler = (event) => {
-            event.preventDefault()
+
+
             const newEvent = {
                 title: title,
                 description: description,
@@ -97,11 +94,8 @@ function EditEvent() {
                 instruments: instruments,
                 picture: picture,
                 phoneNumber: phoneNumber,
-                address: address,
-
+                address: address
             }
-
-            console.log(newEvent)
 
             const putApi = async () => {
                 const storedToken = localStorage.getItem("authToken");
@@ -134,30 +128,30 @@ function EditEvent() {
 
         return (
             <div>
-
                 <h1>Edit your Event!</h1>
                 <form onSubmit={submitHandler}>
                     <label>Title</label>
                     <input type='text' value={title} onChange={titleHandler} />
                     <br />
-                    <label>Picture</label>
-                    <input type='text' value={picture} onChange={pictureHandler} />
-                    <br />
+
                     <label>Description</label>
-                    <textarea type='text' value={picture} onChange={pictureHandler} />
+                    <input type='text' value={description} onChange={descriptionHandler} />
                     <br />
+
                     <label>Date</label>
-                    <input type='number' value={date} onChange={dateHandler} />
+                    <textarea type='date' value={date} onChange={dateHandler} />
                     <br />
-                    <label>Type Of Event</label>
+
+                    <label>Type of Event</label>
                     <select onChange={typeOfEventHandler}>
-                        {typeOfEventArr.map((typeOfEvent) => {
+                        {typeOfEventArr.map((el)=> {
                             return (
-                                <option value={typeOfEvent}>{typeOfEvent}</option>
+                                <option value={el}>{el}</option>
                             )
                         })}
                     </select>
                     <br />
+                    
                     <label>Style</label>
                     <select onChange={styleHandler}>
                         {styleArr.map((style) => {
@@ -167,8 +161,17 @@ function EditEvent() {
                         })}
                     </select>
                     <br />
+
                     <label>Price</label>
-                    <input type='text' value={price} onChange={priceHandler} />
+                    <input type='number' value={price} onChange={priceHandler} />
+                    <br />
+
+                    <label>Address</label>
+                    <input type='text' value={address} onChange={addressHandler} />
+                    <br />
+
+                    <label>Phone number</label>
+                    <input type='text' value={phoneNumber} onChange={phoneNumberHandler} />
                     <br />
 
                     <label>Instruments</label>
@@ -180,27 +183,19 @@ function EditEvent() {
                         })}
                     </select>
                     <br />
-                    <label>Phone number</label>
-                    <input type='text' value={phoneNumber} onChange={phoneNumberHandler} />
-                    <br />
-                    <label>Address</label>
-                    <input type='text' value={address} onChange={addressHandler} />
-                    <br />
 
+                    <label>Picture</label>
+                    <input type='text' value={picture} onChange={pictureHandler} />
+                    <br />
+                    
                     <button type='submit'>Save your edit</button>
                     <button onClick={deleteHandler}>Delete the Event</button>
                 </form>
-
-
-
             </div>
-
-
         )
-
     }
 
 
-}
+
 
 export default EditEvent
