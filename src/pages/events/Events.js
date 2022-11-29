@@ -1,30 +1,45 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Searchbar from "../../components/Searchbar";
 
 const apiEndPoint = "http://localhost:8000/api/v1/events"
 
 function Events() {
     const [events, setEvents] = useState([])
+    const [filterEvents, setFilterEvents] = useState([])
+
 
     useEffect(() => {
         const apiCall = async () => {
             const res = await axios.get(apiEndPoint)
             console.log(res.data)
             setEvents(res.data)
+            setFilterEvents(res.data)
         }
 
 
         apiCall()
     }, [])
 
+    const searchHandler = (search) => {
+        const searchThis = events.filter((one) =>
+          one.title.toLowerCase().includes(search.toLowerCase())
+        );   console.log(searchThis) 
+        setFilterEvents(searchThis)
+    };
+
 
     return (
         <div>
 
             <h1>Current Events</h1>
+            <div className = "searchBar">
+                <Searchbar  onSearch={searchHandler}/>
+                </div>
             <ul>
-                {events.map((event) => {
+                
+                {filterEvents.map((event) => {
                     return (
 
                         <div key={event._id}>

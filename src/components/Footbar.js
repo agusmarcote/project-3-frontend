@@ -7,7 +7,6 @@ import { faAnglesLeft } from "@fortawesome/free-solid-svg-icons"
 import { faHouse } from "@fortawesome/free-solid-svg-icons"
 import { faUser } from "@fortawesome/free-solid-svg-icons"
 import { faAddressCard } from "@fortawesome/free-solid-svg-icons"
-import { faStar } from "@fortawesome/free-solid-svg-icons"
 
 
 
