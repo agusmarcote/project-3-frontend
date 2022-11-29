@@ -15,6 +15,7 @@ span{
     border-bottom-left-radius:0px ;
     border-bottom-right-radius:0px;
     /* NEED TO ADD TOP SHADOW */
+    object-fit: cover; 
 }
 p{
     color:grey
@@ -44,10 +45,11 @@ p{
     margin: 0 118px;
 }
 .userImage{
-    width: 25px;
-    height:25px;
+    width: 33px;
+    height:33px;
     border-radius: 25px;
-    margin: 13px 0;
+    margin: 8px 0;
+    object-fit: cover; 
 }
 .userFlex{
     display: flex;
