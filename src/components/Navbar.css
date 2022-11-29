@@ -2,14 +2,55 @@
     width:120px;
     height: 120px;
     border-radius: 56px;
-    margin: 50px 50px;
+    margin: 15px 50px;
     align-items: center;
     text-align: center;
     align-content: center;   
 }
-li{
+
+.linkStyle{
     text-decoration: none !important;
     color:black;
-    background-color: rgb(245, 242, 242);
-    list-style-type: none;
+    text-decoration-style: none;
+    font-style: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    /* margin:5px 5px; */
+    
+}
+.navLinksFlex{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap:10px;
+    margin: 0;
+    padding: 0;
+    /* text-decoration: none; */
+
+}
+svg{
+    margin: 0;
+    padding: 0;
+}
+li{
+    margin:0;
+    padding: 0;
+}
+h1{
+    margin:0;
+    padding: 0;
+
+}
+.logo{
+    width:80px;
+    padding:0 75px
+}
+.logOut{
+    text-decoration: none;
+    background-color:white;
+    border: none;
+    font-size: 15px;
 }
