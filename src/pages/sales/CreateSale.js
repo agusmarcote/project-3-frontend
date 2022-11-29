@@ -54,7 +54,7 @@ function CreateSale() {
             description: description,
             picture: picture
         }
-        console.log(newSale)
+        console.log(picture)
 
         const postApi = async () => {
             const storedToken = localStorage.getItem("authToken");//NEED SOMEONE TO EXPLAIN THIA SHIT HERE
