@@ -63,7 +63,7 @@ function Profile() {
                 <p>{profile.style}</p>
                 <div className="proInstrument"><FontAwesomeIcon icon={faGuitar}><p>{profile.instruments}</p></FontAwesomeIcon></div>
                 {/* <div className="proMail"><FontAwesomeIcon icon={faEnvelope} /><p>{profile.email}</p></div> */}
-                <ButtonMailto  mailto={`mailto:${profile.email}`} />
+                <ButtonMailto mailto={`mailto:${profile.email}`} />
             </div>
 
             <div className="profileEdit">
