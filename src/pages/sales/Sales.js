@@ -2,6 +2,7 @@ import axios from "axios"
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import './Sales.css';
+import Searchbar from "../../components/Searchbar";
 
 const apiEndpoint = "http://localhost:8000/api/v1/sales/instrument"
 
@@ -9,20 +10,32 @@ const apiEndpoint = "http://localhost:8000/api/v1/sales/instrument"
 function Sales(){
 
     const [sales, setSales] = useState([])
+    const [filterSales, setFilterSales] = useState([])
     console.log(sales)
 
     useEffect(() => {
         const apiCall = async () => {
            const res = await axios.get(apiEndpoint)
            setSales(res.data)
+           setFilterSales(res.data)
         }
   
         apiCall()
      }, [])
 
+     const searchHandler = (search) => {
+        const searchThis = sales.filter((one) =>
+          one.title.toLowerCase().includes(search.toLowerCase())
+        );   console.log(searchThis) 
+        setFilterSales(searchThis)
+    };
+
     return(
         <div>
             <h1>FOR <span>SALE</span></h1>
+            <div className = "searchBar">
+                <Searchbar  onSearch={searchHandler}/>
+                </div>
             {sales.map((sale) =>{
                 return(
                     <Link className="cardLink flex" to={`/sales/${sale._id}`}>
