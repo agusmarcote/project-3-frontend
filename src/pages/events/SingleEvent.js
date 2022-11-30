@@ -1,21 +1,29 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import './SingleEvent.css';
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { faStar as farStar } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { AuthContext } from "../../context/AuthContext";
 
 const apiEndPoint = "http://localhost:8000/api/v1/events/"
 const apiFAV = 'http://localhost:8000/api/v1/favorites/addEvent/'
+const apiURL = 'http://localhost:8000/api/v1/favorites/favorites'
 
 
 function SingleEvent() {
     const { eventId } = useParams()
     const [event, setEvent] = useState([])
+    const [favorite, setFavorite] = useState(false)
 
     useEffect(() => {
         const apiCall = async () => {
-            const res = await axios.get(apiEndPoint + eventId)
-            console.log(res.data)
+
+
+            const res = await axios.get(apiEndPoint + eventId) 
+
             setEvent(res.data)
         }
 
@@ -28,8 +36,30 @@ function SingleEvent() {
             const storedToken = localStorage.getItem("authToken");
 
             try {
-                const res = await axios.post(apiFAV + eventId, {}, { headers: { Authorization: `Bearer ${storedToken}` } })
-                console.log(res)
+
+                const res = await axios.post(apiFAV + eventId, {}, { headers: { Authorization: `Bearer ${storedToken}` }})
+                const resUser = await axios.get(apiURL, { headers: { Authorization: `Bearer ${storedToken}` }})
+                
+                const userData = resUser.data.favoriteEvent
+                console.log(userData)
+                
+                const idArr = []
+
+                for (let i = 0; i < userData.length; i++) {
+                    idArr.push(userData[i]._id)
+                }
+                console.log(idArr)
+
+                if (idArr.includes(eventId)) {
+                    console.log('inside')
+                    setFavorite(true)
+                    console.log(favorite)
+                } else {
+                    console.log('outside')
+                    setFavorite(false)
+                }
+               
+         
             } catch (error) {
                 console.log(error)
             }
@@ -38,6 +68,7 @@ function SingleEvent() {
     }
 
     return (
+
         <div>
             <section className="CardStyleEvents">
                 {/* <h1>DETAIL <span>EVENT</span></h1> */}
@@ -76,10 +107,12 @@ function SingleEvent() {
         </div>
 
 
+                    <img className ="logoDetailPage" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo"/>    
+
+                </section>  
+            </div>
     )
 }
-
-
 
 
 

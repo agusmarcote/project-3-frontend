@@ -80,6 +80,14 @@ p{
     gap:8px;
     margin: 10px 10px;
 }
+
+
+
+.titleFav {
+    display: flex;
+    justify-content: space-around;
+}
+
 .phoneIcon{
     color:black;
     margin: 0 15px;
@@ -98,6 +106,8 @@ p{
     font-style: italic;
 }
 
+
 .singleSaleHeight{
     height: 95vh;
     }
+
