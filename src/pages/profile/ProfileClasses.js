@@ -23,7 +23,7 @@ function ProfileClasses() {
 
 
     return (
-        <div className="profileClasses">
+        <div className="profileClasses profileClassesHeight">
             {profile && profile.classes.map((pro) => {
                 console.log(pro)
                 return(
