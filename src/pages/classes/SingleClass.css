@@ -3,3 +3,8 @@
     margin: 10px 130px;
 
 }
+
+.titleFav {
+    display: flex;
+    justify-content: space-around;
+}

@@ -1,26 +1,28 @@
-import "./ProfileSales.css"
+import "./ProfileLinks.css"
 import axios from "axios";
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
+import { useParams } from "react-router-dom"
 
-const apiURL = "http://localhost:8000/api/v1/users/profile"
+const apiURL = "http://localhost:8000/api/v1/users/profile/"
 
-function ProfileSales() {
-    const storedToken = localStorage.getItem("authToken");
-    const [profile, setProfile] = useState(null)
+function ProfileSalesByID() {
+
+    const { userId } = useParams()
+    const [user, setUser] = useState([])
 
     useEffect(() => {
-        console.log("st")
         const apiCall = async () => {
-            console.log("start")
-            const res = await axios.get(apiURL, { headers: { Authorization: `Bearer ${storedToken}` } })
-            setProfile(res.data)
+            const res = await axios.get(apiURL + userId)
+            console.log(res.data)
+            setUser(res.data)
         }
         apiCall()
-    }, [])
+    }, [userId])
+
     return (
         <div className="profileSales profileSalesHeight">
-                {profile && profile.sale.map((pro) => {
+                {user.sale && user.sale.map((pro) => {
                     console.log(pro)
                     return (
                         <div key={pro._id}>
@@ -42,4 +44,4 @@ function ProfileSales() {
 }
 
 
-export default ProfileSales
+export default ProfileSalesByID

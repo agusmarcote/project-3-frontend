@@ -55,7 +55,7 @@ function ProfileLinksEdit() {
             try {
                 const res = await axios.put(endPoint, newPresentationCard, { headers: { Authorization: `Bearer ${storedToken}` } })
                 console.log(res)
-                navigate("/profile/links")
+                navigate("/profile")
             } catch (error) {
                 console.log(error)
             }
