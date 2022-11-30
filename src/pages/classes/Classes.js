@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import Searchbar from "../../components/Searchbar";
 
+
 const apiURL = 'http://localhost:8000/api/classes'
 
 export default function Classes() {
@@ -32,7 +33,7 @@ export default function Classes() {
         <div>
             <h1>Classes List</h1>
             <div className="searchBar">
-                <Searchbar onSearch={searchHandler} />
+            <Searchbar onSearch={searchHandler} />
                 </div>
                 
         {filterClasses.map((element) => {

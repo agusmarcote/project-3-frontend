@@ -120,7 +120,7 @@ function ProfileEdit() {
 
     return (
         <div>
-            <h1 className="editProfileTitle">Edit Profile</h1>
+            <h1 className="editProfileTitle profileEditHeight">Edit Profile</h1>
             <form className="formEditP" onSubmit={submitHandler}>
                 <div className="divFormEditP">
                     <label>Email</label>

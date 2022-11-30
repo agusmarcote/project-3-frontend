@@ -20,9 +20,8 @@ span{
 p{
     color:grey
 }
-.button-class{
+/* .button-class{
   background:linear-gradient(to top left, rgb(253, 133, 133), #e3446e);
-  /* border: 1px solid grey; */
   border-radius: 15px;
   color: #fff;
   cursor: pointer;
@@ -33,7 +32,30 @@ p{
   text-transform: uppercase;
   width: 14%;
   margin: 0px 10px 10px 5px;
+} */
+
+.button-class{
+
+    
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-weight: 400;
+    border-radius: 3px;
+    padding: 8px 15px;
+    border: 0;
+    color: #fff;
+    background: #00020b;
+    line-height: 0.3;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 20px 0px 60px 146px;
+
+
 }
+
+
 .priceStyleLits{
     color: black;
 }
@@ -60,7 +82,27 @@ p{
 }
 
 
+
 .titleFav {
     display: flex;
     justify-content: space-around;
 }
+
+.phoneIcon{
+    color:black;
+    margin: 0 15px;
+    text-decoration: none;
+}
+.flexContact{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap:15px;
+
+}
+.icon{
+    margin:0px 0px;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+

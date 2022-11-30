@@ -23,7 +23,7 @@ function ProfileLinks() {
 
 
     return (
-        <div className="presentationCard" >
+        <div className="presentationCard profileLinksHeight" >
             <div className="createPresentationCard">
                 <Link to={`/profile/links/edit`}> Add New Presentation Card
                     {/* <ProfileLinksEdit/> */}

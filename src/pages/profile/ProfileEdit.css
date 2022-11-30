@@ -173,3 +173,7 @@ select{
     background-color: rgb(173,213,230, 0.4);;
     box-shadow: 0 0 20px;
 }
+
+.profileEditHeight{
+    height: 95vh;
+    }
