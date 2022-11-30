@@ -1,0 +1,27 @@
+.favoritesCard {
+    color: black;
+    padding: 0px 0px 0px 0px;
+    height: 450px;
+    width: 350px;
+    background: white;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-left: 20px;
+    box-shadow: 0 0 5px 0px #d0d0d0;
+    margin-bottom: 50px;
+}
+
+.favoritesCard{
+
+    text-align: center;
+}
+
+.favoriteCards a{
+    text-decoration: none;
+}
+
+.favoriteCards h1 {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}

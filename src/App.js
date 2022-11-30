@@ -47,6 +47,7 @@ import { useState } from "react";
 import Favorites from './pages/favorites/Favorites-Classes';
 import FavoritesEvents from './pages/favorites/Favorites-Events';
 import FavoriteSales from './pages/favorites/Favorites-Sales';
+import FavoritesAll from './pages/favorites/Favorites';
 
 
 function App() {
@@ -109,6 +110,7 @@ function App() {
             <Route path="/favorites-classes" element={<Favorites />} />
             <Route path="/favorites-events" element={<FavoritesEvents />} />
             <Route path="/favorites-sales" element={<FavoriteSales />} />
+            <Route path="/favorites" element={<FavoritesAll/>} />
          </Routes>
          <Footbar/>
       </div>
