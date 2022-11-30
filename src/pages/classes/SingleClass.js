@@ -59,7 +59,7 @@ export default function SingleClass() {
     }
 
     return (    
-            <div>
+            <div  className="CardStyle">
                    
                     {klass.creator &&<Link className="cardLink" to={`/profile/${klass.creator._id}`}>
                                              <div className="userFlex">
@@ -68,7 +68,8 @@ export default function SingleClass() {
                                             </div>
                                         </Link>}
                     {/* <p>{sale.creator.email}</p> */}
-                    <img className="photoDetails" src={klass.picture} alt="Instrument"/>
+
+                    <img className="photoCard" src={klass.picture} alt="Instrument"/>
 
                     <div className="titleFav">
                         <h3 className="textStyle">{klass.title}</h3>
