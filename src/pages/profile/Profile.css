@@ -7,15 +7,20 @@
     width: 150px;
 } */
 
+h6{
+    font-size: 16px;
+}
+
 .profileHeight{
 height: 95vh;
 }
 
 .profileImage{
     display: flex;
-    border-radius: 50%;
+    border-radius: 80px;
     object-fit: cover;
     width: 150px;
+    height: 150px;
 }
 
 #profilePicNameRate{
@@ -28,7 +33,9 @@ height: 95vh;
 .profileDetails{
     display: flex;
     flex-flow: column;
-    margin-left: 30px;
+    padding: 0px;
+    margin-left: 20px;
+    margin-right: 60px;
 }
 
 .profileDetailsName{
@@ -38,9 +45,14 @@ height: 95vh;
 
 .profileDetailsStyle{
     display: flex;
-    justify-content: space-around;
-    width: 200px;
+    width: 50px;
     align-items: center;
+    justify-content: space-between;
+}
+
+.profileStyleInstruments{
+    display: flex;
+    flex-flow: column;
 }
 
 .proPhone svg{
@@ -85,8 +97,12 @@ height: 95vh;
     justify-content: center;
     width: 80%;
     left: 50%;
-    border-radius: 30px;
-    background-color: rgb(0, 255, 255, 0.3);;
+    border-radius: 3px;
+    border: 0;
+    box-shadow: 0 0 3px inset;
+    color: white;
+    background-color: black;
+    text-transform: uppercase;
 }
 
 .profileEdit a{
@@ -94,6 +110,8 @@ height: 95vh;
     align-items: center;
     justify-content: center;
     margin-top: 30px;
+    text-transform: uppercase;
+    text-decoration: none;
 }
 
 .profileDescription {
@@ -106,8 +124,9 @@ height: 95vh;
     justify-content: space-around;
     height: 70px;
     align-items: flex-end;
-    margin-left: 10px;
+    margin-left: 40px;
     margin-right: 10px;
+    margin-top: 10px;
 }
 
 /* .profileButtonsSvg{
