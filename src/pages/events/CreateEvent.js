@@ -18,10 +18,10 @@ export default function CreateEvent() {
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
     const [date, setDate] = useState('')
-    const [typeOfEvent, setTypeOfEvent] = useState('')
-    const [style, setStyle] = useState('')
+    const [typeOfEvent, setTypeOfEvent] = useState('Party')
+    const [style, setStyle] = useState('Dance')
     const [price, setPrice] = useState('')
-    const [instruments, setInstruments] = useState('')
+    const [instruments, setInstruments] = useState('DJ')
     const [phoneNumber, setPhoneNumber] = useState('')
     const [address, setAddress] = useState('')
     const [picture, setPicture] = useState('')
@@ -104,7 +104,7 @@ export default function CreateEvent() {
                     </div>
                     <div className="divFormEditP">
                         <label>Date</label>
-                        <input type='textarea' value={date} onChange={dateHandler} />
+                        <input type='date' value={date} onChange={dateHandler} />
                         <br />
                     </div>
                     
