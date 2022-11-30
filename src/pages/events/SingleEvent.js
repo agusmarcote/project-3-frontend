@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 import './SingleEvent.css';
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { faStar as farStar } from "@fortawesome/free-regular-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { AuthContext } from "../../context/AuthContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";   
+
 
 const apiEndPoint = "http://localhost:8000/api/v1/events/"
 const apiFAV = 'http://localhost:8000/api/v1/favorites/addEvent/'
@@ -68,7 +68,6 @@ function SingleEvent() {
     }
 
     return (
-
         <div>
             <section className="CardStyleEvents">
                 {/* <h1>DETAIL <span>EVENT</span></h1> */}
@@ -80,7 +79,12 @@ function SingleEvent() {
                 </Link>}
                 {/* <p>{sale.creator.email}</p> */}
                 <img className="photoCard" src={event.picture} alt="Instrument" />
-                <h3 className="textStyle">{event.title}</h3>
+                <div className="titleFav">
+                       <h3 className="textStyle">{event.title}</h3>
+                       {favorite ? <FontAwesomeIcon icon ={faStar} onClick={favoriteHandler}>Favorite</FontAwesomeIcon> : <FontAwesomeIcon icon={farStar} onClick={favoriteHandler}>Favorite</FontAwesomeIcon>}
+                    </div>
+
+
                 <div>
                     <a className='phoneIcon flexContact' href='https://wa.me/${event.creator.telephone}?text=My+name+is+${event.creator.name}+I+got+your+number+from+Harmoney.+May+I+Call+you?'>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-outbound-fill" viewBox="0 0 16 16">
@@ -97,17 +101,8 @@ function SingleEvent() {
                 <p className="textStyle">{event.date}</p>
                 <Link className="button-class" to={`/events/edit/${event._id}`}>Edit Event</Link>
                 <br></br>
-                {/* <button onClick={favoriteHandler}>Favorite</button> */}
                 <br></br>
                 <img className="logoDetailPage" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo" />
-
-                <br></br>
-                {/* <Link className = "button-class" to={`/events/edit/${event._id}`}>Edit Event</Link> */}
-            </section>
-        </div>
-
-
-                    <img className ="logoDetailPage" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo"/>    
 
                 </section>  
             </div>
