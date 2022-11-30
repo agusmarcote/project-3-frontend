@@ -83,38 +83,34 @@ function SingleEvent() {
     }
 
     return (
-
         <div>
             <section className="CardStyleEvents">
-                {/* <h1>DETAIL <span>EVENT</span></h1> */}
                 {event.creator && <Link className="cardLink" to={`/profile/${event.creator._id}`}>
                     <div className="userFlex">
                         {event.creator && <img className="userImage" src={event.creator.picture} />}
                         <p className="userNameStyle">{event.creator && event.creator.name}</p>
                     </div>
                 </Link>}
-                {/* <p>{sale.creator.email}</p> */}
                 <img className="photoCard" src={event.picture} alt="Instrument" />
                 
                 <div className="titleFav">
                        <h3 className="textStyle">{event.title}</h3>
                        {favorite ? <FontAwesomeIcon icon ={faStar} onClick={favoriteHandler}>Favorite</FontAwesomeIcon> : <FontAwesomeIcon icon={farStar} onClick={favoriteHandler}>Favorite</FontAwesomeIcon>}
+                </div>
+
+
+
+                    <div>
+                        <p className="textStyle"><i>{event.description}</i></p>
+                        <p className="textStyle">{event.instruments}</p>
+                        <p className="spanPrice">{event.price}€</p>
+                        <p className="textStyle">Contact: {event.phoneNumber}</p>
+                        <p className="textStyle">Type Of Event: {event.typeOfEvent}</p>
+                        <p className="textStyle">{event.date}</p>
+                        {currentCreator &&<Link className = "button-class" to={`/events/edit/${event._id}`}>Edit Event</Link>}
+                        <br></br>
+                        <img className ="logoDetailPage" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo"/>    
                     </div>
-
-
-
-                    </div>
-                    <p className="textStyle"><i>{event.description}</i></p>
-                    <p className="textStyle">{event.instruments}</p>
-                    <p className="spanPrice">{event.price}€</p>
-                    <p className="textStyle">Contact: {event.phoneNumber}</p>
-                    <p className="textStyle">Type Of Event: {event.typeOfEvent}</p>
-                    <p className="textStyle">{event.date}</p>
-                    {currentCreator &&<Link className = "button-class" to={`/events/edit/${event._id}`}>Edit Event</Link>}
-                    <br></br>
-
-                    <img className ="logoDetailPage" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo"/>    
-
                 <div>
                     <a className='phoneIcon flexContact' href='https://wa.me/${event.creator.telephone}?text=My+name+is+${event.creator.name}+I+got+your+number+from+Harmoney.+May+I+Call+you?'>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-outbound-fill" viewBox="0 0 16 16">
@@ -122,11 +118,10 @@ function SingleEvent() {
                         </svg>
                         <p className="icon">WhatsApp</p>
                     </a>
-                </div>
-                
-
-                </section>  
-            </div>
+                   </div>
+            </section>
+        </div>
+    
     )
 }
 
