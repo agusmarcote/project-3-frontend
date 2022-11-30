@@ -8,8 +8,6 @@ const apiURL = "http://localhost:8000/api/v1/users/profile"
 function ProfileSales() {
     const storedToken = localStorage.getItem("authToken");
     const [profile, setProfile] = useState(null)
-    // console.log(profile.presentationCard)
-    console.log("sdnajkndasjasjndkasjdjasd")
 
     useEffect(() => {
         console.log("st")

@@ -20,14 +20,32 @@ height: 95vh;
 
 #profilePicNameRate{
     display: flex;
-    justify-content: center;
-    flex-flow: column-reverse;
+    justify-content: space-around;
+    flex-flow: row-reverse;
     align-items: center;
 }
 
 .profileDetails{
     display: flex;
+    flex-flow: column;
+    margin-left: 30px;
+}
+
+.profileDetailsName{
+    display: flex;
+    justify-content: space-between;
+}
+
+.profileDetailsStyle{
+    display: flex;
     justify-content: space-around;
+    width: 200px;
+    align-items: center;
+}
+
+.proPhone svg{
+    display: flex;
+    width: 50px;
 }
 
 .proPhone{
@@ -35,6 +53,7 @@ height: 95vh;
     flex-flow: column;
     justify-content: center;
     margin-top: 10px;
+    align-items: center;
 }
 .proMail{
     display: flex;
@@ -85,15 +104,33 @@ height: 95vh;
 .profileButtons{
     display: flex;
     justify-content: space-around;
-    height: 30px;
+    height: 70px;
     align-items: flex-end;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
-.buttonPresentationCard button{
+/* .profileButtonsSvg{
     display: flex;
-    background-color: aliceblue;
-    border-bottom: 0;
-    border-radius: 15px 15px 0px 0px;
+    height: 70px;
+    width: 70px;
+} */
+
+.profileButtons svg{
+    display: flex;
+    height: 70px;
+    width: 70px;
+}
+/* .buttonPresentationCard{
+    width: 20vh;
+} */
+
+.buttonPresentationCard button{
+    width: 10vh;
+    justify-content: center;
+    display: flex;
+    background-color: white;
+    border: 0;
     margin-left: 10px;
     height: 25px;
     align-items: center;
@@ -114,10 +151,11 @@ height: 95vh;
 }
 
 .buttonViewSales button{
+    width: 10vh;
+    justify-content: center;
     display: flex;
-    background-color: aliceblue;
-    border-bottom: 0;
-    border-radius: 15px 15px 0px 0px;
+    background-color: white;
+    border: 0;
     margin-left: 10px;
     height: 25px;
     align-items: center;
@@ -125,10 +163,11 @@ height: 95vh;
 }
 
 .buttonViewEvent button{
+    width: 10vh;
+    justify-content: center;
     display: flex;
-    background-color: aliceblue;
-    border-bottom: 0;
-    border-radius: 15px 15px 0px 0px;
+    background-color: white;
+    border: 0;
     margin-left: 10px;
     height: 25px;
     align-items: center;
@@ -136,10 +175,11 @@ height: 95vh;
 }
 
 .buttonViewClasses button{
+    width: 10vh;
+    justify-content: center;
     display: flex;
-    background-color: aliceblue;
-    border-bottom: 0;
-    border-radius: 15px 15px 0px 0px;
+    background-color: white;
+    border: 0;
     margin-left: 10px;
     height: 25px;
     align-items: center;
@@ -151,6 +191,13 @@ height: 95vh;
     border: black;
     display: flex;
     flex-flow: column;
-    /* margin: 10px; */
-    box-shadow: 0 0 20px;
+}
+
+.hide{
+    display:none;
+}
+
+.proPhone svg{
+    color: black;
+    
 }
