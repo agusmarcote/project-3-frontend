@@ -73,7 +73,7 @@ function SingleEvent() {
                                                 <p className="userNameStyle">{event.creator && event.creator.name}</p>
                                             </div>
                                         </Link>}
-                    {/* <p>{sale.creator.email}</p> */}
+
 
                     <img className="photoCard" src={event.picture} alt="Instrument"/>
 
