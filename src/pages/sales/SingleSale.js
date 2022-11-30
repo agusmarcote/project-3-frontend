@@ -3,14 +3,19 @@ import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import './SingleSale.css';
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { faStar as farStar } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const apiURL = 'http://localhost:8000/api/v1/sales/instrument/'
 const apiFAV = 'http://localhost:8000/api/v1/favorites/addInstrument/'
+const apifavo = 'http://localhost:8000/api/v1/favorites/favorites'
 
 function SingleSale(){
 
     const { saleId } = useParams()
     const [sale, setSale] = useState([])
+    const [favorite, setFavorite] = useState(false)
 
     useEffect(() => {
         const apiCall = async () => {
@@ -29,7 +34,22 @@ function SingleSale(){
 
             try {
                 const res = await axios.post(apiFAV + saleId, {}, { headers: { Authorization: `Bearer ${storedToken}` }})
-                console.log(res)
+                const resUser = await axios.get(apifavo, { headers: { Authorization: `Bearer ${storedToken}` }})
+
+                const userData = resUser.data.favoriteSale
+
+                const idArr = []
+                for (let i = 0; i < userData.length; i++) {
+                    idArr.push(userData[i]._id)
+                }
+                console.log(idArr)
+
+                if (idArr.includes(saleId)) {
+                    setFavorite(true)
+                } else {
+                    setFavorite(false)
+                }
+
             } catch (error) {
                 console.log(error)
             }
@@ -51,14 +71,18 @@ function SingleSale(){
                     </Link>}
 
                     <img className="photoDetails" src={sale.picture} alt="Instrument"/>
-                    <h3 className="textStyle">{sale.title}</h3>
+                    <div className="titleFav">
+                      <h3 className="textStyle">{sale.title}</h3>
+                      {favorite ? <FontAwesomeIcon icon ={faStar} onClick={favoriteHandler}>Favorite</FontAwesomeIcon> : <FontAwesomeIcon icon={farStar} onClick={favoriteHandler}>Favorite</FontAwesomeIcon>}
+                    </div>
+                    
+
                     <p className="textStyle"><i>{sale.description}</i></p>
                     <p className="textStyle">{sale.instruments}</p>
                     <p className="priceStyleLits textStyle">{sale.price}€</p>
                     <Link className = "button-class" to={`/sales/edit/${sale._id}`}>Edit Sale</Link>
                     <br></br>
                     <img className ="logoDetailPage" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo"/>
-                    <button onClick={favoriteHandler}>Favorite</button>
                 </section>
             </div>
         </div>

@@ -58,3 +58,9 @@ p{
     gap:8px;
     margin: 10px 10px;
 }
+
+
+.titleFav {
+    display: flex;
+    justify-content: space-around;
+}
