@@ -47,7 +47,7 @@ function SingleSale(){
     
     return(
             <div>
-                <section>
+                <section className="CardStyle ">
                     {/* <h1>DETAIL <span>SALE</span></h1> */}
                     {sale.creator &&<Link className="cardLink" to={`/profile/${sale.creator._id}`}>
                     <div className="userFlex">
@@ -58,7 +58,7 @@ function SingleSale(){
 
                     
 
-                    <img className="photoDetails" src={sale.picture} alt="Instrument"/>
+                    <img className="photoCard" src={sale.picture} alt="Instrument"/>
                     <h3 className="textStyle">{sale.title}</h3>
                     
                     <div>

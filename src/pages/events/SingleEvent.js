@@ -39,7 +39,7 @@ function SingleEvent() {
 
     return (
             <div>
-                <section>
+                <section className="CardStyle">
                     {/* <h1>DETAIL <span>EVENT</span></h1> */}
                     {event.creator &&<Link className="cardLink" to={`/profile/${event.creator._id}`}>
                                              <div className="userFlex">
@@ -48,7 +48,7 @@ function SingleEvent() {
                                             </div>
                                         </Link>}
                     {/* <p>{sale.creator.email}</p> */}
-                    <img className="photoDetails" src={event.picture} alt="Instrument"/>
+                    <img className="photoCard" src={event.picture} alt="Instrument"/>
                     <h3 className="textStyle">{event.title}</h3>
                     <div>
                     <a className = 'phoneIcon flexContact' href='https://wa.me/${event.creator.telephone}?text=My+name+is+${event.creator.name}+I+got+your+number+from+Harmoney.+May+I+Call+you?'>

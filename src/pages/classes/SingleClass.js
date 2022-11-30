@@ -38,7 +38,7 @@ export default function SingleClass() {
     }
 
     return (    
-            <div>
+            <div  className="CardStyle">
                    
                     {klass.creator &&<Link className="cardLink" to={`/profile/${klass.creator._id}`}>
                                              <div className="userFlex">
@@ -47,7 +47,7 @@ export default function SingleClass() {
                                             </div>
                                         </Link>}
                     {/* <p>{sale.creator.email}</p> */}
-                    <img className="photoDetails" src={klass.picture} alt="Instrument"/>
+                    <img className="photoCard" src={klass.picture} alt="Instrument"/>
                     <h3 className="textStyle">{klass.title}</h3>
                     <a className = 'phoneIcon flexContact' href='https://wa.me/${klass.creator.telephone}?text=My+name+is+${klass.creator.name}+I+got+your+number+from+Harmoney.+May+I+Call+you?'>
                             <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-outbound-fill" viewBox="0 0 16 16">
