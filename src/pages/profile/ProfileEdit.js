@@ -22,18 +22,12 @@ function ProfileEdit() {
     const [name, setName] = useState("")
     const [username, setUsername] = useState("")
     const [picture, setPicture] = useState("")
-    // const [presentationcard, setPresentationCard] = useState([""])
     const [telephone, setTelephone] = useState("")
     const [images, setImages] = useState("")
     const [description, setDescription] = useState("")
     const [instruments, setInstruments] = useState("")
     const [style, setStyle] = useState("")
-    // const [favoriteSale, setFavoriteSale] = useState("")
-    // const [favoriteEvent, setFavoriteEvent] = useState("")
-    // const [favoriteClass, setFavoriteClass] = useState("")
-    // const [sale, setSale] = useState("")
-    // const [event, setEvent] = useState("")
-    // const [classes, setClasses] = useState("")
+
 
     const navigate = useNavigate()
 
@@ -42,18 +36,13 @@ function ProfileEdit() {
     const nameHandler = (event) => setName(event.target.value)
     const usernameHandler = (event) => setUsername(event.target.value)
     const pictureHandler = (event) => setPicture(event.target.value)
-    // const presentationCardHandler = (event) => setPresentationCard(event.target.value)
+
     const telephoneHandler = (event) => setTelephone(event.target.value)
     const imagesHandler = (event) => setImages(event.target.value)
     const descriptionHandler = (event) => setDescription(event.target.value)
     const instrumentsHandler = (event) => setInstruments(event.target.value)
     const styleHandler = (event) => setStyle(event.target.value)
-    // const favoriteClassHandler = (event) => setFavoriteClass(event.target.value)
-    // const favoriteEventHandler = (event) => setFavoriteEvent(event.target.value)
-    // const favoriteSaleHandler = (event) => setFavoriteSale(event.target.value)
-    // const saleHandler = (event) => setSale(event.target.value)
-    // const eventHandler = (event) => setEvent(event.target.value)
-    // const classesHandler = (event) => setClasses(event.target.value)
+ 
 
 
     const submitHandler = (event) => {
@@ -65,7 +54,7 @@ function ProfileEdit() {
             name: name,
             username: username,
             picture: picture,
-            // presentationCard: presentationcard,
+
             telephone: telephone,
             images: images,
             description: description,
@@ -76,7 +65,6 @@ function ProfileEdit() {
         console.log(newProfile)
 
         const postApi = async () => {
-            // const storedToken = localStorage.getItem("authToken");
             try {
                 const res = await axios.put(endPoint, newProfile, { headers: { Authorization: `Bearer ${storedToken}` } })
                 console.log(res)
@@ -92,7 +80,6 @@ function ProfileEdit() {
         setName("")
         setUsername("")
         setPicture("")
-        // setPresentationCard("")
         setTelephone("")
         setImages("")
         setDescription("")
@@ -108,10 +95,9 @@ function ProfileEdit() {
             setName(res.data.name)
             setUsername(res.data.username)
             setPicture(res.data.picture)
-            // setPresentationCard(res.data.presentationCard)
             setTelephone(res.data.telephone)
             setImages("res.data.images")
-            setDescription(res.data.desccription)
+            setDescription(res.data.description)
             setInstruments(res.data.instruments)
             setStyle(res.data.style)
         }
@@ -142,10 +128,6 @@ function ProfileEdit() {
                     <input type="text" name='picture' placeholder={picture} value={picture} onChange={pictureHandler} />
                     <br />
                 </div>
-                {/* <div className="divFormEditP">
-                    <input type="text" name='presentationCard' placeholder={presentationcard} value={presentationcard} onChange={presentationCardHandler} />
-                    <br />
-                </div> */}
                 <div className="divFormEditP">
                     <label>Telephone</label>
                     <input type="text" name='telephone' placeholder={telephone} value={telephone} onChange={telephoneHandler} />

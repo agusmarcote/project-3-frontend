@@ -9,33 +9,35 @@
     display: flex;
     align-items: center;
     border: 0;
-    border-radius: 30px;
-    box-shadow: 0 0 3px;
+    border-radius: 3px;
+    box-shadow: 0 0 2px;
     margin-top: 20px;
     margin-bottom: 20px;
     padding-left: 10px;
     padding-right: 10px;
     height: 30px;
-    background-color: rgb(0, 255, 255, 0.3);
+    background-color: black;
+    
 }
 
 .createPresentationCard a{
     text-decoration: none;
+    color: white;
+    text-transform: uppercase;
 }
 
 .listPresentationCard{
     display: flex;
     flex-flow: column;
-    background-color: lightseagreen;
+    background-color: rgb(32, 178, 170, 0.1);
     width: 90%;
     border-radius: 10px;
     padding: 10px;
-    box-shadow: 0 0 2px 2px;
-    margin-bottom: 30px;
+    box-shadow: 0 0 2px;
 }
 
 .musicLinks{
-    display: 	flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;

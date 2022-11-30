@@ -97,7 +97,7 @@ function SingleEvent() {
                     <p className="textStyle">Contact: {event.phoneNumber}</p>
                     <p className="textStyle">Type Of Event: {event.typeOfEvent}</p>
                     <p className="textStyle">{event.date}</p>
-                    {/* <Link className = "button-class" to={`/events/edit/${event._id}`}>Edit Event</Link> */}
+                    <Link className = "button-class" to={`/events/edit/${event._id}`}>Edit Event</Link>
                     <br></br>
 
                     <img className ="logoDetailPage" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo"/>    
