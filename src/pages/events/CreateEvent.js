@@ -1,4 +1,3 @@
-import "./CreateEvent.css"
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -89,7 +88,7 @@ export default function CreateEvent() {
     }
 
     return (
-            <div>
+            <div className=" singleEvent">
                 <h1>Create a new Event</h1>
                 <form className="formEditP" onSubmit={submitHandler}>
                     <div className="divFormEditP">
