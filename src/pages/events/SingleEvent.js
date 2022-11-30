@@ -68,6 +68,7 @@ function SingleEvent() {
     }
 
     return (
+
         <div>
             <section className="CardStyleEvents">
                 {/* <h1>DETAIL <span>EVENT</span></h1> */}
@@ -79,6 +80,7 @@ function SingleEvent() {
                 </Link>}
                 {/* <p>{sale.creator.email}</p> */}
                 <img className="photoCard" src={event.picture} alt="Instrument" />
+                
                 <div className="titleFav">
                        <h3 className="textStyle">{event.title}</h3>
                        {favorite ? <FontAwesomeIcon icon ={faStar} onClick={favoriteHandler}>Favorite</FontAwesomeIcon> : <FontAwesomeIcon icon={farStar} onClick={favoriteHandler}>Favorite</FontAwesomeIcon>}
