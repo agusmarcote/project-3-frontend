@@ -12,11 +12,26 @@ const apiEndPoint = "http://localhost:8000/api/v1/events/"
 const apiFAV = 'http://localhost:8000/api/v1/favorites/addEvent/'
 const apiURL = 'http://localhost:8000/api/v1/favorites/favorites'
 
+const apiURLprofile = "http://localhost:8000/api/v1/users/profile"
+
 
 function SingleEvent() {
     const { eventId } = useParams()
     const [event, setEvent] = useState([])
     const [favorite, setFavorite] = useState(false)
+    const storedToken = localStorage.getItem("authToken");
+    const [currentCreator, setCurrentCreator] = useState(false)
+
+    useEffect(() => {
+        const apiCall = async () => {
+            const res = await axios.get(apiURLprofile, { headers: { Authorization: `Bearer ${storedToken}` } })
+            const userID = res.data._id
+            if (event.creator._id === userID){
+                setCurrentCreator(true)
+            }
+        }
+        apiCall()
+    }, [event])   
 
     useEffect(() => {
         const apiCall = async () => {
@@ -97,7 +112,7 @@ function SingleEvent() {
                     <p className="textStyle">Contact: {event.phoneNumber}</p>
                     <p className="textStyle">Type Of Event: {event.typeOfEvent}</p>
                     <p className="textStyle">{event.date}</p>
-                    {/* <Link className = "button-class" to={`/events/edit/${event._id}`}>Edit Event</Link> */}
+                    {currentCreator &&<Link className = "button-class" to={`/events/edit/${event._id}`}>Edit Event</Link>}
                     <br></br>
 
                     <img className ="logoDetailPage" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo"/>    

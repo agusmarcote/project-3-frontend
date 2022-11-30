@@ -13,17 +13,34 @@ const apiURL = 'http://localhost:8000/api/v1/sales/instrument/'
 const apiFAV = 'http://localhost:8000/api/v1/favorites/addInstrument/'
 const apifavo = 'http://localhost:8000/api/v1/favorites/favorites'
 
+const apiURLprofile = "http://localhost:8000/api/v1/users/profile"
+
 // const teleph = `https://wa.me/${sale.creator.telephone}?text=My+name+is+${profile.name}+I+got+your+number+from+Harmoney.+May+I+Call+you?`
 
 
 
 function SingleSale(){
-
-    
-
+    const storedToken = localStorage.getItem("authToken");
+    const [currentCreator, setCurrentCreator] = useState(false)
     const { saleId } = useParams()
     const [sale, setSale] = useState([])
     const [favorite, setFavorite] = useState(false)
+
+
+    useEffect(() => {
+        const apiCall = async () => {
+            const res = await axios.get(apiURLprofile, { headers: { Authorization: `Bearer ${storedToken}` } })
+            const userID = res.data._id
+            console.log(sale.creator)
+            console.log(sale)
+            if (sale.creator._id === userID){
+                setCurrentCreator(true)
+            }
+        }
+        apiCall()
+    }, [sale])    
+
+    
 
     useEffect(() => {
         const apiCall = async () => {
@@ -42,33 +59,39 @@ function SingleSale(){
 
             try {
                 const res = await axios.post(apiFAV + saleId, {}, { headers: { Authorization: `Bearer ${storedToken}` }})
-                const resUser = await axios.get(apifavo, { headers: { Authorization: `Bearer ${storedToken}` }})
-
-                const userData = resUser.data.favoriteSale
-
+                const resUser = await axios.get(apiURL, { headers: { Authorization: `Bearer ${storedToken}` }})
+                
+                const userData = resUser.data.favoriteEvent
+                console.log(userData)
+                
                 const idArr = []
+
                 for (let i = 0; i < userData.length; i++) {
                     idArr.push(userData[i]._id)
                 }
                 console.log(idArr)
 
                 if (idArr.includes(saleId)) {
+                    console.log('inside')
                     setFavorite(true)
+                    console.log(favorite)
                 } else {
+                    console.log('outside')
                     setFavorite(false)
                 }
-
+               
+            
             } catch (error) {
                 console.log(error)
             }
         }
         apiPost()
     }
+
     
     return(
             <div>
                 <section className="CardStyle ">
-                    {/* <h1>DETAIL <span>SALE</span></h1> */}
                     {sale.creator &&<Link className="cardLink" to={`/profile/${sale.creator._id}`}>
                     <div className="userFlex">
                         {sale.creator && <img className ="userImage" src={sale.creator.picture}/>}
@@ -106,8 +129,7 @@ function SingleSale(){
 
                     <br></br>
                     <br></br>
-                    <Link className = "button-class" to={`/sales/edit/${sale._id}`}>Edit Sale</Link>
-
+                    {currentCreator &&<Link className = "button-class" to={`/sales/edit/${sale._id}`}>Edit Sale</Link>}
                 </section>
             </div>
     )   
