@@ -10,11 +10,34 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const apiURL = 'http://localhost:8000/api/classes/'
 const apiFAV = 'http://localhost:8000/api/v1/favorites/addClass/'
 const apifavo = 'http://localhost:8000/api/v1/favorites/favorites'
+const apiURLprofile = "http://localhost:8000/api/v1/users/profile"
 
 export default function SingleClass() {
     const { classId } = useParams()
     const [klass, setKlass] = useState({})
     const [favorite, setFavorite] = useState(false)
+    const storedToken = localStorage.getItem("authToken");
+    const [currentCreator, setCurrentCreator] = useState(false)
+
+    useEffect(() => {
+        const apiCall = async () => {
+            const res = await axios.get(apiURLprofile, { headers: { Authorization: `Bearer ${storedToken}` } })
+            const userID = res.data._id
+            if (klass.creator._id === userID){
+                setCurrentCreator(true)
+            }
+        }
+        apiCall()
+    }, [klass])   
+
+    useEffect(() => {
+        const apiCall = async () => {
+            const res = await axios.get(apiURL + classId) 
+            setKlass(res.data)
+        }
+
+        apiCall()
+    }, [classId])
 
     useEffect(() => {
         const apiCall = async () => {
@@ -97,7 +120,7 @@ export default function SingleClass() {
                     <img className="logoImageHere" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo"/>
                     <br></br>
                     <br></br>
-                    <Link className = "button-class" to={`/classes/edit/${klass._id}`}>Edit Class</Link>
+                    {currentCreator &&<Link className = "button-class" to={`/classes/edit/${klass._id}`}>Edit Class</Link>}
             </div>
     )
 }
