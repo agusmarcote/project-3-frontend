@@ -3,3 +3,21 @@
     margin: 0 118px;
 
 }
+
+.singleEvent{
+    height: 95vh;
+    }
+
+    
+.CardStyleEvents{
+  /* text-align: justify; */
+  color: black;
+  padding: 0px 0px 0px 0px;
+
+  width: 350px;
+  background: white;
+  border-radius: 15px;
+  cursor: pointer;
+
+  box-shadow: 0 0 5px 0px #d0d0d0;
+}
