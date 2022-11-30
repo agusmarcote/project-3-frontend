@@ -23,7 +23,7 @@ function ProfileEvent() {
 
 
     return (
-        <div className="profileEvent">
+        <div className="profileEvent profileEventHeight">
             
            {profile && profile.event.map((pro) => {
                 console.log(pro)

@@ -21,7 +21,7 @@ function ProfileSales() {
         apiCall()
     }, [])
     return (
-        <div className="profileSales">
+        <div className="profileSales profileSalesHeight">
                 {profile && profile.sale.map((pro) => {
                     console.log(pro)
                     return (

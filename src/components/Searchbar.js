@@ -1,4 +1,6 @@
 import "./Searchbar.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
 
 
 const Searchbar = (props) => {
@@ -6,8 +8,9 @@ const Searchbar = (props) => {
         props.onSearch(event.target.value)
     }
     return (
-        <div>
-            <input type="text" onChange={searchChangeHandler}></input>
+        <div className="searchBar">
+            <FontAwesomeIcon icon={faMagnifyingGlass}   />
+            <input type="text" onChange={searchChangeHandler} ></input>
         </div>
     )
 }
