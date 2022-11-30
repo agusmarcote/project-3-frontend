@@ -112,6 +112,7 @@ function App() {
             <Route path="/favorites-sales" element={<FavoriteSales />} />
             <Route path="/favorites" element={<FavoritesAll/>} />
          </Routes>
+         <br></br>
          <Footbar/>
       </div>
    );

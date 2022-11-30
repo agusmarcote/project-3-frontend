@@ -31,7 +31,7 @@ function Events() {
 
 
     return (
-        <div>
+        <div className= "singleEvent" >
 
             <h1>Current Events</h1>
             <div className = "searchBar">

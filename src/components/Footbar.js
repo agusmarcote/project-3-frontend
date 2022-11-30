@@ -7,7 +7,7 @@ import { faAnglesLeft } from "@fortawesome/free-solid-svg-icons"
 import { faHouse } from "@fortawesome/free-solid-svg-icons"
 import { faUser } from "@fortawesome/free-solid-svg-icons"
 import { faAddressCard } from "@fortawesome/free-solid-svg-icons"
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
+
 
 
 
