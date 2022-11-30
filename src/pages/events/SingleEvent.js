@@ -79,6 +79,7 @@ function SingleEvent() {
                     <div className="titleFav">
                        <h3 className="textStyle">{event.title}</h3>
                        {favorite ? <FontAwesomeIcon icon ={faStar} onClick={favoriteHandler}>Favorite</FontAwesomeIcon> : <FontAwesomeIcon icon={farStar} onClick={favoriteHandler}>Favorite</FontAwesomeIcon>} 
+                    </div>
                     <div>
                     <a className = 'phoneIcon flexContact' href='https://wa.me/${event.creator.telephone}?text=My+name+is+${event.creator.name}+I+got+your+number+from+Harmoney.+May+I+Call+you?'>
                             <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-outbound-fill" viewBox="0 0 16 16">
@@ -101,8 +102,6 @@ function SingleEvent() {
 
                 </section>  
             </div>
-
-
     )
 }
 
