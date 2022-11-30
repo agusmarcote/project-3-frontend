@@ -2,8 +2,6 @@ import "./Profile.css"
 import axios from "axios";
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
-import ProfileLinks from "./ProfileLinks";
-import ProfileSales from "./ProfileSales";
 import ProfileClasses from "./ProfileClasses";
 import ProfileEvent from "./ProfileEvent";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,6 +10,11 @@ import { faPhone } from "@fortawesome/free-solid-svg-icons"
 import { faGuitar } from "@fortawesome/free-solid-svg-icons";
 import { faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
 import { useParams } from "react-router-dom"
+import ProfileLinksByID from "./ProfileLinksByID";
+import ProfileSalesByID from "./ProfileSalesByID";
+import ProfileEventByID from "./ProfileEventByID";
+import ProfileClassesByID from "./ProfileClassesByID";
+
 
 const apiURL = "http://localhost:8000/api/v1/users/profile/"
 
@@ -37,9 +40,6 @@ function ProfileByID () {
     const [viewClasses, setViewClasses] = useState(false)
 
     return (
-        <div>
-            <h4>HARMONEY A SPACE FOR MUSICIANS BY <span>MUSICIANS</span></h4>
-            
             <div>
                     <div id="profilePicNameRate">
                         <h1>{user.name}</h1>
@@ -69,13 +69,12 @@ function ProfileByID () {
                     </div>
                 </div>
                 <div className="profileInformation">
-                    {viewLinks && <ProfileLinks />}
-                    {viewSales && <ProfileSales />}
-                    {viewClasses && <ProfileClasses />}
-                    {viewEvents && <ProfileEvent />}
+                    {viewLinks && <ProfileLinksByID />}
+                    {viewSales && <ProfileSalesByID />}
+                    {viewEvents && <ProfileEventByID />}
+                    {viewClasses && <ProfileClassesByID />}
                 </div>
             </div>
-        </div>
     )
 }
 export default ProfileByID

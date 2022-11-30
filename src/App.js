@@ -25,6 +25,11 @@ import ProfileEdit from './pages/profile/ProfileEdit';
 import ProfileLinks from './pages/profile/ProfileLinks';
 import ProfileLinksEdit from './pages/profile/ProfileLinksEdit';
 import ProfileByID from './pages/profile/ProfileByID';
+import ProfileLinksByID from './pages/profile/ProfileLinksByID';
+import ProfileSalesByID from './pages/profile/ProfileSalesByID';
+import ProfileEventByID from './pages/profile/ProfileEventByID';
+import ProfileClassesByID from './pages/profile/ProfileClassesByID';
+
 
 import SingleEvent from './pages/events/SingleEvent';
 import Events from './pages/events/Events';
@@ -96,6 +101,10 @@ function App() {
             <Route path="/profile/links" element={<ProfileLinks />} />
             <Route path="/profile/links/edit" element={<ProfileLinksEdit/>} />  
             <Route path="/profile/:userId" element={<ProfileByID/>} /> 
+            <Route path="/profile/links/:userId" element={<ProfileLinksByID/>} /> 
+            <Route path="/profile/sales/:userId" element={<ProfileSalesByID/>} /> 
+            <Route path="/profile/event/:userId" element={<ProfileEventByID/>} /> 
+            <Route path="/profile/classes/:userId" element={<ProfileClassesByID/>} /> 
 
             <Route path="/favorites-classes" element={<Favorites />} />
             <Route path="/favorites-events" element={<FavoritesEvents />} />
