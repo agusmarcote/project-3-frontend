@@ -77,8 +77,8 @@ function App() {
             </svg>
          </h1>       
          <Routes>
-            <Route path="/" element={<PrivateView><Home /></PrivateView >} />
-            <Route path="/signup" element={<Signup />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/" element={<Signup />} />
             <Route path="/login" element={<Login />} />
             <Route path="/private" element={<IsPrivate><PrivateView /></IsPrivate>} />
             <Route path="*" element={<ErrorPage />} />
