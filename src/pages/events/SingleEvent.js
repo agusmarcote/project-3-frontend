@@ -85,21 +85,23 @@ function SingleEvent() {
     }
 
     return (
-        <div className="cardLink flex " >
-            <div className="CardStyle">
-                <section className="">
-                    <img className="photoCard" src={event.picture} alt="Instrument" />
 
-                    <div className="titleFav">
-                        <h3 className="textStyle">{event.title}</h3>
-                        {favorite ? <FontAwesomeIcon icon={faStar} onClick={favoriteHandler}>Favorite</FontAwesomeIcon> : <FontAwesomeIcon icon={farStar} onClick={favoriteHandler}>Favorite</FontAwesomeIcon>}
+      <div className="cardLink flex " >
+        <div className="CardStyle">
+            <section>
+                <img className="photoCard" src={event.picture} alt="Instrument" />
+                
+                
+                {event.creator && <Link className="cardLink" to={`/profile/${event.creator._id}`}>
+                    <div className="userFlex">
+                        {event.creator && <img className="userImage" src={event.creator.picture} />}
+                        <p className="userNameStyle">{event.creator && event.creator.name}</p>
                     </div>
-                    {event.creator && <Link className="cardLink flex" to={`/profile/${event.creator._id}`}>
-                        <div className="userFlex">
-                            {event.creator && <img className="userImage" src={event.creator.picture} />}
-                            <p className="userNameStyle">{event.creator && event.creator.name}</p>
-                        </div>
-                    </Link>}
+                </Link>}
+                <div className="titleFav">
+                       <h3 className="textStyle">{event.title}</h3>
+                       {favorite ? <FontAwesomeIcon icon ={faStar} onClick={favoriteHandler}>Favorite</FontAwesomeIcon> : <FontAwesomeIcon icon={farStar} onClick={favoriteHandler}>Favorite</FontAwesomeIcon>}
+                </div>
 
                     <div>
                         <a className='phoneIcon flexContact' href="https://wa.me/${event.creator.telephone}?text=My+name+is+${event.creator.name}+I+got+your+number+from+Harmoney.+May+I+Call+you?">
@@ -115,8 +117,7 @@ function SingleEvent() {
                         <p className="textStyle"><i>{event.description}</i></p>
                         <p className="textStyle">{event.instruments}</p>
                         <p className="spanPrice">{event.price}€</p>
-                        <p className="textStyle">Contact: {event.phoneNumber}</p>
-                        <p className="textStyle">Type Of Event: {event.typeOfEvent}</p>
+                        <p className="textStyle">{event.typeOfEvent}</p>
                         <p className="textStyle">{event.date}</p>
                         {currentCreator && <Link className="button-class" to={`/events/edit/${event._id}`}>Edit Event</Link>}
                         <br></br>

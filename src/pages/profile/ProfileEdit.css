@@ -2,45 +2,6 @@
     text-align: center;
 }
 
-input:placeholder-shown {
-    border-color: teal;
-    color: purple;
-    font-style: italic;
-    background-color: #D3D3D3;
-    box-shadow: 1px 2px #888888;
-}
-
-textarea:placeholder-shown {
-    border-color: teal;
-    color: purple;
-    font-style: italic;
-    background-color: #D3D3D3;
-    box-shadow: 1px 2px #888888;
-}
-
-select {
-    border-radius: 30px;
-}
-
-
-.divFormEditPCheckBox {
-    display: flex;
-    justify-content: space-between;
-    margin: 0;
-}
-
-.divFormEditPCheckBox select {
-    display: flex;
-}
-
-.divFormEditPCheckBox label {
-    display: flex;
-}
-
-*/ .editProfileTitle {
-    text-align: center;
-}
-
 .formEditP {
     display: flex;
     flex-flow: column;
@@ -52,19 +13,21 @@ select {
 .divFormEditP {
     margin-top: 10px;
     display: flex;
-    border-radius: 30px;
+    border-radius: 3px;
     flex-direction: column;
     align-items: center;
 }
 
-.divFormEditP input {
-    border-radius: 30px;
+.divFormEditP input{
+    border-radius: 3px;
     border: 0;
     box-shadow: 0 0 3px;
     text-align: center;
     width: 280px;
     text-overflow: ellipsis;
-    background-color: lightskyblue;
+    background-color: rgb(32, 178, 170, 0.1);
+    height: 30px;
+    font-size: 18px;
 }
 
 .divFormEditP :placeholder-shown {
@@ -85,11 +48,12 @@ select {
 
 .divFormEditP textarea {
     width: 280px;
-    box-shadow: 0 0 5px;
-    border-radius: 10px;
+    box-shadow: 0 0 3px;
+    border-radius: 3px;
     text-align: center;
     border: 0;
-    background-color: lightskyblue;
+    background-color: rgb(32, 178, 170, 0.1);
+    font-size: 18px;
 }
 
 .divFormEditP textarea:hover {
@@ -107,11 +71,15 @@ select {
 .divFormEditPCheckBox {
     margin-top: 10px;
     display: flex;
+    gap: 20px;
+    font-size: 18px;
 }
 
-.divFormEditPCheckBox select {
-    border-radius: 30px;
-    background-color: lightskyblue;
+
+.divFormEditPCheckBox select{
+    border-radius: 3px;
+    background-color: rgb(32, 178, 170, 0.1);
+    height: 30px;
 }
 
 .divFormEditPCheckBox select:hover {
@@ -127,14 +95,36 @@ select {
 
 }
 
-.formProfileButton button {
-    border-radius: 50px;
+
+.formProfileButton button{
+    border-radius: 3px;
+    height: 45px;
+    width: 90px;
     border: 0;
-    background-color: lightgreen;
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    margin-top: 10px;
 }
 
 .formProfileButton button:hover {
     border: 2px solid rgb(128, 128, 128, 0.1);
     background-color: rgb(173, 213, 230, 0.4);
     box-shadow: 0 0 20px;
+}
+
+.LogoImgForm{
+    width: 160px;
+    height: 100px;
+}
+
+.titleForm{
+    display: flex;
+    margin-left: 30px;
+    align-items: center;
+    justify-content: space-around;  
+}
+
+*{
+    font-family: Arial, Helvetica, sans-serif;
 }

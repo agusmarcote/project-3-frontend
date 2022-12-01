@@ -49,7 +49,8 @@ export default function SingleClass() {
         apiCall()
     }, [classId])
 
-    const favoriteHandler = (event) => {
+
+    const favoriteHandler = () => {
 
         const apiPost = async () => {
             const storedToken = localStorage.getItem("authToken");
@@ -67,11 +68,9 @@ export default function SingleClass() {
                 
 
                 if (idArr.includes(classId)) {
-                    
+
                     setFavorite(true)
-                    
                 } else {
-                    
                     setFavorite(false)
                 }
             } catch (error) {

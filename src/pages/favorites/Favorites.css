@@ -11,12 +11,20 @@
     margin-bottom: 50px;
 }
 
-.favoritesCard {
+div.favoritesCard:hover {
+    box-shadow: 0 0 10px;
+}
 
+
+.favoritesCard{
     text-align: center;
 }
 
 .favoriteCards a {
+    text-decoration: none;
+}
+
+.favoritesCard a{
     text-decoration: none;
 }
 

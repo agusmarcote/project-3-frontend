@@ -71,8 +71,8 @@ function CreateSale() {
     }
 
     return (
-        <div>
-            <h1>SELL MY <span>INSTRUMEMT</span></h1>
+        <div className="createSale">
+            <h1> <span>INSTRUMENT</span> SELL</h1>
 
             <form onSubmit={submitHandler}>
                 <div className="divFormEditP">
@@ -100,7 +100,7 @@ function CreateSale() {
                     <input type='text' value={city} onChange={cityHandler} />
                     <br></br>
                 </div>
-                <div className="divFormEditECheckBox">
+                <div className="divFormEditPCheckBox">
                     <label>Instruments</label>
                     <select onChange={instrumentsHandler}>
                         {instrumentsArr.map((instrument) => {

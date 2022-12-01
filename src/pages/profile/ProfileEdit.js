@@ -107,7 +107,11 @@ function ProfileEdit() {
 
     return (
         <div>
-            <h1 className="editProfileTitle profileEditHeight">Edit Profile</h1>
+            <div className="titleForm">
+              <h1 className="editProfileTitle profileEditHeight"><span>Profile</span> Edit</h1>  
+              <img className= "LogoImgForm" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo"/>
+            </div>
+            
             <form className="formEditP" onSubmit={submitHandler}>
                 <div className="divFormEditP">
                     <label>Email</label>

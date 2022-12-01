@@ -1,0 +1,27 @@
+.favoriteClass {
+    color: black;
+    padding: 0px 0px 0px 0px;
+    height: 520px;
+    width: 350px;
+    background: white;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-left: 20px;
+    box-shadow: 0 0 5px 0px #d0d0d0;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+div.favoriteClass:hover {
+    box-shadow: 0px 0px 20px;
+}
+
+.favoriteX a{
+    text-decoration: none;
+}
+.noFav{
+    text-align: center  ;
+}

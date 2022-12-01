@@ -76,13 +76,8 @@ p {
 
 
 
-.titleFav {
-    display: flex;
-    justify-content: space-around;
-}
-
-.phoneIcon {
-    color: black;
+.phoneIcon{
+    color:black;
     margin: 0 15px;
     text-decoration: none;
 }

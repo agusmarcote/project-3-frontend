@@ -15,7 +15,6 @@ function ProfileEvent() {
         const apiCall = async () => {
             const res = await axios.get(apiURL, { headers: { Authorization: `Bearer ${storedToken}` } })
             setProfile(res.data)
-
         }
         apiCall()
     }, [])

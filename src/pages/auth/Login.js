@@ -37,13 +37,30 @@ export default function Login() {
 
    return (
       <div>
+         <div className="LogoHomeFlex">
+            <img className="LogoImgHome" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo" />
+            <h1><span>Har</span>money</h1>
+         </div>
          <form onSubmit={handleSubmit}>
-            <label>Email</label>
-            <input required type="email" name="email" value={user.email} onChange={handleChange} />
-            <label>Password</label>
-            <input required type="password" name="password" value={user.password} onChange={handleChange} />
-            {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-            <button type="submit">Log in </button>
+            <div className="divFormEditP">
+               <label>Email</label>
+               <input required type="email" name="email" value={user.email} onChange={handleChange} />
+               <br></br>
+            </div>
+            <div className="divFormEditP">
+               <label>Password</label>
+               <input required type="password" name="password" value={user.password} onChange={handleChange} />
+               {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
+            </div>
+            <div className="formProfileButton">
+               <button type="submit">Log in </button>
+            </div>
+            <div className='loginSignup'>
+               <h3>Don´t have an account? 
+                  <a href="/">Sign Up!</a>
+               </h3>
+            </div>
+
          </form>
       </div>
    )
