@@ -26,10 +26,14 @@ export default function FavoriteSales() {
     return (
         
         <div>            
-            {user && user.favoriteSale.length == 0 && <h1 className="noFav">There are no favorites saved yet</h1>}
+            {user && user.favoriteSale.length === 0 && <div className="noFav">
+                <h1>There are no favorites saved yet</h1>
+                <img className="favLogo" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo" />
+            </div>}
             {user && user.favoriteSale.map((el) => {
                 return (
                     <div className="favoriteX">
+                        <h2>Favorites<span> Instruments</span></h2>
                         <div className="favoriteClass">
                             <Link to={`/sales/${el._id}`}>
                                 <img className="photoCard" src={el.picture} alt="Favorites Sales" />
