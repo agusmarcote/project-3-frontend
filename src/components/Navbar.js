@@ -11,7 +11,6 @@ const apiURL = "http://localhost:8000/api/v1/users/profile"
 export default function Navbar() {
    const storedToken = localStorage.getItem("authToken");
    const [profile, setProfile] = useState({})
-   console.log("hola NAVBAR")
 
    useEffect(() => {
       const apiCall = async () => {
