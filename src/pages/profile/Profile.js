@@ -129,9 +129,6 @@ function Profile() {
                 {viewClasses && <ProfileClasses />}
                 {viewEvents && <ProfileEvent />}
             </div>
-            <div className="logoPerfil">
-                <img src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo" />
-            </div>
         </div>
     )
 }
