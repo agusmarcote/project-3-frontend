@@ -76,7 +76,7 @@ function Profile() {
     return (
         <div className="profileHeight">
             <div id="profilePicNameRate">
-                <h1>{profile.username}</h1>
+                <h1 className="profileUsername">{profile.username}</h1>
                 <img className="profileImage" src={profile.picture} alt="" />
             </div>
             <div className="profileDetails">
@@ -96,17 +96,10 @@ function Profile() {
 
                 </div>
                 <h6>{profile.description}</h6>
-                <div>
-
-
-                    <p>
-                        {profile.style}
-                        <br></br>
-                        {profile.instruments}
-                    </p>
-
-
-
+                <div className="profileStyleIns">
+                    {profile.style}
+                    <br></br>
+                    {profile.instruments}
                 </div>
 
 
@@ -159,15 +152,14 @@ function Profile() {
                         </button>
                     </div>
                 </div>
-                <div className="profileInformationLinks">
-                    {viewLinks && <ProfileLinks />}
-
-                </div>
+                {viewLinks && <ProfileLinks />}
                 {viewSales && <ProfileSales />}
                 {viewClasses && <ProfileClasses />}
                 {viewEvents && <ProfileEvent />}
             </div>
-
+            <div className="logoPerfil">
+                <img  src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo" />
+            </div>
         </div>
     )
 }

@@ -4,13 +4,13 @@ import { useNavigate } from "react-router-dom";
 
 const apiEndPoint = "http://localhost:8000/api/v1/events/create"
 
-const instrumentsArr = ['DJ', 'Piano', 'Guitar', 'Violin', 'Drums', 'Saxophone', 'Flute', 'Cello',
+const instrumentsArr = ['-', 'DJ', 'Piano', 'Guitar', 'Violin', 'Drums', 'Saxophone', 'Flute', 'Cello',
     'Clarinet', 'Trumpet', 'Harp', 'Ukelele', 'Electric Guitar', 'Banjo', 'Accordion', 'Microphone']
 
-const typeOfArr = ["Party", "Concert", "Join a Band", "Hiring a Member", "Jamming"]
+const typeOfArr = ["-", "Party", "Concert", "Join a Band", "Hiring a Member", "Jamming"]
 
 
-const styleArr = ["Dance", "Folk", "Bachata", "Rock", "Reggaeton", "Rap", "Flamenco", "Classic", "Tango", "Indie", "Trap", "Pop", "Electronic", "Blues", "Punk", "Jazz", "Techno", "Choir", "Trance"]
+const styleArr = ["-","Dance", "Folk", "Bachata", "Rock", "Reggaeton", "Rap", "Flamenco", "Classic", "Tango", "Indie", "Trap", "Pop", "Electronic", "Blues", "Punk", "Jazz", "Techno", "Choir", "Trance"]
 
 
 export default function CreateEvent() {

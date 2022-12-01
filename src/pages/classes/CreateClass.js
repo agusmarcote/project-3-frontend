@@ -5,10 +5,10 @@ import { useNavigate } from "react-router-dom"
 
 const apiURL = "http://localhost:8000/api/classes"
 
-const instrumentsArr = ['DJ', 'Piano', 'Guitar', 'Violin', 'Drums', 'Saxophone', 'Flute', 'Cello',
+const instrumentsArr = ['-', 'DJ', 'Piano', 'Guitar', 'Violin', 'Drums', 'Saxophone', 'Flute', 'Cello',
     'Clarinet', 'Trumpet', 'Harp', 'Ukelele', 'Electric Guitar', 'Banjo', 'Accordion', 'Microphone']
 
-const levelArr = ['Beginner', 'Intermediate', 'Advanced']
+const levelArr = ['-', 'Beginner', 'Intermediate', 'Advanced']
 
 export default function CreateClass() {
     const [title, setTitle] = useState('')

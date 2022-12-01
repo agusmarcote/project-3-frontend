@@ -4,9 +4,9 @@ import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 
-const instrumentsArr = ['DJ', 'Piano', 'Guitar', 'Violin', 'Drums', 'Saxophone', 'Flute', 'Cello',
+const instrumentsArr = ['-', 'DJ', 'Piano', 'Guitar', 'Violin', 'Drums', 'Saxophone', 'Flute', 'Cello',
     'Clarinet', 'Trumpet', 'Harp', 'Ukelele', 'Electric Guitar', 'Banjo', 'Accordion', 'Microphone']
-const styleArr = ["Dance", "Folk", "Bachata", "Rock", "Reggaeton", "Rap", "Flamenco", "Classic", "Tango", "Indie", "Trap", "Pop", "Electronic", "Blues", "Punk", "Jazz", "Techno", "Choir", "Trance",]
+const styleArr = ["-", "Dance", "Folk", "Bachata", "Rock", "Reggaeton", "Rap", "Flamenco", "Classic", "Tango", "Indie", "Trap", "Pop", "Electronic", "Blues", "Punk", "Jazz", "Techno", "Choir", "Trance",]
 
 
 const endPoint = "http://localhost:8000/api/v1/users/profile/edit"
@@ -16,6 +16,10 @@ const apiURL = "http://localhost:8000/api/v1/users/profile"
 function ProfileEdit() {
     const storedToken = localStorage.getItem("authToken");
     const [profile, setProfile] = useState({})
+
+    console.log(profile)
+    console.log(profile.style)
+    console.log(profile.instruments)
 
 
     const [email, setEmail] = useState("")
