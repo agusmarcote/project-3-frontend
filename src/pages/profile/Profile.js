@@ -74,9 +74,9 @@ function Profile() {
                 </div>
                 <h6>{profile.description}</h6>
                 <div className="profileStyleIns">
-                    <p>Favorite Style: {profile.style}</p>
+                    <p>Favorite Style {profile.style}</p>
                     <br></br>
-                    <p>Favorite Instrument: {profile.instruments}</p>
+                    <p>Favorite Instrument {profile.instruments}</p>
                 </div>
 
             </div>
