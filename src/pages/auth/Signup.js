@@ -27,12 +27,11 @@ export default function Signup() {
       } else {
          setErrorMessage(undefined)
       }
-      // eslint-disable-next-line
+
    }, [passwordControl])
 
    const handleSubmit = async (e) => {
       e.preventDefault();
-      console.log(user.email)
       try {
          await axios.post(`${process.env.REACT_APP_API_URL}/auth/signup`, { name: user.username, email: user.email, password });
          navigate('/profile');

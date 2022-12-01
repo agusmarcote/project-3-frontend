@@ -13,7 +13,7 @@ function Events() {
     useEffect(() => {
         const apiCall = async () => {
             const res = await axios.get(apiEndPoint)
-            console.log(res.data)
+            
             setEvents(res.data)
             setFilterEvents(res.data)
         }
@@ -24,41 +24,41 @@ function Events() {
 
     const searchHandler = (search) => {
         const searchThis = events.filter((one) =>
-          one.title.toLowerCase().includes(search.toLowerCase())
-        );   console.log(searchThis) 
+            one.title.toLowerCase().includes(search.toLowerCase())
+        ); 
         setFilterEvents(searchThis)
     };
 
 
     return (
-        <div className= "singleEvent" >
+        <div>
 
-            <h1>Current Events</h1>
-            <div className = "searchBar">
-                <Searchbar  onSearch={searchHandler}/>
-                </div>
+            <h1 className="flex"><span>Current</span> Events</h1>
+            <div className="searchBar">
+                <Searchbar onSearch={searchHandler} />
+            </div>
             <div>
-                
+
                 {filterEvents.map((event) => {
                     return (
 
                         <div key={event._id}>
-                        <Link className="cardLink flex" to={`/events/${event._id}`}>
-                        <div className = "CardStyle">
-                            <img className = "photoCard"src={event.picture} alt="instrument"/>
-                            {event.creator &&<Link className="cardLink" to={`/profile/${event.creator._id}`}>
-                                             <div className="userFlex">
-                                                {event.creator && <img className ="userImage" src={event.creator.picture}/>}
-                                                <p className="userNameStyle">{event.creator && event.creator.name}</p>
-                                            </div>
-                                        </Link>}
-                            <h3 className="textStyle">{event.title}</h3>
-                            <p className="textStyle">{event.instruments}</p>
-                            <p className="textStyle"><i>{event.description}</i></p>
-                            <h4 className="priceStyleLits textStyle">price: <span className="spanPrice">${event.price}</span></h4>
-                            <img className ="smallLogo" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo"/>
-                        </div>
-                        </Link>
+                            <Link className="cardLink flex" to={`/events/${event._id}`}>
+                                <div className="CardStyle">
+                                    <img className="photoCard" src={event.picture} alt="instrument" />
+                                    {event.creator && <Link className="cardLink" to={`/profile/${event.creator._id}`}>
+                                        <div className="userFlex">
+                                            {event.creator && <img className="userImage" src={event.creator.picture} />}
+                                            <p className="userNameStyle">{event.creator && event.creator.name}</p>
+                                        </div>
+                                    </Link>}
+                                    <h3 className="textStyle">{event.title}</h3>
+                                    <p className="textStyle">{event.instruments}</p>
+                                    <p className="textStyle"><i>{event.description}</i></p>
+                                    <h4 className="priceStyleLits textStyle">price: <span className="spanPrice">${event.price}</span></h4>
+                                    <img className="smallLogo" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo" />
+                                </div>
+                            </Link>
                         </div>
                     )
                 })}

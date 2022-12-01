@@ -27,7 +27,7 @@ function ProfileByID() {
     useEffect(() => {
         const apiCall = async () => {
             const res = await axios.get(apiURL + userId)
-            console.log(res.data)
+            
             setUser(res.data)
         }
 

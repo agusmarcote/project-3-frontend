@@ -10,12 +10,12 @@ function ProfileLinksByID() {
     const { userId } = useParams()
     const [user, setUser] = useState([])
 
-    // console.log(profile.presentationCard)
+
 
     useEffect(() => {
         const apiCall = async () => {
             const res = await axios.get(apiURL + userId)
-            console.log(res.data)
+            
             setUser(res.data)
         }
         apiCall()

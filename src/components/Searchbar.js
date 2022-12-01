@@ -9,7 +9,7 @@ const Searchbar = (props) => {
     }
     return (
         <div className="searchBar">
-            <FontAwesomeIcon icon={faMagnifyingGlass}   />
+            <FontAwesomeIcon icon={faMagnifyingGlass} />
             <input type="text" onChange={searchChangeHandler} ></input>
         </div>
     )

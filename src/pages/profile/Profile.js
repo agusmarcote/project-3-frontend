@@ -12,7 +12,7 @@ import { faGuitar } from "@fortawesome/free-solid-svg-icons";
 import { faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
 import ButtonMailto from "./Mailto";
 import Instruments from "./Instruments";
-// import ProfileLinksEdit from "./ProfileLinksEdit";
+
 
 
 const apiURL = "http://localhost:8000/api/v1/users/profile"
@@ -28,7 +28,7 @@ function Profile() {
         const apiCall = async () => {
             const res = await axios.get(apiURL, { headers: { Authorization: `Bearer ${storedToken}` } })
             setProfile(res.data)
-            // console.log(res.data)
+
         }
         apiCall()
     }, [])
@@ -103,9 +103,6 @@ function Profile() {
                 </div>
 
 
-                {/* <div className="proInstrument"><FontAwesomeIcon icon={faGuitar}><p>{profile.instruments}</p></FontAwesomeIcon></div> */}
-                {/* <Instruments/> */}
-
             </div>
 
             <div className="profileEdit">
@@ -158,7 +155,7 @@ function Profile() {
                 {viewEvents && <ProfileEvent />}
             </div>
             <div className="logoPerfil">
-                <img  src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo" />
+                <img src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo" />
             </div>
         </div>
     )

@@ -40,7 +40,7 @@ function CreateSale() {
         setPicture(event.target.value)
     }
 
-    //NEW CODE
+
 
     const submitHandler = (event) => {
         event.preventDefault()
@@ -54,17 +54,17 @@ function CreateSale() {
             description: description,
             picture: picture
         }
-        console.log(picture)
+        
 
         const postApi = async () => {
-            const storedToken = localStorage.getItem("authToken");//NEED SOMEONE TO EXPLAIN THIA SHIT HERE
+            const storedToken = localStorage.getItem("authToken");
 
             try {
                 const res = await axios.post(apiURL, newSale, { headers: { Authorization: `Bearer ${storedToken}` } })
-                console.log(res)
+                
                 navigate('/Sales')
             } catch (error) {
-                console.log(error.response.data)
+                
             }
         }
         postApi()

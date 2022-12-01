@@ -13,10 +13,10 @@ export default function FavoriteSales() {
             const storedToken = localStorage.getItem("authToken");
             try {
                 const res = await axios.get(apiURL, { headers: { Authorization: `Bearer ${storedToken}` } })
-                console.log(res.data)
+                
                 setUser(res.data)
             } catch (error) {
-                console.log(error)
+                
             }
         }
         apiCall()

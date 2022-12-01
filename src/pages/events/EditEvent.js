@@ -31,7 +31,7 @@ function EditEvent() {
     useEffect(() => {
         const apiFind = async () => {
             const res = await axios.get(apiURL + eventId)
-            console.log(res)
+            
             setTitle(res.data.title)
             setDescription(res.data.description)
             setDate(res.data.date)
@@ -41,7 +41,7 @@ function EditEvent() {
             setInstruments(res.data.instruments)
             setPhoneNumber(res.data.phoneNumber)
             setAddress(res.data.address)
-            setPicture(res.data.picture)        
+            setPicture(res.data.picture)
         }
         apiFind()
     }, [eventId])
@@ -84,116 +84,116 @@ function EditEvent() {
         event.preventDefault()
 
 
-            const newEvent = {
-                title: title,
-                description: description,
-                date: date,
-                typeOfEvent: typeOfEvent,
-                style: style,
-                price: price,
-                instruments: instruments,
-                picture: picture,
-                phoneNumber: phoneNumber,
-                address: address
-            }
-
-            const putApi = async () => {
-                const storedToken = localStorage.getItem("authToken");
-
-                try {
-                    const res = await axios.put(apiURL + eventId, newEvent, { headers: { Authorization: `Bearer ${storedToken}` } })
-                    console.log(res)
-                    navigate('/events')
-                } catch (error) {
-                    console.log(error.response.data)
-                }
-            }
-            putApi()
+        const newEvent = {
+            title: title,
+            description: description,
+            date: date,
+            typeOfEvent: typeOfEvent,
+            style: style,
+            price: price,
+            instruments: instruments,
+            picture: picture,
+            phoneNumber: phoneNumber,
+            address: address
         }
 
-        const deleteHandler = () => {
+        const putApi = async () => {
+            const storedToken = localStorage.getItem("authToken");
 
-            const deleteApi = async () => {
-                const storedToken = localStorage.getItem("authToken");
-                try {
-                    const res = await axios.delete(apiURL + eventId, { headers: { Authorization: `Bearer ${storedToken}` } })
-                    navigate('/events')
-                } catch (error) {
-                    console.log(error)
-                }
+            try {
+                const res = await axios.put(apiURL + eventId, newEvent, { headers: { Authorization: `Bearer ${storedToken}` } })
+                
+                navigate('/events')
+            } catch (error) {
+                
             }
-            deleteApi()
         }
-
-
-        return (
-            <div>
-                <h1>Edit your Event!</h1>
-                <form onSubmit={submitHandler}>
-                    <label>Title</label>
-                    <input type='text' value={title} onChange={titleHandler} />
-                    <br />
-
-                    <label>Description</label>
-                    <input type='text' value={description} onChange={descriptionHandler} />
-                    <br />
-
-                    <label>Date</label>
-                    <textarea type='date' value={date} onChange={dateHandler} />
-                    <br />
-
-                    <label>Type of Event</label>
-                    <select onChange={typeOfEventHandler}>
-                        {typeOfEventArr.map((el)=> {
-                            return (
-                                <option value={el}>{el}</option>
-                            )
-                        })}
-                    </select>
-                    <br />
-                    
-                    <label>Style</label>
-                    <select onChange={styleHandler}>
-                        {styleArr.map((style) => {
-                            return (
-                                <option value={style}>{style}</option>
-                            )
-                        })}
-                    </select>
-                    <br />
-
-                    <label>Price</label>
-                    <input type='number' value={price} onChange={priceHandler} />
-                    <br />
-
-                    <label>Address</label>
-                    <input type='text' value={address} onChange={addressHandler} />
-                    <br />
-
-                    <label>Phone number</label>
-                    <input type='text' value={phoneNumber} onChange={phoneNumberHandler} />
-                    <br />
-
-                    <label>Instruments</label>
-                    <select onChange={instrumentsHandler}>
-                        {instrumentsArr.map((instrument) => {
-                            return (
-                                <option value={instrument}>{instrument}</option>
-                            )
-                        })}
-                    </select>
-                    <br />
-
-                    <label>Picture</label>
-                    <input type='text' value={picture} onChange={pictureHandler} />
-                    <br />
-                    
-                    <button type='submit'>Save your edit</button>
-                    <button onClick={deleteHandler}>Delete the Event</button>
-                </form>
-            </div>
-        )
+        putApi()
     }
+
+    const deleteHandler = () => {
+
+        const deleteApi = async () => {
+            const storedToken = localStorage.getItem("authToken");
+            try {
+                const res = await axios.delete(apiURL + eventId, { headers: { Authorization: `Bearer ${storedToken}` } })
+                navigate('/events')
+            } catch (error) {
+               
+            }
+        }
+        deleteApi()
+    }
+
+
+    return (
+        <div>
+            <h1>Edit your Event!</h1>
+            <form onSubmit={submitHandler}>
+                <label>Title</label>
+                <input type='text' value={title} onChange={titleHandler} />
+                <br />
+
+                <label>Description</label>
+                <input type='text' value={description} onChange={descriptionHandler} />
+                <br />
+
+                <label>Date</label>
+                <textarea type='date' value={date} onChange={dateHandler} />
+                <br />
+
+                <label>Type of Event</label>
+                <select onChange={typeOfEventHandler}>
+                    {typeOfEventArr.map((el) => {
+                        return (
+                            <option value={el}>{el}</option>
+                        )
+                    })}
+                </select>
+                <br />
+
+                <label>Style</label>
+                <select onChange={styleHandler}>
+                    {styleArr.map((style) => {
+                        return (
+                            <option value={style}>{style}</option>
+                        )
+                    })}
+                </select>
+                <br />
+
+                <label>Price</label>
+                <input type='number' value={price} onChange={priceHandler} />
+                <br />
+
+                <label>Address</label>
+                <input type='text' value={address} onChange={addressHandler} />
+                <br />
+
+                <label>Phone number</label>
+                <input type='text' value={phoneNumber} onChange={phoneNumberHandler} />
+                <br />
+
+                <label>Instruments</label>
+                <select onChange={instrumentsHandler}>
+                    {instrumentsArr.map((instrument) => {
+                        return (
+                            <option value={instrument}>{instrument}</option>
+                        )
+                    })}
+                </select>
+                <br />
+
+                <label>Picture</label>
+                <input type='text' value={picture} onChange={pictureHandler} />
+                <br />
+
+                <button type='submit'>Save your edit</button>
+                <button onClick={deleteHandler}>Delete the Event</button>
+            </form>
+        </div>
+    )
+}
 
 
 

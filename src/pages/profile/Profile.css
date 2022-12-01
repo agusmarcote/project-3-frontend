@@ -1,21 +1,13 @@
-/* img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    object-fit: cover;
-    width: 150px;
-} */
 
-h6{
+h6 {
     font-size: 16px;
 }
 
-.profileHeight{
-height: 95vh;
+.profileHeight {
+    height: 100vh;
 }
 
-.profileImage{
+.profileImage {
     display: flex;
     border-radius: 80px;
     object-fit: cover;
@@ -23,7 +15,7 @@ height: 95vh;
     height: 150px;
 }
 
-#profilePicNameRate{
+#profilePicNameRate {
     display: flex;
     justify-content: space-around;
     flex-flow: row-reverse;
@@ -31,7 +23,7 @@ height: 95vh;
     margin-left: 20px;
 }
 
-.profileDetails{
+.profileDetails {
     display: flex;
     flex-flow: column;
     padding: 0px;
@@ -39,58 +31,60 @@ height: 95vh;
     margin-right: 60px;
 }
 
-.profileDetailsName{
+.profileDetailsName {
     display: flex;
     justify-content: space-between;
 }
 
-.profileDetailsStyle{
+.profileDetailsStyle {
     display: flex;
     width: 50px;
     align-items: center;
     justify-content: space-between;
 }
 
-.profileDetailsStyle svg{
+.profileDetailsStyle svg {
     color: black;
 }
 
-.profileStyleIns{
+.profileStyleIns {
     font-style: italic;
     display: flex;
 
 }
 
-.profileStyleInstruments{
+.profileStyleInstruments {
     display: flex;
     flex-flow: column;
 }
 
-.proPhone svg{
+.proPhone svg {
     display: flex;
     width: 50px;
 }
 
-.proPhone{
+.proPhone {
     display: flex;
     flex-flow: column;
     justify-content: center;
     margin-top: 10px;
     align-items: center;
 }
-.proMail{
+
+.proMail {
     display: flex;
     flex-flow: column;
     justify-content: center;
 }
-.proUsername{
+
+.proUsername {
     display: flex;
     flex-flow: column;
     justify-content: center;
     font-size: 30px;
 }
 
-.proInstrument{
+.proInstrument {
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -102,14 +96,14 @@ height: 95vh;
 
 } */
 
-.profileUsername{
+.profileUsername {
     display: flex;
     text-align: center;
     width: 200px;
     justify-content: center;
 }
 
-.profileEdit button{
+.profileEdit button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -123,7 +117,7 @@ height: 95vh;
     text-transform: uppercase;
 }
 
-.profileEdit a{
+.profileEdit a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -137,7 +131,7 @@ height: 95vh;
     font-style: italic;
 }
 
-.profileButtons{
+.profileButtons {
     display: flex;
     justify-content: space-around;
     height: 70px;
@@ -147,22 +141,13 @@ height: 95vh;
     margin-top: 10px;
 }
 
-/* .profileButtonsSvg{
-    display: flex;
-    height: 70px;
-    width: 70px;
-} */
-
-.profileButtons svg{
+.profileButtons svg {
     display: flex;
     height: 70px;
     width: 70px;
 }
-/* .buttonPresentationCard{
-    width: 20vh;
-} */
 
-.buttonPresentationCard button{
+.buttonPresentationCard button {
     width: 10vh;
     justify-content: center;
     display: flex;
@@ -174,20 +159,23 @@ height: 95vh;
     padding-top: 5px;
 }
 
-.buttonPresentationCard button:active{
-    border-color: yellow;
-}
-.buttonViewClasses button:active{
-    border-color: yellow;
-}
-.buttonViewEvent button:active{
-    border-color: yellow;
-}
-.buttonViewSales button:active{
+.buttonPresentationCard button:active {
     border-color: yellow;
 }
 
-.buttonViewSales button{
+.buttonViewClasses button:active {
+    border-color: yellow;
+}
+
+.buttonViewEvent button:active {
+    border-color: yellow;
+}
+
+.buttonViewSales button:active {
+    border-color: yellow;
+}
+
+.buttonViewSales button {
     width: 10vh;
     justify-content: center;
     display: flex;
@@ -199,7 +187,7 @@ height: 95vh;
     padding-top: 5px;
 }
 
-.buttonViewEvent button{
+.buttonViewEvent button {
     width: 10vh;
     justify-content: center;
     display: flex;
@@ -211,7 +199,7 @@ height: 95vh;
     padding-top: 5px;
 }
 
-.buttonViewClasses button{
+.buttonViewClasses button {
     width: 10vh;
     justify-content: center;
     display: flex;
@@ -223,26 +211,29 @@ height: 95vh;
     padding-top: 5px;
 }
 
-.profileInformation{
+.profileInformation {
     border-radius: 10px;
     border: black;
     display: flex;
     flex-flow: column;
 }
 
-.hide{
-    display:none;
+.hide {
+    display: none;
 }
 
-.proPhone svg{
+.proPhone svg {
     color: black;
 }
 
-.logoPerfil{
+.logoPerfil {
     display: flex;
     justify-content: center;
+    margin-bottom: 40px;
 }
 
-.logoPerfil img{
+.logoPerfil img {
     width: 80px;
+    position: relative;
+    bottom: 40px;
 }

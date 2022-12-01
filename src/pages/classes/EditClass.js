@@ -6,12 +6,12 @@ import { useParams } from "react-router-dom"
 const apiURL = "http://localhost:8000/api/classes/"
 
 const instrumentsArr = ['-', 'DJ', 'Piano', 'Guitar', 'Violin', 'Drums', 'Saxophone', 'Flute', 'Cello',
-'Clarinet', 'Trumpet', 'Harp', 'Ukelele', 'Electric Guitar', 'Banjo', 'Accordion', 'Microphone']
+    'Clarinet', 'Trumpet', 'Harp', 'Ukelele', 'Electric Guitar', 'Banjo', 'Accordion', 'Microphone']
 
 const levelArr = ['-', 'Beginner', 'Intermediate', 'Advanced']
 
 export default function EditClass() {
-    
+
     const { classId } = useParams()
 
     const [title, setTitle] = useState('')
@@ -24,7 +24,6 @@ export default function EditClass() {
     useEffect(() => {
         const apiFind = async () => {
             const res = await axios.get(apiURL + classId)
-            console.log(res)
             setTitle(res.data.title)
             setInstruments(res.data.instruments)
             setPicture(res.data.picture)
@@ -48,7 +47,7 @@ export default function EditClass() {
     const pictureHandler = (event) => {
         setPicture(event.target.value)
     }
-    
+
     const priceHandler = (event) => {
         setPrice(event.target.value)
     }
@@ -60,11 +59,11 @@ export default function EditClass() {
     const levelHandler = (event) => {
         setLevel(event.target.value)
     }
-    
+
     const submitHandler = (event) => {
         event.preventDefault()
 
-    
+
         const newClasses = {
             title: title,
             instruments: instruments,
@@ -73,18 +72,18 @@ export default function EditClass() {
             description: description,
             level: level
         }
-        console.log(newClasses)
+
 
         const putApi = async () => {
             const storedToken = localStorage.getItem("authToken");
 
             try {
                 const res = await axios.put(apiURL + classId, newClasses, { headers: { Authorization: `Bearer ${storedToken}` } })
-                console.log(res)
+
                 navigate('/classes')
             } catch (error) {
-                console.log(error.response.data)
-            } 
+
+            }
         }
         putApi()
     }
@@ -97,7 +96,7 @@ export default function EditClass() {
                 const res = await axios.delete(apiURL + classId, { headers: { Authorization: `Bearer ${storedToken}` } })
                 navigate('/classes')
             } catch (error) {
-                console.log(error)
+
             }
         }
         deleteApi()
@@ -108,12 +107,12 @@ export default function EditClass() {
             <h1>Edit your Class</h1>
             <form onSubmit={submitHandler}>
                 <label>Title</label>
-                <input type='text' value={title} onChange={titleHandler}/>
+                <input type='text' value={title} onChange={titleHandler} />
                 <br />
 
                 <label>Instruments</label>
                 <select onChange={instrumentsHandler}>
-                    {instrumentsArr.map((instrument)=> {
+                    {instrumentsArr.map((instrument) => {
                         return (
                             <option value={instrument}>{instrument}</option>
                         )
@@ -122,31 +121,27 @@ export default function EditClass() {
                 <br />
 
                 <label>Picture</label>
-                <input type='text' value={picture} onChange={pictureHandler}/>
+                <input type='text' value={picture} onChange={pictureHandler} />
                 <br />
 
                 <label>Price</label>
-                <input type='number' value={price} onChange={priceHandler}/>
+                <input type='number' value={price} onChange={priceHandler} />
                 <br />
 
                 <label>Description</label>
-                <textarea type='text' value={description} rows='15' cols='40' onChange={descriptionHandler}/>
+                <textarea type='text' value={description} rows='15' cols='40' onChange={descriptionHandler} />
                 <br />
-{/* 
-                <label>Address</label>
-                <input type='text' value={coordinates} onChange={coordinatesHandler}/>
-                <br /> */}
 
                 <label>Level</label>
                 <select onChange={levelHandler}>
-                    {levelArr.map((lev)=> {
+                    {levelArr.map((lev) => {
                         return (
                             <option value={lev}>{lev}</option>
                         )
                     })}
                 </select>
                 <br />
-                
+
                 <button type='submit'>Save your edit</button>
                 <button onClick={deleteHandler}>Delete the class</button>
             </form>
