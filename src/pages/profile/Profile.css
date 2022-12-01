@@ -7,6 +7,10 @@ h6 {
     height: 100vh;
 }
 
+.profileDescription{
+    overflow-wrap: break-word;
+}
+
 .profileImage {
     display: flex;
     border-radius: 80px;
