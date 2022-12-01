@@ -17,7 +17,7 @@ function ProfileEvent() {
             setProfile(res.data)
         }
         apiCall()
-    }, [])
+    }, [storedToken])
 
 
 

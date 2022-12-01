@@ -138,11 +138,12 @@ h6 {
     margin-top: 10px;
 }
 
-.profileButtons svg {
+.profileButtons svg{
     display: flex;
     height: 70px;
     width: 70px;
 }
+
 
 .buttonPresentationCard button {
     width: 10vh;
