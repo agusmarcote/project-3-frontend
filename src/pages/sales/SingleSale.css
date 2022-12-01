@@ -110,4 +110,7 @@ p{
 .singleSaleHeight{
     height: 95vh;
     }
-
+.backgroundImg{
+    z-index: 10;
+    width:200px
+}

@@ -84,15 +84,16 @@ export default function SingleClass() {
     return (    
             <div  className="CardStyle">
                    
+                    {/* <p>{sale.creator.email}</p> */}
+
+                    <img className="photoCard" src={klass.picture} alt="Instrument"/>
+
                     {klass.creator &&<Link className="cardLink" to={`/profile/${klass.creator._id}`}>
                                              <div className="userFlex">
                                                 {klass.creator && <img className ="userImage" src={klass.creator.picture}/>}
                                                 <p className="userNameStyle">{klass.creator && klass.creator.name}</p>
                                             </div>
                                         </Link>}
-                    {/* <p>{sale.creator.email}</p> */}
-
-                    <img className="photoCard" src={klass.picture} alt="Instrument"/>
 
                     <div className="titleFav">
                         <h3 className="textStyle">{klass.title}</h3>

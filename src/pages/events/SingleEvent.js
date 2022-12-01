@@ -22,8 +22,8 @@ function SingleEvent() {
     const storedToken = localStorage.getItem("authToken");
     const [currentCreator, setCurrentCreator] = useState(false)
 
-    const teleph = `https://wa.me/${event.creator.telephone}?text=My+name+is+${event.creator.name}+I+got+your+number+from+Harmoney.+May+I+Call+you?`
-    console.log(teleph)
+    // const teleph = `https://wa.me/${event.creator.telephone}?text=My+name+is+${event.creator.name}+I+got+your+number+from+Harmoney.+May+I+Call+you?`
+    // console.log(teleph)
 
 
     useEffect(() => {
@@ -87,23 +87,23 @@ function SingleEvent() {
     }
 
     return (
-        <div>
-            <section className="CardStyleEvents">
-                {event.creator && <Link className="cardLink" to={`/profile/${event.creator._id}`}>
-                    <div className="userFlex">
-                        {event.creator && <img className="userImage" src={event.creator.picture} />}
-                        <p className="userNameStyle">{event.creator && event.creator.name}</p>
-                    </div>
-                </Link>}
+        <div className="CardStyle">
+            <section className="CardStyleEvents cardLinkx">
                 <img className="photoCard" src={event.picture} alt="Instrument" />
                 
                 <div className="titleFav">
                        <h3 className="textStyle">{event.title}</h3>
                        {favorite ? <FontAwesomeIcon icon ={faStar} onClick={favoriteHandler}>Favorite</FontAwesomeIcon> : <FontAwesomeIcon icon={farStar} onClick={favoriteHandler}>Favorite</FontAwesomeIcon>}
                 </div>
+                {event.creator && <Link className="cardLink" to={`/profile/${event.creator._id}`}>
+                    <div className="userFlex">
+                        {event.creator && <img className="userImage" src={event.creator.picture} />}
+                        <p className="userNameStyle">{event.creator && event.creator.name}</p>
+                    </div>
+                </Link>}
 
                 <div>
-                    <a className='phoneIcon flexContact' href={teleph}>
+                    <a className='phoneIcon flexContact' href="https://wa.me/${event.creator.telephone}?text=My+name+is+${event.creator.name}+I+got+your+number+from+Harmoney.+May+I+Call+you?">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-outbound-fill" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zM11 .5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V1.707l-4.146 4.147a.5.5 0 0 1-.708-.708L14.293 1H11.5a.5.5 0 0 1-.5-.5z" />
                         </svg>
