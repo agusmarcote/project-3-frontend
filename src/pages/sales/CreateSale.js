@@ -41,11 +41,8 @@ function CreateSale() {
     }
 
 
-
     const submitHandler = (event) => {
         event.preventDefault()
-
-
         const newSale = {
             title: title,
             city: city,
@@ -54,17 +51,15 @@ function CreateSale() {
             description: description,
             picture: picture
         }
-        
+
 
         const postApi = async () => {
             const storedToken = localStorage.getItem("authToken");
 
             try {
                 await axios.post(apiURL, newSale, { headers: { Authorization: `Bearer ${storedToken}` } })
-                
                 navigate('/Sales')
             } catch (error) {
-                
             }
         }
         postApi()
@@ -72,48 +67,48 @@ function CreateSale() {
 
     return (
         <div className="createSale">
-            <h3> <span>SELL</span> INSTRUMEN</h3>
+            <h3><span>SELL</span> INSTRUMENT</h3>
 
             <img className="smallLogo" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo" />
 
             <form onSubmit={submitHandler}>
-                <div className="divFormEditP">
+                <div key='1' className="divFormEditP">
                     <label>Title</label>
                     <input type='text' value={title} onChange={titleHandler} />
                     <br />
                 </div>
-                <div className="divFormEditP">
+                <div key='2' className="divFormEditP">
                     <label>Picture</label>
                     <input type='text' value={picture} onChange={pictureHandler} />
                     <br />
                 </div>
-                <div className="divFormEditP">
+                <div key='3' className="divFormEditP">
                     <label>Price</label>
                     <input type='number' value={price} onChange={priceHandler} />
                     <br />
                 </div>
-                <div className="divFormEditP">
+                <div key='4' className="divFormEditP">
                     <label>Description</label>
                     <input type='text' value={description} onChange={descriptionHandler} />
                     <br />
                 </div>
-                <div className="divFormEditP">
+                <div key='5' className="divFormEditP">
                     <label>City</label>
                     <input type='text' value={city} onChange={cityHandler} />
                     <br></br>
                 </div>
-                <div className="divFormEditPCheckBox">
+                <div key='6' className="divFormEditPCheckBox">
                     <label>Instruments</label>
                     <select onChange={instrumentsHandler}>
                         {instrumentsArr.map((instrument) => {
                             return (
-                                <option value={instrument}>{instrument}</option>
+                                <option key={instrument} value={instrument}>{instrument}</option>
                             )
                         })}
                     </select>
                     <br />
                 </div>
-                <div className="formProfileButton">
+                <div key='7' className="formProfileButton">
                     <button type='submit'>Create</button>
                 </div>
             </form>

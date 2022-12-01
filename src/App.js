@@ -70,8 +70,8 @@ function App() {
          </Modal>}
 
          {isLoggedIn &&<h1 className="navIcon" onClick={() => setModal(!modal)}>
-            <svg className="navIcon" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-list" viewBox="0 0 20 20">
-               <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+            <svg className="navIcon bi bi-list" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" viewBox="0 0 20 20">
+               <path fillRule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
             </svg>
          </h1>}       
 
@@ -101,7 +101,7 @@ function App() {
             <Route path="/profile" element={<IsPrivate><Profile /></IsPrivate>} />
             <Route path="/profile/edit" element={<IsPrivate><ProfileEdit /></IsPrivate>} />
             <Route path="/profile/links" element={<IsPrivate><ProfileLinks /></IsPrivate>} />
-            <Route path="/profile/links/edit" element={<isPrivate><ProfileLinksEdit/></isPrivate>} />  
+            <Route path="/profile/links/edit" element={<IsPrivate><ProfileLinksEdit/></IsPrivate>} />  
             <Route path="/profile/:userId" element={<ProfileByID/>} />
             <Route path="/profile/links/:userId" element={<ProfileLinksByID/>} />
             <Route path="/profile/sales/:userId" element={<ProfileSalesByID/>} />

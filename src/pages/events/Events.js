@@ -29,8 +29,6 @@ function Events() {
         setFilterEvents(searchThis)
     };
 
-    
-
 
     return (
         <div>
@@ -43,17 +41,16 @@ function Events() {
 
                 {filterEvents.map((event) => {
                     return (
-
                         <div key={event._id}>
                             <Link className="cardLink flex" to={`/events/${event._id}`}>
                                 <div className="CardStyle">
                                     <img className="photoCard" src={event.picture} alt="instrument" />
-                                    {event.creator && <Link className="cardLink" to={`/profile/${event.creator._id}`}>
+                                    {event.creator && <div className="cardLink">
                                         <div className="userFlex">
                                             {event.creator && <img className="userImage" src={event.creator.picture} alt="Creator"/>}
                                             <p className="userNameStyle">{event.creator && event.creator.name}</p>
                                         </div>
-                                    </Link>}
+                                    </div>}
                                     <h3 className="textStyle">{event.title}</h3>
                                     <p className="textStyle">{event.instruments}</p>
                                     <p className="textStyle"><i>{event.description}</i></p>

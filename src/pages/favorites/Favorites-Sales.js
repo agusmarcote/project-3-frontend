@@ -32,7 +32,7 @@ export default function FavoriteSales() {
             </div>}
             {user && user.favoriteSale.map((el) => {
                 return (
-                    <div className="favoriteX">
+                    <div key={el._id} className="favoriteX">
                         <h2>Favorites<span> Instruments</span></h2>
                         <div className="favoriteClass">
                             <Link to={`/sales/${el._id}`}>

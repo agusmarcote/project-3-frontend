@@ -10,9 +10,6 @@ function ProfileLinksEdit() {
   const storedToken = localStorage.getItem("authToken");
   const navigate = useNavigate()
 
-
-
-
   const [presentationCardSpotify, setPresentationCardSpotify] = useState("")
   const [presentationCardYouTube, setPresentationCardYouTube] = useState("")
   const [presentationCardSoundCloud, setPresentationCardSoundCloud] = useState("")
@@ -22,8 +19,6 @@ function ProfileLinksEdit() {
   const [presentationCardLinkedIn, setPresentationCardLinkedIn] = useState("")
   const [presentationCardTwitter, setPresentationCardTwitter] = useState("")
   const [presentationCardOther, setPresentationCardOther] = useState("")
-
-
 
   const presentationCardSpotifyHandler = (event) => setPresentationCardSpotify(event.target.value)
   const presentationCardYouTubeHandler = (event) => setPresentationCardYouTube(event.target.value)
