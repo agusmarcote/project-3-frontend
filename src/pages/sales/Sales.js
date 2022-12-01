@@ -32,7 +32,7 @@ function Sales() {
 
     return (
         <div>
-            <h1>FOR <span>SALE</span></h1>
+            <h1 className="titleCenter">For <span>Sale</span></h1>
             <div className="searchBar">
                 <Searchbar onSearch={searchHandler} />
             </div>

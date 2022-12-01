@@ -28,6 +28,7 @@ p {
 
     display: inline-block;
     outline: none;
+    justify-items: center;
     cursor: pointer;
     font-weight: 400;
     border-radius: 3px;
@@ -39,7 +40,7 @@ p {
     font-size: 16px;
     text-transform: uppercase;
     text-decoration: none;
-    margin: 20px 0px 60px 146px;
+    margin: 20px 0px 60px 0px;
 
 
 }
