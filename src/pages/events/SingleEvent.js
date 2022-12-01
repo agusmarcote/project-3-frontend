@@ -91,16 +91,17 @@ function SingleEvent() {
             <section className="CardStyleEvents cardLinkx">
                 <img className="photoCard" src={event.picture} alt="Instrument" />
                 
-                <div className="titleFav">
-                       <h3 className="textStyle">{event.title}</h3>
-                       {favorite ? <FontAwesomeIcon icon ={faStar} onClick={favoriteHandler}>Favorite</FontAwesomeIcon> : <FontAwesomeIcon icon={farStar} onClick={favoriteHandler}>Favorite</FontAwesomeIcon>}
-                </div>
+                
                 {event.creator && <Link className="cardLink" to={`/profile/${event.creator._id}`}>
                     <div className="userFlex">
                         {event.creator && <img className="userImage" src={event.creator.picture} />}
                         <p className="userNameStyle">{event.creator && event.creator.name}</p>
                     </div>
                 </Link>}
+                <div className="titleFav">
+                       <h3 className="textStyle">{event.title}</h3>
+                       {favorite ? <FontAwesomeIcon icon ={faStar} onClick={favoriteHandler}>Favorite</FontAwesomeIcon> : <FontAwesomeIcon icon={farStar} onClick={favoriteHandler}>Favorite</FontAwesomeIcon>}
+                </div>
 
                 <div>
                     <a className='phoneIcon flexContact' href="https://wa.me/${event.creator.telephone}?text=My+name+is+${event.creator.name}+I+got+your+number+from+Harmoney.+May+I+Call+you?">

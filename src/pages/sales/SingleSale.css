@@ -82,12 +82,6 @@ p{
 }
 
 
-
-.titleFav {
-    display: flex;
-    justify-content: space-around;
-}
-
 .phoneIcon{
     color:black;
     margin: 0 15px;
