@@ -1,26 +1,23 @@
 .selected {
    color: black;
 }
-.unSelected{
+
+.unSelected {
    color: #d3d3d3;
 }
 
-/* body{
-   background:linear-gradient(to top left, #FFD372, #FF99D7);
-   color:#333;
-} */
 
-span{
+span {
    color: #CF0A0A;
-   margin:0;
-   padding:0;
+   margin: 0;
+   padding: 0;
    height: 0;
 }
-.navIcon{
+
+.navIcon {
    margin: 10px 0px;
    text-align: center;
    align-items: center;
-   /* position: absolute; */
    cursor: pointer;
 
 

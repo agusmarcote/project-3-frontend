@@ -49,15 +49,15 @@ function ProfileLinksEdit() {
             presentationCardFacebook: presentationCardFacebook,
             presentationCardOther: presentationCardOther,
         }
-        console.log(newPresentationCard)
+        
 
         const postApi = async () => {
             try {
                 const res = await axios.put(endPoint, newPresentationCard, { headers: { Authorization: `Bearer ${storedToken}` } })
-                console.log(res)
+                
                 navigate("/profile")
             } catch (error) {
-                console.log(error)
+                
             }
         }
 

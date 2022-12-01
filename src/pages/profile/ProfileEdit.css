@@ -2,7 +2,7 @@
     text-align: center;
 }
 
-.formEditP{
+.formEditP {
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -10,7 +10,7 @@
 }
 
 
-.divFormEditP{
+.divFormEditP {
     margin-top: 10px;
     display: flex;
     border-radius: 3px;
@@ -30,23 +30,23 @@
     font-size: 18px;
 }
 
-.divFormEditP :placeholder-shown{
+.divFormEditP :placeholder-shown {
     background-color: white !important;
 }
 
-.divFormEditP input:hover{
-    border: 2px solid rgb(128,128,128, 0.1);
-    background-color: rgb(173,213,230, 0.4);;
+.divFormEditP input:hover {
+    border: 2px solid rgb(128, 128, 128, 0.1);
+    background-color: rgb(173, 213, 230, 0.4);
     box-shadow: 0 0 20px;
 }
 
-.divFormEditP input:focus{
-    /* border: 2px solid rgb(128,128,128, 0.1); */
-    background-color: rgb(173,213,230, 0.4);;
+.divFormEditP input:focus {
+
+    background-color: rgb(173, 213, 230, 0.4);
     box-shadow: 0 0 20px;
 }
 
-.divFormEditP textarea{
+.divFormEditP textarea {
     width: 280px;
     box-shadow: 0 0 3px;
     border-radius: 3px;
@@ -56,15 +56,15 @@
     font-size: 18px;
 }
 
-.divFormEditP textarea:hover{
-    border: 2px solid rgb(128,128,128, 0.1);
-    background-color: rgb(173,213,230, 0.4);;
+.divFormEditP textarea:hover {
+    border: 2px solid rgb(128, 128, 128, 0.1);
+    background-color: rgb(173, 213, 230, 0.4);
     box-shadow: 0 0 20px;
 }
 
-.divFormEditP textarea:focus{
-    border: 2px solid rgb(128,128,128, 0.1);
-    background-color: rgb(173,213,230, 0.4);;
+.divFormEditP textarea:focus {
+    border: 2px solid rgb(128, 128, 128, 0.1);
+    background-color: rgb(173, 213, 230, 0.4);
     box-shadow: 0 0 20px;
 }
 
@@ -75,24 +75,26 @@
     font-size: 18px;
 }
 
+
 .divFormEditPCheckBox select{
     border-radius: 3px;
     background-color: rgb(32, 178, 170, 0.1);
     height: 30px;
 }
 
-.divFormEditPCheckBox select:hover{
-    border: 2px solid rgb(128,128,128, 0.1);
-    background-color: rgb(173,213,230, 0.4);;
+.divFormEditPCheckBox select:hover {
+    border: 2px solid rgb(128, 128, 128, 0.1);
+    background-color: rgb(173, 213, 230, 0.4);
     box-shadow: 0 0 20px;
 }
 
-.formProfileButton{
+.formProfileButton {
     margin: 10px;
     display: flex;
     justify-content: center;
-    
+
 }
+
 
 .formProfileButton button{
     border-radius: 3px;
@@ -105,9 +107,9 @@
     margin-top: 10px;
 }
 
-.formProfileButton button:hover{
-    border: 2px solid rgb(128,128,128, 0.1);
-    background-color: rgb(173,213,230, 0.4);;
+.formProfileButton button:hover {
+    border: 2px solid rgb(128, 128, 128, 0.1);
+    background-color: rgb(173, 213, 230, 0.4);
     box-shadow: 0 0 20px;
 }
 

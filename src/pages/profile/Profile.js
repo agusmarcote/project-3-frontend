@@ -78,6 +78,7 @@ function Profile() {
                     <br></br>
                     <p>Favorite Instrument: {profile.instruments}</p>
                 </div>
+
             </div>
             <div className="profileEdit">
                 <Link to={`/profile/edit`}>
@@ -129,7 +130,7 @@ function Profile() {
                 {viewEvents && <ProfileEvent />}
             </div>
             <div className="logoPerfil">
-                <img  src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo" />
+                <img src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo" />
             </div>
         </div>
     )

@@ -4,12 +4,10 @@ import axios from 'axios';
 const AuthContext = createContext();
 
 function AuthProviderWrapper(props) {
-   // Store the variables we want to share
    const [user, setUser] = useState(null);
    const [isLoggedIn, setIsLoggedIn] = useState(false);
    const [isLoading, setLoading] = useState(true);
 
-   // Functions to store and delete the token received by the backend in the browser
    const storeToken = (token) => {
       localStorage.setItem('authToken', token);
    }
@@ -18,7 +16,6 @@ function AuthProviderWrapper(props) {
       localStorage.removeItem('authToken');
    }
 
-   // Function to check if the user is already authenticated or not
    const authenticateUser = async () => {
       setLoading(true);
       const storedToken = localStorage.getItem('authToken');

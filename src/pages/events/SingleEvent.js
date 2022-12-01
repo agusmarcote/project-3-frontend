@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import './SingleEvent.css';
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { faStar as farStar } from "@fortawesome/free-regular-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";   
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 const apiEndPoint = "http://localhost:8000/api/v1/events/"
@@ -29,18 +29,18 @@ function SingleEvent() {
         const apiCall = async () => {
             const res = await axios.get(apiURLprofile, { headers: { Authorization: `Bearer ${storedToken}` } })
             const userID = res.data._id
-            if (event.creator._id === userID){
+            if (event.creator._id === userID) {
                 setCurrentCreator(true)
             }
         }
         apiCall()
-    }, [event])   
+    }, [event])
 
     useEffect(() => {
         const apiCall = async () => {
 
 
-            const res = await axios.get(apiEndPoint + eventId) 
+            const res = await axios.get(apiEndPoint + eventId)
 
             setEvent(res.data)
             setTeleph(`https://wa.me/${res.data.creator.telephone}?text=Hi+${res.data.creator.name}.+I+got+your+number+from+Harmoney.+I+am+interested+in+your+event.+May+I+Call+you?`)
@@ -56,51 +56,54 @@ function SingleEvent() {
 
             try {
 
-                const res = await axios.post(apiFAV + eventId, {}, { headers: { Authorization: `Bearer ${storedToken}` }})
-                const resUser = await axios.get(apiURL, { headers: { Authorization: `Bearer ${storedToken}` }})
-                
+                const res = await axios.post(apiFAV + eventId, {}, { headers: { Authorization: `Bearer ${storedToken}` } })
+                const resUser = await axios.get(apiURL, { headers: { Authorization: `Bearer ${storedToken}` } })
+
                 const userData = resUser.data.favoriteEvent
-                console.log(userData)
-                
+
+
                 const idArr = []
 
                 for (let i = 0; i < userData.length; i++) {
                     idArr.push(userData[i]._id)
                 }
-                console.log(idArr)
+
 
                 if (idArr.includes(eventId)) {
-                    console.log('inside')
+
                     setFavorite(true)
-                    console.log(favorite)
+
                 } else {
-                    console.log('outside')
+
                     setFavorite(false)
                 }
-               
-         
+
+
             } catch (error) {
-                console.log(error)
+
             }
         }
         apiPost()
     }
 
     return (
+
+      <div className="cardLink flex " >
         <div className="CardStyle">
-            <section className="CardStyleEvents cardLinkx">
+            <section>
                 <img className="photoCard" src={event.picture} alt="Instrument" />
                 
-                <div className="titleFav">
-                       <h3 className="textStyle">{event.title}</h3>
-                       {favorite ? <FontAwesomeIcon icon ={faStar} onClick={favoriteHandler}>Favorite</FontAwesomeIcon> : <FontAwesomeIcon icon={farStar} onClick={favoriteHandler}>Favorite</FontAwesomeIcon>}
-                </div>
+                
                 {event.creator && <Link className="cardLink" to={`/profile/${event.creator._id}`}>
                     <div className="userFlex">
                         {event.creator && <img className="userImage" src={event.creator.picture} />}
                         <p className="userNameStyle">{event.creator && event.creator.name}</p>
                     </div>
                 </Link>}
+                <div className="titleFav">
+                       <h3 className="textStyle">{event.title}</h3>
+                       {favorite ? <FontAwesomeIcon icon ={faStar} onClick={favoriteHandler}>Favorite</FontAwesomeIcon> : <FontAwesomeIcon icon={farStar} onClick={favoriteHandler}>Favorite</FontAwesomeIcon>}
+                </div>
 
                 <div>
                     <a className='phoneIcon flexContact' target='_blank' rel="noreferrer" href={teleph}>
@@ -116,17 +119,16 @@ function SingleEvent() {
                         <p className="textStyle"><i>{event.description}</i></p>
                         <p className="textStyle">{event.instruments}</p>
                         <p className="spanPrice">{event.price}€</p>
-                        <p className="textStyle">Contact: {event.phoneNumber}</p>
-                        <p className="textStyle">Type Of Event: {event.typeOfEvent}</p>
+                        <p className="textStyle">{event.typeOfEvent}</p>
                         <p className="textStyle">{event.date}</p>
-                        {currentCreator &&<Link className = "button-class" to={`/events/edit/${event._id}`}>Edit Event</Link>}
+                        {currentCreator && <Link className="button-class" to={`/events/edit/${event._id}`}>Edit Event</Link>}
                         <br></br>
-                        <img className ="logoDetailPage" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo"/>    
+                        <img className="logoDetailPage" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo" />
                     </div>
 
-                </section>  
+                </section>
             </div>
-
+        </div>
     )
 }
 

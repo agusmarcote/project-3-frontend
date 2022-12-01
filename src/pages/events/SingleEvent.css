@@ -1,32 +1,32 @@
 .logoDetailPage{
-    /* width: 160px;
-    margin: 0 118px; */
     text-align: center;
     
 
 }
 
 .singleEvent{
-    height: 95vh;
+    height: 100vh;
     }
 
     
 .CardStyleEvents{
   color: black;
   padding: 0px 0px 0px 0px;
-
   width: 350px;
   background: white;
   border-radius: 15px;
   cursor: pointer;
-
   box-shadow: 0 0 5px 0px #d0d0d0;
 
 }
 
 .titleFav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+}
+
+.titleFav svg {
+    margin-right: 35px;
 }
 

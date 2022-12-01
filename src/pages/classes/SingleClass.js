@@ -24,16 +24,16 @@ export default function SingleClass() {
         const apiCall = async () => {
             const res = await axios.get(apiURLprofile, { headers: { Authorization: `Bearer ${storedToken}` } })
             const userID = res.data._id
-            if (klass.creator._id === userID){
+            if (klass.creator._id === userID) {
                 setCurrentCreator(true)
             }
         }
         apiCall()
-    }, [klass])   
+    }, [klass])
 
     useEffect(() => {
         const apiCall = async () => {
-            const res = await axios.get(apiURL + classId) 
+            const res = await axios.get(apiURL + classId)
             setKlass(res.data)
             setTeleph(`https://wa.me/${res.data.creator.telephone}?text=Hi+${res.data.creator.name}.+I+got+your+number+from+Harmoney.+I+am+interested+in+taking+a+class.+May+I+Call+you?`)
         }
@@ -42,56 +42,56 @@ export default function SingleClass() {
     }, [classId])
 
 
-    const favoriteHandler = (event) => {  
+
+    const favoriteHandler = () => {
 
         const apiPost = async () => {
             const storedToken = localStorage.getItem("authToken");
 
             try {
-                const res = await axios.post(apiFAV + classId, {}, { headers: { Authorization: `Bearer ${storedToken}` }})
-                const resUser = await axios.get(apifavo, { headers: { Authorization: `Bearer ${storedToken}` }})
+                const res = await axios.post(apiFAV + classId, {}, { headers: { Authorization: `Bearer ${storedToken}` } })
+                const resUser = await axios.get(apifavo, { headers: { Authorization: `Bearer ${storedToken}` } })
 
                 const userData = resUser.data.favoriteClass
-                
+
                 const idArr = []
                 for (let i = 0; i < userData.length; i++) {
                     idArr.push(userData[i]._id)
                 }
-                console.log(idArr)
+                
 
                 if (idArr.includes(classId)) {
-                    console.log('inside')
+
                     setFavorite(true)
-                    console.log(favorite)
                 } else {
-                    console.log('outside')
                     setFavorite(false)
                 }
             } catch (error) {
-                console.log(error)
+                
             }
         }
         apiPost()
     }
 
-    return (    
-            <div  className="CardStyle">
-                   
-                    {/* <p>{sale.creator.email}</p> */}
+    return (
 
-                    <img className="photoCard" src={klass.picture} alt="Instrument"/>
+        <div className="singleEvent" >
+            <div className="CardStyle cardlink">
 
-                    {klass.creator &&<Link className="cardLink" to={`/profile/${klass.creator._id}`}>
-                                             <div className="userFlex">
-                                                {klass.creator && <img className ="userImage" src={klass.creator.picture}/>}
-                                                <p className="userNameStyle">{klass.creator && klass.creator.name}</p>
-                                            </div>
-                                        </Link>}
 
-                    <div className="titleFav">
-                        <h3 className="textStyle">{klass.title}</h3>
-                    {favorite ? <FontAwesomeIcon icon ={faStar} onClick={favoriteHandler}>Favorite</FontAwesomeIcon> : <FontAwesomeIcon icon={farStar} onClick={favoriteHandler}>Favorite</FontAwesomeIcon>}
+                <img className="photoCard" src={klass.picture} alt="Instrument" />
+
+                {klass.creator && <Link className="cardLink" to={`/profile/${klass.creator._id}`}>
+                    <div className="userFlex">
+                        {klass.creator && <img className="userImage" src={klass.creator.picture} />}
+                        <p className="userNameStyle">{klass.creator && klass.creator.name}</p>
                     </div>
+                </Link>}
+
+                <div className="titleFav">
+                    <h3 className="textStyle">{klass.title}</h3>
+                    {favorite ? <FontAwesomeIcon icon={faStar} onClick={favoriteHandler}>Favorite</FontAwesomeIcon> : <FontAwesomeIcon icon={farStar} onClick={favoriteHandler}>Favorite</FontAwesomeIcon>}
+                </div>
 
                     <a className = 'phoneIcon flexContact' target='_blank' rel="noreferrer" href={teleph}>
                             <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-outbound-fill" viewBox="0 0 16 16">
@@ -100,20 +100,20 @@ export default function SingleClass() {
                             <p className="icon">WhatsApp</p>  
                     </a>
 
-                    <p className="textStyle"><i>{klass.description}</i></p>
-                    <p className="textStyle">{klass.instruments}</p>
-                    <p className="spanPrice">{klass.price}€</p>
-                    <p className="textStyle">Level: {klass.level}</p>
-                    {/* <Link className = "button-class" to={`/classes/edit/${klass._id}`}>Edit Class</Link> */}
-                    <br></br>
-
-                
+                <p className="textStyle"><i>{klass.description}</i></p>
+                <p className="textStyle">{klass.instruments}</p>
+                <p className="spanPrice">{klass.price}€</p>
+                <p className="textStyle">Level: {klass.level}</p>
+                <br></br>
 
 
-                    <img className="logoImageHere" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo"/>
-                    <br></br>
-                    <br></br>
-                    {currentCreator &&<Link className = "button-class" to={`/classes/edit/${klass._id}`}>Edit Class</Link>}
+
+
+                <img className="logoImageHere" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo" />
+                <br></br>
+                <br></br>
+                {currentCreator && <Link className="button-class" to={`/classes/edit/${klass._id}`}>Edit Class</Link>}
             </div>
+        </div>
     )
 }

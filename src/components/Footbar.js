@@ -13,7 +13,7 @@ import { faAddressCard } from "@fortawesome/free-solid-svg-icons"
 
 
 function Footbar() {
-    const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
+    const { isLoggedIn } = useContext(AuthContext);
     const navigate = useNavigate();
     return (
         <div className="footBarComponents">
@@ -21,13 +21,13 @@ function Footbar() {
             <FontAwesomeIcon icon={faAnglesLeft} onClick={() => navigate(-1)} className="footbar-icons buttonBack" />
 
 
-            <NavLink className={(element) => element.isActive ? 'selected' : 'unSelected'} to="/"><FontAwesomeIcon icon={faHouse} className="footbar-icons" /></NavLink>
+            <NavLink className={(element) => element.isActive ? 'selected' : 'unSelected'} to="/home"><FontAwesomeIcon icon={faHouse} className="footbar-icons" /></NavLink>
 
 
             {isLoggedIn && <NavLink className={(element) => element.isActive ? 'selected' : 'unSelected'} to="/profile"><FontAwesomeIcon icon={faUser} className="footbar-icons" /></NavLink>}
 
-            
-                {isLoggedIn && <NavLink className={(element) => element.isActive ? 'selected' : 'unSelected'} to="/profile/links"><FontAwesomeIcon icon={faAddressCard}/></NavLink>}
+
+            {isLoggedIn && <NavLink className={(element) => element.isActive ? 'selected' : 'unSelected'} to="/profile/links"><FontAwesomeIcon icon={faAddressCard} /></NavLink>}
 
         </div>
     )
