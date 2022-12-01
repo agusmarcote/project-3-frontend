@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import Searchbar from "../../components/Searchbar";
 
 
+
 const apiURL = 'http://localhost:8000/api/classes'
 
 export default function Classes() {
@@ -23,14 +24,14 @@ export default function Classes() {
     const searchHandler = (search) => {
         const searchThis = classes.filter((one) =>
             one.title.toLowerCase().includes(search.toLowerCase())
-        ); 
+        );
         setFilterClasses(searchThis)
     };
 
 
     return (
         <div>
-            <h1>Classes List</h1>
+            <h1 className = "titleCenter">Classes <span>List</span></h1>
             <div className="searchBar">
                 <Searchbar onSearch={searchHandler} />
             </div>

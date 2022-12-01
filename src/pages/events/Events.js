@@ -35,7 +35,7 @@ function Events() {
     return (
         <div>
 
-            <h1 className="flex"><span>Current</span> Events</h1>
+            <h1 className="titleCenter"><span>Current </span>Events</h1>
             <div className="searchBar">
                 <Searchbar onSearch={searchHandler} />
             </div>

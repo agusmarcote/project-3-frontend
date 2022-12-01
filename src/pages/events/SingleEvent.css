@@ -30,3 +30,21 @@
     margin-right: 35px;
 }
 
+.buttonClassEvent{
+        display: inline-block;
+        outline: none;
+        justify-items: center;
+        cursor: pointer;
+        font-weight: 400;
+        border-radius: 3px;
+        padding: 8px 15px;
+        border: 0;
+        color: #fff;
+        background: #00020b;
+        line-height: 0.3;
+        font-size: 16px;
+        text-transform: uppercase;
+        text-decoration: none;
+        margin: 20px 0px 60px 120px;
+
+}
