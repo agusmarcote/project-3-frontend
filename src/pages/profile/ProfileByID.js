@@ -70,13 +70,13 @@ function ProfileByID() {
         <div>
             <div id="profilePicNameRate">
                 <div id="profilePicNameRate">
-                    <h1 className="profileUsername">{user.name}</h1>
+                    <h2 className="profileUsername">{user.name}</h2>
                     <img className="profileImage" src={user.picture} alt="profilePicture" />
                 </div>
             </div>
             <div>
                 <div className="userDetailsName">
-                    <h3>{user.name}</h3>
+                    <h4>{user.name}</h4>
                     <div className="userDetailsStyle">
 
                         <a href={teleph} target='_blank' rel="noreferrer">
@@ -91,10 +91,9 @@ function ProfileByID() {
 
                 </div>
                 <div className="profileDetails">
-                    <h6>{user.description}</h6>
+                    <p>{user.description}</p>
                     <div className="profileStyleIns">
                         <p>Favorite Style {user.style}</p>
-                        <br></br>
                         <p>Favorite Instrument {user.instruments}</p>
                     </div>
 

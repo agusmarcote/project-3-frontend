@@ -65,18 +65,17 @@ function Profile() {
     return (
         <div className="profileHeight">
             <div id="profilePicNameRate">
-                <h1 className="profileUsername">{profile.username}</h1>
+                <h2 className="profileUsername">{profile.username}</h2>
                 <img className="profileImage" src={profile.picture} alt="" />
             </div>
             <div className="profileDetails">
                 <div className="profileDetailsName">
-                    <h3>{profile.name}</h3>
+                    <h4>{profile.name}</h4>
                 </div>
-                <h6 className="profileDescription">{profile.description}</h6>
+                <p>{profile.description}</p>
                 <div className="profileStyleIns">
-                    <p>Favorite Style {profile.style}</p>
-                    <br></br>
-                    <p>Favorite Instrument {profile.instruments}</p>
+                    <p>Favorite Style: {profile.style}</p>
+                    <p>Favorite Instrument: {profile.instruments}</p>
                 </div>
 
             </div>

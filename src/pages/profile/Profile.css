@@ -54,7 +54,7 @@ h6 {
 .profileStyleIns {
     font-style: italic;
     display: flex;
-    text-align: center;
+    flex-direction: column;
 }
 
 .profileStyleInstruments {
