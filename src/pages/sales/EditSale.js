@@ -98,13 +98,16 @@ function EditSale() {
 
 
     return (
-        <div>
-            <h1>EDIT <span>SELL-ITEM</span></h1>
-            <form onSubmit={submitHandler}>
+        <div className="createSale">
+            <h3> <span>EDIT</span> INSTRUMENT</h3>
+            <img className="smallLogo" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo" />
+            <form className="formEditP" onSubmit={submitHandler}>
+            <div className="divFormEditP">
                 <label>Title</label>
                 <input type='text' value={title} onChange={titleHandler} />
                 <br />
-
+            </div>
+            <div className="divFormEditPCheckBox">
                 <label>Instruments</label>
                 <select onChange={instrumentsHandler}>
                     {instrumentsArr.map((instrument) => {
@@ -114,11 +117,13 @@ function EditSale() {
                     })}
                 </select>
                 <br />
-
+            </div>
+            <div className="divFormEditP">
                 <label>Picture</label>
                 <input type='text' value={picture} onChange={pictureHandler} />
                 <br />
-
+            </div>
+            <div className="divFormEditP">
                 <label>Price</label>
                 <input type='number' value={price} onChange={priceHandler} />
                 <br />
@@ -126,15 +131,18 @@ function EditSale() {
                 <label>Description</label>
                 <input type='text' value={description} onChange={descriptionHandler} />
                 <br />
-
+            
                 <label>City</label>
                 <input type='text' value={city} onChange={cityHandler} />
                 <br></br>
-                <button className="button-class" type='submit'>Edit</button>
-                <br></br>
-                <br></br>
-                <button className="button-class" type='submit' onClick={deleteHandler}>Delete the instrument</button>
-
+            </div>
+            
+            <div className="formProfileButton" >
+                <button type='submit'>Edit</button>
+            </div>
+            <div className="formProfileButton">
+                <button type='submit' onClick={deleteHandler}>Delete</button>
+            </div>
             </form>
         </div>
     )
