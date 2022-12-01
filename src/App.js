@@ -39,6 +39,8 @@ import EditEvent from './pages/events/EditEvent'
 
 import styled from 'styled-components';
 import Modal from './components/Modal';
+import { useContext } from "react";
+import { AuthContext } from "./context/AuthContext";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 // import { faBars } from "@fortawesome/free-solid-svg-icons"
 
@@ -51,14 +53,15 @@ import FavoritesAll from './pages/favorites/Favorites';
 
 
 function App() {
+   const { isLoggedIn, isLoading } = useContext(AuthContext);
 
    const [modal, setModal]  = useState(false);
 
    return (
       <div className="App">
-         <Toaster />
+        <Toaster />
 
-         <Modal
+         {isLoggedIn &&<Modal
             state= {modal}
             changeState = {setModal}
          
@@ -66,7 +69,7 @@ function App() {
             <Content>
                <Navbar/>
             </Content>
-         </Modal>
+         </Modal>}
 
          <h1 className="navIcon" onClick={() => setModal(!modal)}>
             <svg className="navIcon" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-list" viewBox="0 0 20 20">
