@@ -93,43 +93,43 @@ function App() {
             </svg>
          </h1>}       
          <Routes>
-            <Route path="/home" element={<Home />} />
+            <Route path="/home" element={<IsPrivate><Home /></IsPrivate>} />
             <Route path="/" element={<Signup />} />
             <Route path="/login" element={<Login />} />
             <Route path="/private" element={<IsPrivate><PrivateView /></IsPrivate>} />
             <Route path="*" element={<ErrorPage />} />
 
-            <Route path="/events" element={<Events />} />
-            <Route path="/create-event" element={<CreateEvent />} />
-            <Route path="/events/:eventId" element={<SingleEvent />} />
-            <Route path="/events/edit/:eventId" element={<EditEvent />} />
+            <Route path="/events" element={<IsPrivate><Events /></IsPrivate>} />
+            <Route path="/create-event" element={<IsPrivate><CreateEvent /></IsPrivate>} />
+            <Route path="/events/:eventId" element={<IsPrivate><SingleEvent /></IsPrivate>} />
+            <Route path="/events/edit/:eventId" element={<isPrivate><EditEvent /></isPrivate>} />
 
-            <Route path="/sales" element={<Sales />} />
-            <Route path="/create-sale" element={<CreateSale />} />
-            <Route path="/sales/:saleId" element={<SingleSale />} />
-            <Route path="/sales/edit/:saleId" element={<EditSale />} />
+            <Route path="/sales" element={<IsPrivate><Sales /></IsPrivate>} />
+            <Route path="/create-sale" element={<IsPrivate><CreateSale /></IsPrivate>} />
+            <Route path="/sales/:saleId" element={<IsPrivate><SingleSale /></IsPrivate>} />
+            <Route path="/sales/edit/:saleId" element={<IsPrivate><EditSale /></IsPrivate>} />
 
 
-            <Route path="/classes" element={<Classes />} />
-            <Route path="/create-class" element={<CreateClass />} />
-            <Route path="/classes/:classId" element={<SingleClass />} />
-            <Route path="/classes/edit/:classId" element={<EditClass />} />
+            <Route path="/classes" element={<IsPrivate><Classes /></IsPrivate>} />
+            <Route path="/create-class" element={<IsPrivate><CreateClass /></IsPrivate>} />
+            <Route path="/classes/:classId" element={<IsPrivate><SingleClass /></IsPrivate>} />
+            <Route path="/classes/edit/:classId" element={<IsPrivate><EditClass /></IsPrivate>} />
+            <Route path="/classes/edit/:classId" element={<IsPrivate><EditClass /></IsPrivate>} /> 
 
-            <Route path="/classes/edit/:classId" element={<EditClass />} /> 
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/profile/edit" element={<ProfileEdit />} />
-            <Route path="/profile/links" element={<ProfileLinks />} />
-            <Route path="/profile/links/edit" element={<ProfileLinksEdit/>} />  
-            <Route path="/profile/:userId" element={<ProfileByID/>} /> 
-            <Route path="/profile/links/:userId" element={<ProfileLinksByID/>} /> 
-            <Route path="/profile/sales/:userId" element={<ProfileSalesByID/>} /> 
-            <Route path="/profile/event/:userId" element={<ProfileEventByID/>} /> 
-            <Route path="/profile/classes/:userId" element={<ProfileClassesByID/>} /> 
+            <Route path="/profile" element={<IsPrivate><Profile /></IsPrivate>} />
+            <Route path="/profile/edit" element={<IsPrivate><ProfileEdit /></IsPrivate>} />
+            <Route path="/profile/links" element={<IsPrivate><ProfileLinks /></IsPrivate>} />
+            <Route path="/profile/links/edit" element={<isPrivate><ProfileLinksEdit/></isPrivate>} />  
+            <Route path="/profile/:userId" element={<ProfileByID/>} />
+            <Route path="/profile/links/:userId" element={<ProfileLinksByID/>} />
+            <Route path="/profile/sales/:userId" element={<ProfileSalesByID/>} />
+            <Route path="/profile/event/:userId" element={<ProfileEventByID/>} />
+            <Route path="/profile/classes/:userId" element={<ProfileClassesByID/>} />
 
-            <Route path="/favorites-classes" element={<Favorites />} />
-            <Route path="/favorites-events" element={<FavoritesEvents />} />
-            <Route path="/favorites-sales" element={<FavoriteSales />} />
-            <Route path="/favorites" element={<FavoritesAll/>} />
+            <Route path="/favorites-classes" element={<IsPrivate><Favorites /></IsPrivate>} />
+            <Route path="/favorites-events" element={<IsPrivate><FavoritesEvents /></IsPrivate>} />
+            <Route path="/favorites-sales" element={<IsPrivate><FavoriteSales /></IsPrivate>} />
+            <Route path="/favorites" element={<IsPrivate><FavoritesAll/></IsPrivate>} />
          </Routes>
          <br></br>
          {isLoggedIn &&<Footbar/>}
