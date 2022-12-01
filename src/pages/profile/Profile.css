@@ -144,20 +144,12 @@ height: 95vh;
     margin-top: 10px;
 }
 
-/* .profileButtonsSvg{
-    display: flex;
-    height: 70px;
-    width: 70px;
-} */
-
 .profileButtons svg{
     display: flex;
     height: 70px;
     width: 70px;
 }
-/* .buttonPresentationCard{
-    width: 20vh;
-} */
+
 
 .buttonPresentationCard button{
     width: 10vh;

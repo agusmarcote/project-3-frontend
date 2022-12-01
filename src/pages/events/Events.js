@@ -29,6 +29,8 @@ function Events() {
         setFilterEvents(searchThis)
     };
 
+    
+
 
     return (
         <div className= "singleEvent" >

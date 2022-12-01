@@ -1,5 +1,7 @@
+
 .footBarComponents {
-    height: 5vh;
+    position: fixed ;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -21,7 +23,7 @@
 
 .btnHome {
     height: 10px;
-    width: 1opx;
+    width: 10px;
 
 
 }
