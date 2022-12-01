@@ -8,14 +8,12 @@ const apiURL = "http://localhost:8000/api/v1/users/profile"
 function ProfileEvent() {
     const storedToken = localStorage.getItem("authToken");
     const [profile, setProfile] = useState(null)
-    // console.log(profile.presentationCard)
 
 
     useEffect(() => {
         const apiCall = async () => {
             const res = await axios.get(apiURL, { headers: { Authorization: `Bearer ${storedToken}` } })
             setProfile(res.data)
-            // console.log(res.data)
         }
         apiCall()
     }, [])

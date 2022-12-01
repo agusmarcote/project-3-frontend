@@ -97,17 +97,11 @@ function Profile() {
                 </div>
                 <h6>{profile.description}</h6>
                 <div className="profileStyleIns">
-                    {profile.style}
+                    <p>Favorite Style: {profile.style}</p>
                     <br></br>
-                    {profile.instruments}
+                    <p>Favorite Instrument: {profile.instruments}</p>
                 </div>
-
-
-                {/* <div className="proInstrument"><FontAwesomeIcon icon={faGuitar}><p>{profile.instruments}</p></FontAwesomeIcon></div> */}
-                {/* <Instruments/> */}
-
             </div>
-
             <div className="profileEdit">
                 <Link to={`/profile/edit`}>
                     <button>Edit Profile</button>

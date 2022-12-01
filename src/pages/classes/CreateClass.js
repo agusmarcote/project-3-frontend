@@ -73,8 +73,8 @@ export default function CreateClass() {
     }
 
     return (
-        <div>
-            <h1>Create a new Class</h1>
+        <div className="createClass">
+            <h1><span>Create</span> Class</h1>
             <form className="formEditP" onSubmit={submitHandler}>
                 <div className="divFormEditP">
                     <label>Title</label>
@@ -96,7 +96,7 @@ export default function CreateClass() {
                     <input type='text' value={description} onChange={descriptionHandler} />
                     <br />
                 </div>
-                <div className="divFormEditECheckBox">
+                <div className="divFormEditPCheckBox">
                     <label>Level</label>
                     <select onChange={levelHandler}>
                         {levelArr.map((lev) => {
@@ -107,7 +107,7 @@ export default function CreateClass() {
                     </select>
                     <br />
                 </div>
-                <div className="divFormEditECheckBox">
+                <div className="divFormEditPCheckBox">
                     <label>Instruments</label>
                     <select onChange={instrumentsHandler}>
                         {instrumentsArr.map((instrument) => {
