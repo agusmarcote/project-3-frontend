@@ -79,7 +79,7 @@ export default function CreateEvent() {
             const storedToken = localStorage.getItem("authToken")
 
             try {
-                const res = await axios.post(apiEndPoint, newEvent, { headers: { Authorization: `Bearer ${storedToken}` } })
+                await axios.post(apiEndPoint, newEvent, { headers: { Authorization: `Bearer ${storedToken}` } })
                 navigate('/events')
             } catch (error) {
                 

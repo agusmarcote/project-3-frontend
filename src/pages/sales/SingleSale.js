@@ -7,17 +7,9 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { faStar as farStar } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-
-
 const apiURL = 'http://localhost:8000/api/v1/sales/instrument/'
 const apiFAV = 'http://localhost:8000/api/v1/favorites/addInstrument/'
-const apifavo = 'http://localhost:8000/api/v1/favorites/favorites'
-
 const apiURLprofile = "http://localhost:8000/api/v1/users/profile"
-
-
-
-
 
 function SingleSale() {
     const storedToken = localStorage.getItem("authToken");
@@ -26,7 +18,6 @@ function SingleSale() {
     const [sale, setSale] = useState([])
     const [favorite, setFavorite] = useState(false)
     const [teleph, setTeleph] = useState("")
-
 
     useEffect(() => {
         const apiCall = async () => {
@@ -39,9 +30,7 @@ function SingleSale() {
             }
         }
         apiCall()
-    }, [sale])
-
-
+    }, [sale, storedToken])
 
     useEffect(() => {
         const apiCall = async () => {
@@ -60,31 +49,20 @@ function SingleSale() {
             const storedToken = localStorage.getItem("authToken");
 
             try {
-                const res = await axios.post(apiFAV + saleId, {}, { headers: { Authorization: `Bearer ${storedToken}` } })
+                await axios.post(apiFAV + saleId, {}, { headers: { Authorization: `Bearer ${storedToken}` } })
                 const resUser = await axios.get(apiURL, { headers: { Authorization: `Bearer ${storedToken}` } })
-
                 const userData = resUser.data.favoriteEvent
-
-
                 const idArr = []
 
                 for (let i = 0; i < userData.length; i++) {
                     idArr.push(userData[i]._id)
                 }
-
-
                 if (idArr.includes(saleId)) {
-
                     setFavorite(true)
-
                 } else {
-
                     setFavorite(false)
                 }
-
-
             } catch (error) {
-
             }
         }
         apiPost()

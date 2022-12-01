@@ -62,7 +62,7 @@ export default function CreateClass() {
             const storedToken = localStorage.getItem("authToken");
 
             try {
-                const res = await axios.post(apiURL, newClasses, { headers: { Authorization: `Bearer ${storedToken}` } })
+               await axios.post(apiURL, newClasses, { headers: { Authorization: `Bearer ${storedToken}` } })
                 
                 navigate('/classes')
             } catch (error) {

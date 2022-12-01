@@ -29,7 +29,7 @@ export default function SingleClass() {
             }
         }
         apiCall()
-    }, [klass])
+    }, [klass, storedToken])
 
     useEffect(() => {
         const apiCall = async () => {
@@ -49,7 +49,7 @@ export default function SingleClass() {
             const storedToken = localStorage.getItem("authToken");
 
             try {
-                const res = await axios.post(apiFAV + classId, {}, { headers: { Authorization: `Bearer ${storedToken}` } })
+                await axios.post(apiFAV + classId, {}, { headers: { Authorization: `Bearer ${storedToken}` } })
                 const resUser = await axios.get(apifavo, { headers: { Authorization: `Bearer ${storedToken}` } })
 
                 const userData = resUser.data.favoriteClass
@@ -83,7 +83,7 @@ export default function SingleClass() {
 
                 {klass.creator && <Link className="cardLink" to={`/profile/${klass.creator._id}`}>
                     <div className="userFlex">
-                        {klass.creator && <img className="userImage" src={klass.creator.picture} />}
+                        {klass.creator && <img className="userImage" src={klass.creator.picture} alt="Creator"/>}
                         <p className="userNameStyle">{klass.creator && klass.creator.name}</p>
                     </div>
                 </Link>}

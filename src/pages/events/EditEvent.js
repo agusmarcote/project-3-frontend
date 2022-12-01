@@ -101,8 +101,7 @@ function EditEvent() {
             const storedToken = localStorage.getItem("authToken");
 
             try {
-                const res = await axios.put(apiURL + eventId, newEvent, { headers: { Authorization: `Bearer ${storedToken}` } })
-                
+                await axios.put(apiURL + eventId, newEvent, { headers: { Authorization: `Bearer ${storedToken}` } })
                 navigate('/events')
             } catch (error) {
                 
@@ -116,7 +115,7 @@ function EditEvent() {
         const deleteApi = async () => {
             const storedToken = localStorage.getItem("authToken");
             try {
-                const res = await axios.delete(apiURL + eventId, { headers: { Authorization: `Bearer ${storedToken}` } })
+                await axios.delete(apiURL + eventId, { headers: { Authorization: `Bearer ${storedToken}` } })
                 navigate('/events')
             } catch (error) {
                

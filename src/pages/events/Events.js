@@ -50,7 +50,7 @@ function Events() {
                                     <img className="photoCard" src={event.picture} alt="instrument" />
                                     {event.creator && <Link className="cardLink" to={`/profile/${event.creator._id}`}>
                                         <div className="userFlex">
-                                            {event.creator && <img className="userImage" src={event.creator.picture} />}
+                                            {event.creator && <img className="userImage" src={event.creator.picture} alt="Creator"/>}
                                             <p className="userNameStyle">{event.creator && event.creator.name}</p>
                                         </div>
                                     </Link>}

@@ -60,7 +60,7 @@ function CreateSale() {
             const storedToken = localStorage.getItem("authToken");
 
             try {
-                const res = await axios.post(apiURL, newSale, { headers: { Authorization: `Bearer ${storedToken}` } })
+                await axios.post(apiURL, newSale, { headers: { Authorization: `Bearer ${storedToken}` } })
                 
                 navigate('/Sales')
             } catch (error) {

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 import axios from "axios";
 import { useEffect, useState } from "react"
@@ -16,20 +16,17 @@ export default function Navbar() {
       const apiCall = async () => {
          const res = await axios.get(apiURL, { headers: { Authorization: `Bearer ${storedToken}` } })
          setProfile(res.data)
-         console.log(res.data)
+
       }
       apiCall()
-   }, [])
+   }, [storedToken])
 
-   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
-   const navigate = useNavigate();
+   const { isLoggedIn, logOutUser } = useContext(AuthContext);
 
    return (
       <div>
 
          {isLoggedIn && <img className="navImage" src={profile.picture} alt="userPhoto" />}
-
-
 
          <ul>
             <section className='navLinksFlex'>

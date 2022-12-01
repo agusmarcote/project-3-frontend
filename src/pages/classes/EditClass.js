@@ -78,7 +78,7 @@ export default function EditClass() {
             const storedToken = localStorage.getItem("authToken");
 
             try {
-                const res = await axios.put(apiURL + classId, newClasses, { headers: { Authorization: `Bearer ${storedToken}` } })
+                await axios.put(apiURL + classId, newClasses, { headers: { Authorization: `Bearer ${storedToken}` } })
 
                 navigate('/classes')
             } catch (error) {
@@ -93,7 +93,7 @@ export default function EditClass() {
         const deleteApi = async () => {
             const storedToken = localStorage.getItem("authToken");
             try {
-                const res = await axios.delete(apiURL + classId, { headers: { Authorization: `Bearer ${storedToken}` } })
+                await axios.delete(apiURL + classId, { headers: { Authorization: `Bearer ${storedToken}` } })
                 navigate('/classes')
             } catch (error) {
 

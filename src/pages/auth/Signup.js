@@ -29,7 +29,7 @@ export default function Signup() {
          setErrorMessage(undefined)
       }
 
-   }, [passwordControl])
+   }, [password, passwordControl])
 
    const handleSubmit = async (e) => {
       e.preventDefault();
@@ -48,9 +48,6 @@ export default function Signup() {
             <h1><span>Har</span>money</h1>
          </div>
          <form onSubmit={handleSubmit}>
-            <div>
-               <h1></h1>
-            </div>
             <div className="divFormEditP">
                <label>Name</label>
                <input required type="text" name="username" value={user.username} onChange={handleChange} />

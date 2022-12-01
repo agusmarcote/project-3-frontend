@@ -9,17 +9,13 @@ function ProfileLinks() {
     const storedToken = localStorage.getItem("authToken");
     const [profile, setProfile] = useState({})
 
-
-
     useEffect(() => {
         const apiCall = async () => {
             const res = await axios.get(apiURL, { headers: { Authorization: `Bearer ${storedToken}` } })
             setProfile(res.data)
         }
         apiCall()
-    }, [])
-
-
+    }, [storedToken])
 
 
     return (
@@ -84,14 +80,3 @@ function ProfileLinks() {
 
 
 export default ProfileLinks
-
-
-
-
-
-
-{/* {profile.presentationCard.map((id) => (
-                    <ul>
-                        <li><a href={`${id}`}>{id}</a></li>
-                    </ul>   
-                ))}                  */}

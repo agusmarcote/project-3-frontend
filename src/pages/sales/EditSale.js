@@ -67,13 +67,11 @@ function EditSale() {
             picture: picture
         }
        
-
         const putApi = async () => {
             const storedToken = localStorage.getItem("authToken");
 
             try {
-                const res = await axios.put(apiURL + saleId, newSale, { headers: { Authorization: `Bearer ${storedToken}` } })
-                
+                await axios.put(apiURL + saleId, newSale, { headers: { Authorization: `Bearer ${storedToken}` } })
                 navigate('/Sales')
             } catch (error) {
                 
@@ -87,7 +85,7 @@ function EditSale() {
         const deleteApi = async () => {
             const storedToken = localStorage.getItem("authToken");
             try {
-                const res = await axios.delete(apiURL + saleId, { headers: { Authorization: `Bearer ${storedToken}` } })
+                await axios.delete(apiURL + saleId, { headers: { Authorization: `Bearer ${storedToken}` } })
                 navigate('/sales')
             } catch (error) {
                

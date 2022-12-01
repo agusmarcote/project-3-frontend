@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import './SingleEvent.css';
@@ -34,14 +34,11 @@ function SingleEvent() {
             }
         }
         apiCall()
-    }, [event])
+    }, [event, storedToken])
 
     useEffect(() => {
         const apiCall = async () => {
-
-
             const res = await axios.get(apiEndPoint + eventId)
-
             setEvent(res.data)
             setTeleph(`https://wa.me/${res.data.creator.telephone}?text=Hi+${res.data.creator.name}.+I+got+your+number+from+Harmoney.+I+am+interested+in+your+event.+May+I+Call+you?`)
         }
@@ -55,8 +52,7 @@ function SingleEvent() {
             const storedToken = localStorage.getItem("authToken");
 
             try {
-
-                const res = await axios.post(apiFAV + eventId, {}, { headers: { Authorization: `Bearer ${storedToken}` } })
+                await axios.post(apiFAV + eventId, {}, { headers: { Authorization: `Bearer ${storedToken}` } })
                 const resUser = await axios.get(apiURL, { headers: { Authorization: `Bearer ${storedToken}` } })
 
                 const userData = resUser.data.favoriteEvent
@@ -96,7 +92,7 @@ function SingleEvent() {
                 
                 {event.creator && <Link className="cardLink" to={`/profile/${event.creator._id}`}>
                     <div className="userFlex">
-                        {event.creator && <img className="userImage" src={event.creator.picture} />}
+                        {event.creator && <img className="userImage" src={event.creator.picture} alt="Creator"/>}
                         <p className="userNameStyle">{event.creator && event.creator.name}</p>
                     </div>
                 </Link>}

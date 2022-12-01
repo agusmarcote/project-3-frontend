@@ -44,7 +44,7 @@ export default function Classes() {
                                 <img className="photoCard" src={element.picture} alt="instrument" />
                                 {element.creator && <Link className="cardLink" to={`/profile/${element.creator._id}`}>
                                     <div className="userFlex">
-                                        {element.creator && <img className="userImage" src={element.creator.picture} />}
+                                        {element.creator && <img className="userImage" src={element.creator.picture} alt="Creator"/>}
                                         <p className="userNameStyle">{element.creator && element.creator.name}</p>
                                     </div>
                                 </Link>}

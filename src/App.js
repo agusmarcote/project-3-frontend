@@ -10,16 +10,19 @@ import Login from './pages/auth/Login';
 import PrivateView from './pages/PrivateView';
 import IsPrivate from './components/IsPrivate';
 
+//SALES
 import CreateSale from './pages/sales/CreateSale';
 import EditSale from './pages/sales/EditSale';
 import Sales from './pages/sales/Sales';
 import SingleSale from './pages/sales/SingleSale';
 
+//CLASSES
 import Classes from './pages/classes/Classes';
 import CreateClass from './pages/classes/CreateClass';
 import SingleClass from './pages/classes/SingleClass';
 import EditClass from './pages/classes/EditClass';
 
+//PROFILE
 import Profile from './pages/profile/Profile';
 import ProfileEdit from './pages/profile/ProfileEdit';
 import ProfileLinks from './pages/profile/ProfileLinks';
@@ -30,41 +33,34 @@ import ProfileSalesByID from './pages/profile/ProfileSalesByID';
 import ProfileEventByID from './pages/profile/ProfileEventByID';
 import ProfileClassesByID from './pages/profile/ProfileClassesByID';
 
-
+//EVENTS
 import SingleEvent from './pages/events/SingleEvent';
 import Events from './pages/events/Events';
 import CreateEvent from './pages/events/CreateEvent'
 import EditEvent from './pages/events/EditEvent'
 
-
 import styled from 'styled-components';
 import Modal from './components/Modal';
 
+//REACT
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
-import { useEffect, useState } from "react"
-import axios from "axios";
+import { useState } from "react"
 
-
+//FAVORITES
 import Favorites from './pages/favorites/Favorites-Classes';
 import FavoritesEvents from './pages/favorites/Favorites-Events';
 import FavoriteSales from './pages/favorites/Favorites-Sales';
 import FavoritesAll from './pages/favorites/Favorites';
 
-
 function App() {
-
-
    const [modal, setModal]  = useState(false);
-   const storedToken = localStorage.getItem("authToken");
    const {isLoggedIn} = useContext(AuthContext);
 
 
    return (
       <div className="App">
         <Toaster />
-
-
          {isLoggedIn &&<Modal
             state= {modal}
             changeState = {setModal}>
@@ -86,7 +82,6 @@ function App() {
             <Route path="/private" element={<IsPrivate><PrivateView /></IsPrivate>} />
             <Route path="*" element={<ErrorPage />} />
 
-
             <Route path="/events" element={<IsPrivate><Events /></IsPrivate>} />
             <Route path="/create-event" element={<IsPrivate><CreateEvent /></IsPrivate>} />
             <Route path="/events/:eventId" element={<IsPrivate><SingleEvent /></IsPrivate>} />
@@ -96,7 +91,6 @@ function App() {
             <Route path="/create-sale" element={<IsPrivate><CreateSale /></IsPrivate>} />
             <Route path="/sales/:saleId" element={<IsPrivate><SingleSale /></IsPrivate>} />
             <Route path="/sales/edit/:saleId" element={<IsPrivate><EditSale /></IsPrivate>} />
-
 
             <Route path="/classes" element={<IsPrivate><Classes /></IsPrivate>} />
             <Route path="/create-class" element={<IsPrivate><CreateClass /></IsPrivate>} />
