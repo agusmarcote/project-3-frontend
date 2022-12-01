@@ -60,8 +60,6 @@ function Profile() {
         setViewSales(false)
     }
 
-
-
     return (
         <div className="profileHeight">
             <div id="profilePicNameRate">

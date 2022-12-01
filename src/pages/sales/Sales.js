@@ -36,6 +36,11 @@ function Sales() {
             <div className="searchBar">
                 <Searchbar onSearch={searchHandler} />
             </div>
+            {!filterSales[0] &&
+                <div className="noFav">
+                    <h1>There are no sales</h1>
+                    <img className="favLogo" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo" />
+                </div>}
             {filterSales.map((sale) => {
                 return (
                     <div key={sale._id}>

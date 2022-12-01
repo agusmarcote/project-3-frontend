@@ -19,6 +19,12 @@ function ProfileSales() {
     }, [storedToken])
     return (
         <div className="profileSales profileSalesHeight">
+            {profile && !profile.sale.length &&
+                    <div className="profileNotFound">
+                        <h2>There are no sales posted yet.</h2>
+                        <a href="/create-sale"><h3><span>Create </span>a sale</h3></a>
+                        <img className="favLogo" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo" />
+                    </div>}
             {profile && profile.sale.map((pro) => {
                 
                 return (

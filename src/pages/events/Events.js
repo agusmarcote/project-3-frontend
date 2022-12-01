@@ -13,7 +13,7 @@ function Events() {
     useEffect(() => {
         const apiCall = async () => {
             const res = await axios.get(apiEndPoint)
-            
+
             setEvents(res.data)
             setFilterEvents(res.data)
         }
@@ -25,7 +25,7 @@ function Events() {
     const searchHandler = (search) => {
         const searchThis = events.filter((one) =>
             one.title.toLowerCase().includes(search.toLowerCase())
-        ); 
+        );
         setFilterEvents(searchThis)
     };
 
@@ -38,7 +38,11 @@ function Events() {
                 <Searchbar onSearch={searchHandler} />
             </div>
             <div>
-
+                {!filterEvents[0] &&
+                    <div className="noFav">
+                        <h1>There are no events</h1>
+                        <img className="favLogo" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo" />
+                    </div>}
                 {filterEvents.map((event) => {
                     return (
                         <div key={event._id}>
@@ -47,7 +51,7 @@ function Events() {
                                     <img className="photoCard" src={event.picture} alt="instrument" />
                                     {event.creator && <div className="cardLink">
                                         <div className="userFlex">
-                                            {event.creator && <img className="userImage" src={event.creator.picture} alt="Creator"/>}
+                                            {event.creator && <img className="userImage" src={event.creator.picture} alt="Creator" />}
                                             <p className="userNameStyle">{event.creator && event.creator.name}</p>
                                         </div>
                                     </div>}
