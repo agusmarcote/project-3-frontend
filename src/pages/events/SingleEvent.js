@@ -116,8 +116,7 @@ function SingleEvent() {
                         <p className="textStyle"><i>{event.description}</i></p>
                         <p className="textStyle">{event.instruments}</p>
                         <p className="spanPrice">{event.price}€</p>
-                        <p className="textStyle">Contact: {event.phoneNumber}</p>
-                        <p className="textStyle">Type Of Event: {event.typeOfEvent}</p>
+                        <p className="textStyle">{event.typeOfEvent}</p>
                         <p className="textStyle">{event.date}</p>
                         {currentCreator &&<Link className = "button-class" to={`/events/edit/${event._id}`}>Edit Event</Link>}
                         <br></br>
