@@ -37,7 +37,7 @@ function Events() {
             <div className = "searchBar">
                 <Searchbar  onSearch={searchHandler}/>
                 </div>
-            <ul>
+            <div>
                 
                 {filterEvents.map((event) => {
                     return (
@@ -46,23 +46,23 @@ function Events() {
                         <Link className="cardLink flex" to={`/events/${event._id}`}>
                         <div className = "CardStyle">
                             <img className = "photoCard"src={event.picture} alt="instrument"/>
-                            <h3 className="textStyle">{event.title}</h3>
-                            <p className="textStyle">{event.instruments}</p>
-                            <p className="textStyle"><i>{event.description}</i></p>
-                            <h4 className="priceStyleLits textStyle">price: <span className="spanPrice">${event.price}</span></h4>
                             {event.creator &&<Link className="cardLink" to={`/profile/${event.creator._id}`}>
                                              <div className="userFlex">
                                                 {event.creator && <img className ="userImage" src={event.creator.picture}/>}
                                                 <p className="userNameStyle">{event.creator && event.creator.name}</p>
                                             </div>
                                         </Link>}
+                            <h3 className="textStyle">{event.title}</h3>
+                            <p className="textStyle">{event.instruments}</p>
+                            <p className="textStyle"><i>{event.description}</i></p>
+                            <h4 className="priceStyleLits textStyle">price: <span className="spanPrice">${event.price}</span></h4>
                             <img className ="smallLogo" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo"/>
                         </div>
                         </Link>
                         </div>
                     )
                 })}
-            </ul>
+            </div>
 
 
 

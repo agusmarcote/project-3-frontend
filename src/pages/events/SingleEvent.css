@@ -1,6 +1,8 @@
 .logoDetailPage{
-    width: 160px;
-    margin: 0 118px;
+    /* width: 160px;
+    margin: 0 118px; */
+    text-align: center;
+    
 
 }
 
@@ -20,6 +22,7 @@
   cursor: pointer;
 
   box-shadow: 0 0 5px 0px #d0d0d0;
+
 }
 
 .titleFav {

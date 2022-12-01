@@ -11,10 +11,7 @@ export default function Home() {
          <img className= "LogoImgHome" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo"/>
          <h3><span>Har</span>money</h3>
       </div>
-      <br></br>
-      <br></br>
-      <br></br>
-      <h4 className = "titleHome">Discover our community:</h4>
+      <h4 className = "titleHome"><span>Discover</span> Music</h4>
          <Link className="cardLink flex" to={`/sales`}>
                <div className = "CardStyle">
                   <img className = "photoCard"src="https://beat.com.au/wp-content/uploads/2016/01/macdemarcoianlaidlaw.jpg" alt="instrument"/>

@@ -17,7 +17,11 @@ span{
    height: 0;
 }
 .navIcon{
-   margin: 40px 40px;
-   padding: 40px 40px;
+   margin: 10px 0px;
+   text-align: center;
+   align-items: center;
+   /* position: absolute; */
+   cursor: pointer;
+
 
 }

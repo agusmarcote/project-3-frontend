@@ -30,10 +30,10 @@ function SingleSale(){
 
     useEffect(() => {
         const apiCall = async () => {
+
             const res = await axios.get(apiURLprofile, { headers: { Authorization: `Bearer ${storedToken}` } })
             const userID = res.data._id
-            console.log(sale.creator)
-            console.log(sale)
+
             if (sale.creator._id === userID){
                 setCurrentCreator(true)
             }
@@ -91,21 +91,23 @@ function SingleSale(){
 
     return (
             <div>
-                <section className="CardStyle ">
-                    {sale.creator &&<Link className="cardLink" to={`/profile/${sale.creator._id}`}>
+                <section className="CardStyle cardLinkx">
+                <img className="photoCard" src={sale.picture} alt="Instrument" />
+                {sale.creator &&<Link className="cardLink" to={`/profile/${sale.creator._id}`}>
                     <div className="userFlex">
                         {sale.creator && <img className="userImage" src={sale.creator.picture} />}
                         <p className="userNameStyle">{sale.creator && sale.creator.name}</p>
                     </div>
 
                 </Link>}
-                <img className="photoCard" src={sale.picture} alt="Instrument" />
                 <div>
                     </div>
                     <div className="titleFav">
                       <h3 className="textStyle">{sale.title}</h3>
                       {favorite ? <FontAwesomeIcon icon ={faStar} onClick={favoriteHandler}>Favorite</FontAwesomeIcon> : <FontAwesomeIcon icon={farStar} onClick={favoriteHandler}>Favorite</FontAwesomeIcon>}
                     </div>
+
+                    {/* <img className="backgroundImg" src = "https://www.pngfind.com/pngs/m/37-374251_lr-wavy-lines-hd-png-download.png" alt="test" /> */}
                     
                     <div>
                     <a className = 'phoneIcon flexContact' href='https://wa.me/${sale.creator.telephone}?text=My+name+is+${sale.creator.name}+I+got+your+number+from+Harmoney.+May+I+Call+you?'>
@@ -119,7 +121,6 @@ function SingleSale(){
                     <p className="textStyle"><i>{sale.description}</i></p>
                     <p className="textStyle">{sale.instruments}</p>
                     <p className="spanPrice">{sale.price}€</p>
-                    <Link className="button-class" to={`/sales/edit/${sale._id}`}>Edit Sale</Link>
                     <img className="logoDetailPage" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo" />
                     <br></br>
 

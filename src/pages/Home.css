@@ -14,10 +14,12 @@
 
 .missionStatement{
     text-align: center;
+    margin: 0;
+    padding: 0;
 
 }
 .titleHome{
-    margin:0px 10px 0px 20px;
+    text-align: center;
 }
 .smallLogo{
     width:80px;
