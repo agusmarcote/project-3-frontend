@@ -18,7 +18,7 @@ function ProfileClasses() {
             
         }
         apiCall()
-    }, [])
+    }, [storedToken])
 
 
 

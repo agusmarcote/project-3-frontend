@@ -36,14 +36,14 @@ function Sales() {
             <div className="searchBar">
                 <Searchbar onSearch={searchHandler} />
             </div>
-            {sales.map((sale) => {
+            {filterSales.map((sale) => {
                 return (
                     <Link className="cardLink flex" to={`/sales/${sale._id}`}>
                         <div className="CardStyle">
                             <img className="photoCard" src={sale.picture} alt="instrument" />
                             {sale.creator && <Link className="cardLink" to={`/profile/${sale.creator._id}`}>
                                 <div className="userFlex">
-                                    {sale.creator && <img className="userImage" src={sale.creator.picture} />}
+                                    {sale.creator && <img className="userImage" src={sale.creator.picture} alt="User"/>}
                                     <p className="userNameStyle">{sale.creator && sale.creator.name}</p>
                                 </div>
                             </Link>}

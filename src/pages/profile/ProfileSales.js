@@ -10,14 +10,13 @@ function ProfileSales() {
     const [profile, setProfile] = useState(null)
 
     useEffect(() => {
-        console.log("st")
         const apiCall = async () => {
             
             const res = await axios.get(apiURL, { headers: { Authorization: `Bearer ${storedToken}` } })
             setProfile(res.data)
         }
         apiCall()
-    }, [])
+    }, [storedToken])
     return (
         <div className="profileSales profileSalesHeight">
             {profile && profile.sale.map((pro) => {

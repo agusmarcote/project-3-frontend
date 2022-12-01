@@ -15,8 +15,6 @@ const apiURL = "http://localhost:8000/api/v1/users/profile"
 
 function ProfileEdit() {
     const storedToken = localStorage.getItem("authToken");
-    const [profile, setProfile] = useState({})
-    console.log(profile)
 
 
     const [email, setEmail] = useState("")
@@ -67,8 +65,7 @@ function ProfileEdit() {
 
         const postApi = async () => {
             try {
-                const res = await axios.put(endPoint, newProfile, { headers: { Authorization: `Bearer ${storedToken}` } })
-                console.log(res)
+                await axios.put(endPoint, newProfile, { headers: { Authorization: `Bearer ${storedToken}` } })
                 navigate("/profile")
             } catch (error) {
                 
@@ -91,7 +88,6 @@ function ProfileEdit() {
     useEffect(() => {
         const apiCall = async () => {
             const res = await axios.get(apiURL, { headers: { Authorization: `Bearer ${storedToken}` } })
-            setProfile(res.data)
             setEmail(res.data.email)
             setName(res.data.name)
             setUsername(res.data.username)
