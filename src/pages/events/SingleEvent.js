@@ -120,7 +120,6 @@ function SingleEvent() {
                         <p className="textStyle">{event.instruments}</p>
                         <p className="spanPrice">{event.price}€</p>
                         <p className="textStyle">{event.typeOfEvent}</p>
-                        <p className="textStyle">{event.date}</p>
                         <img className="logoImageHere" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo" />
                         {currentCreator && <Link className="buttonClassEvent" to={`/events/edit/${event._id}`}>Edit Event</Link>}
                         <br></br>
