@@ -21,7 +21,7 @@ function Footbar() {
             <FontAwesomeIcon icon={faAnglesLeft} onClick={() => navigate(-1)} className="footbar-icons buttonBack" />
 
 
-            <NavLink className={(element) => element.isActive ? 'selected' : 'unSelected'} to="/"><FontAwesomeIcon icon={faHouse} className="footbar-icons" /></NavLink>
+            <NavLink className={(element) => element.isActive ? 'selected' : 'unSelected'} to="/home"><FontAwesomeIcon icon={faHouse} className="footbar-icons" /></NavLink>
 
 
             {isLoggedIn && <NavLink className={(element) => element.isActive ? 'selected' : 'unSelected'} to="/profile"><FontAwesomeIcon icon={faUser} className="footbar-icons" /></NavLink>}
