@@ -74,9 +74,9 @@ function Profile() {
                 </div>
                 <h6>{profile.description}</h6>
                 <div className="profileStyleIns">
-                    <p>Favorite Style: {profile.style}</p>
+                    <p>Favorite Style {profile.style}</p>
                     <br></br>
-                    <p>Favorite Instrument: {profile.instruments}</p>
+                    <p>Favorite Instrument {profile.instruments}</p>
                 </div>
 
             </div>
@@ -128,9 +128,6 @@ function Profile() {
                 {viewSales && <ProfileSales />}
                 {viewClasses && <ProfileClasses />}
                 {viewEvents && <ProfileEvent />}
-            </div>
-            <div className="logoPerfil">
-                <img src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo" />
             </div>
         </div>
     )

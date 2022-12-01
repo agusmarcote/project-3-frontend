@@ -2,14 +2,6 @@ import "./Profile.css"
 import "./ProfileByID.css"
 import axios from "axios";
 import { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
-import ProfileClasses from "./ProfileClasses";
-import ProfileEvent from "./ProfileEvent";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
-import { faPhone } from "@fortawesome/free-solid-svg-icons"
-import { faGuitar } from "@fortawesome/free-solid-svg-icons";
-import { faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
 import { useParams } from "react-router-dom"
 import ProfileLinksByID from "./ProfileLinksByID";
 import ProfileSalesByID from "./ProfileSalesByID";
@@ -31,7 +23,7 @@ function ProfileByID() {
     useEffect(() => {
         const apiCall = async () => {
             const res = await axios.get(apiURL + userId)
-            
+
             setUser(res.data)
         }
 
@@ -74,9 +66,6 @@ function ProfileByID() {
 
 
 
-
-
-
     return (
         <div>
             <div id="profilePicNameRate">
@@ -101,19 +90,14 @@ function ProfileByID() {
                     </div>
 
                 </div>
-                <h6>{user.description}</h6>
-                <div className="userStyleIns">
-                    <div className="userStyleInsStyle">
-                        <p>Favorite Style: {user.style}dsa</p>
-                        <p></p>
+                <div className="profileDetails">
+                    <h6>{user.description}</h6>
+                    <div className="profileStyleIns">
+                        <p>Favorite Style {user.style}</p>
+                        <br></br>
+                        <p>Favorite Instrument {user.instruments}</p>
                     </div>
-                    
-                    <br></br>
-                    <div className="userStyleInsStyle">
-                       <p>Favorite Instrument: {user.instruments}</p>
-                        
-                    </div>
-                   
+
                 </div>
             </div>
             <div className="profileButtons">

@@ -10,6 +10,7 @@ function ProfileLinksEdit() {
     const storedToken = localStorage.getItem("authToken");
     const [profile, setProfile] = useState({})
     const navigate = useNavigate()
+    console.log(profile)
 
 
 
@@ -54,7 +55,7 @@ function ProfileLinksEdit() {
         const postApi = async () => {
             try {
                 const res = await axios.put(endPoint, newPresentationCard, { headers: { Authorization: `Bearer ${storedToken}` } })
-                
+                console.log(res)
                 navigate("/profile")
             } catch (error) {
                 
@@ -89,40 +90,61 @@ function ProfileLinksEdit() {
             setPresentationCardiTunes(res.data.presentationCardiTunes)
         }
         apiCall()
-    }, [])
+    }, [storedToken])
 
 
     return (
         <div>
+            <div className="titleFormUpdatePC">
+              <h1 className="editProfileTitle profileEditHeight"><span>Presentation</span> Card</h1>  
+             </div>
             <form onSubmit={submitHandler}>
-                <label>Spotify</label>
+                <div className="divFormEditP">
+                  <label>Spotify</label>
                 <input type="text" name='presentationCardSpotify' placeholder={presentationCardSpotify} value={presentationCardSpotify} onChange={presentationCardSpotifyHandler} />
-                <br />
-                <label>SoundCloud</label>
+                <br />  
+                </div>
+                <div className="divFormEditP">
+                  <label>SoundCloud</label>
                 <input type="text" name='presentationCardSoundCloud' placeholder={presentationCardSoundCloud} value={presentationCardSoundCloud} onChange={presentationCardSoundCloudHandler} />
-                <br />
-                <label>YouTube</label>
+                <br />  
+                </div>
+                <div className="divFormEditP">
+                   <label>YouTube</label>
                 <input type="text" name='presentationCardYouTube' placeholder={presentationCardYouTube} value={presentationCardYouTube} onChange={presentationCardYouTubeHandler} />
-                <br />
-                <label>iTunes Music</label>
+                <br /> 
+                </div>
+                <div className="divFormEditP">
+                 <label>iTunes Music</label>
                 <input type="text" name='presentationCardiTunes' placeholder={presentationCardiTunes} value={presentationCardiTunes} onChange={presentationCardiTunesHandler} />
-                <br />
-                <label>Facebook</label>
+                <br />   
+                </div>
+                <div className="divFormEditP">
+                  <label>Facebook</label>
                 <input type="text" name='presentationCardFacebook' placeholder={presentationCardFacebook} value={presentationCardFacebook} onChange={presentationCardFacebookHandler} />
-                <br />
-                <label>Twitter</label>
+                <br />  
+                </div>
+                <div className="divFormEditP">
+                 <label>Twitter</label>
                 <input type="text" name='presentationCardTwitter' placeholder={presentationCardTwitter} value={presentationCardTwitter} onChange={presentationCardTwitterHandler} />
-                <br />
-                <label>Instagram</label>
+                <br />   
+                </div>
+                <div className="divFormEditP">
+                 <label>Instagram</label>
                 <input type="text" name='presentationCardInstagram' placeholder={presentationCardInstagram} value={presentationCardInstagram} onChange={presentationCardInstagramHandler} />
-                <br />
-                <label>LinkedIn</label>
+                <br />   
+                </div>
+                <div className="divFormEditP">
+                  <label>LinkedIn</label>
                 <input type="text" name='presentationCardLinkedIn' placeholder={presentationCardLinkedIn} value={presentationCardLinkedIn} onChange={presentationCardLinkedInHandler} />
-                <br />
-                <label>Other</label>
+                <br />  
+                </div>
+                <div className="divFormEditP">
+                  <label>Other</label>
                 <input type="text" name='presentationCardOther' placeholder={presentationCardOther} value={presentationCardOther} onChange={presentationCardOtherHandler} />
-                <br />
-                <button type="submit">Submit</button>
+                <br />  
+                </div>
+                <div className="formProfileButton"><button type="submit">Submit</button></div>
             </form>
         </div>
     )

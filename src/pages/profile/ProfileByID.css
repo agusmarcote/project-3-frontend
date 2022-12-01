@@ -20,8 +20,13 @@
     justify-content: space-between;
 }
 
+.userDetailsStyle svg{
+        color: black;
+}
+
 h6{
     font-size: 16px;
+    width: 350px;
 }
 
 .userStyleIns{
