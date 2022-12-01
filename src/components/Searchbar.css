@@ -1,13 +1,10 @@
-.searchBar{
-background-color: white;
-color: #d3d3d3;
-font-size: 20px;
-display: flex;
-justify-content: center;
-border-color: #d3d3d3;
-gap: 5px;
+.searchBar {
+    background-color: white;
+    color: #d3d3d3;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    border-color: #d3d3d3;
+    gap: 5px;
 
 }
-
-
-

@@ -1,42 +1,31 @@
-.cardLink{
+.cardLink {
     text-decoration: none;
-    color:black
+    color: black
 }
-span{
-    color:red
+
+span {
+    color: red
 }
-.photoDetails{
-    width:100vw;
+
+.photoDetails {
+    width: 100vw;
     height: 300px;
     border-radius: 20px;
     align-items: center;
     text-align: center;
-    align-content: center;   
-    border-bottom-left-radius:0px ;
-    border-bottom-right-radius:0px;
-    /* NEED TO ADD TOP SHADOW */
-    object-fit: cover; 
+    align-content: center;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    object-fit: cover;
 }
-p{
-    color:grey
+
+p {
+    color: grey
 }
-/* .button-class{
-  background:linear-gradient(to top left, rgb(253, 133, 133), #e3446e);
-  border-radius: 15px;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 10px;
-  padding: 6px 12px;
-  text-decoration: none;
-  text-transform: uppercase;
-  width: 14%;
-  margin: 0px 10px 10px 5px;
-} */
 
-.button-class{
+.button-class {
 
-    
+
     display: inline-block;
     outline: none;
     cursor: pointer;
@@ -56,30 +45,35 @@ p{
 }
 
 
-.priceStyleLits{
+.priceStyleLits {
     color: black;
 }
-.textStyle{
+
+.textStyle {
     padding: 5px 10px;
 }
-.logoDetailPage{
+
+.logoDetailPage {
     width: 160px;
     margin: 0 118px;
 }
-.userImage{
+
+.userImage {
     width: 33px;
-    height:33px;
+    height: 33px;
     border-radius: 25px;
     margin: 8px 0;
-    object-fit: cover; 
+    object-fit: cover;
 }
-.userFlex{
+
+.userFlex {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-    gap:8px;
+    gap: 8px;
     margin: 10px 10px;
 }
+
 
 
 .phoneIcon{
@@ -87,24 +81,27 @@ p{
     margin: 0 15px;
     text-decoration: none;
 }
-.flexContact{
+
+.flexContact {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    gap:15px;
+    gap: 15px;
 
 }
-.icon{
-    margin:0px 0px;
+
+.icon {
+    margin: 0px 0px;
     font-size: 0.9rem;
     font-style: italic;
 }
 
 
-.singleSaleHeight{
+.singleSaleHeight {
     height: 95vh;
-    }
-.backgroundImg{
+}
+
+.backgroundImg {
     z-index: 10;
-    width:200px
+    width: 200px
 }

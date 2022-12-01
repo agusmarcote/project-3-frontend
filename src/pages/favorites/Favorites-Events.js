@@ -13,10 +13,9 @@ export default function FavoritesEvents() {
             const storedToken = localStorage.getItem("authToken");
             try {
                 const res = await axios.get(apiURL, { headers: { Authorization: `Bearer ${storedToken}` } })
-                console.log(res.data)
                 setUser(res.data)
             } catch (error) {
-                console.log(error)
+                
             }
         }
         apiCall()
@@ -24,7 +23,9 @@ export default function FavoritesEvents() {
 
     return (
         <div>
+
             {user && user.favoriteEvent.length == 0 && <h1 className="noFav">There are no favorites saved yet</h1>}
+
             {user && user.favoriteEvent.map((el) => {
                 return (
                     <div className="favoriteX">

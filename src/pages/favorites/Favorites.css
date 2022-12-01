@@ -15,11 +15,12 @@ div.favoritesCard:hover {
     box-shadow: 0 0 10px;
 }
 
+
 .favoritesCard{
     text-align: center;
 }
 
-.favoriteCards a{
+.favoriteCards a {
     text-decoration: none;
 }
 

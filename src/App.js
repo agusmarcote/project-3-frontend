@@ -39,14 +39,12 @@ import EditEvent from './pages/events/EditEvent'
 
 import styled from 'styled-components';
 import Modal from './components/Modal';
+
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
 import { useEffect, useState } from "react"
 import axios from "axios";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-// import { faBars } from "@fortawesome/free-solid-svg-icons"
 
-// import { useState } from "react";
 
 import Favorites from './pages/favorites/Favorites-Classes';
 import FavoritesEvents from './pages/favorites/Favorites-Events';
@@ -56,48 +54,38 @@ import FavoritesAll from './pages/favorites/Favorites';
 
 function App() {
 
+
    const [modal, setModal]  = useState(false);
    const storedToken = localStorage.getItem("authToken");
    const {isLoggedIn} = useContext(AuthContext);
-   console.log(isLoggedIn)
-   // const apiURL = "http://localhost:8000/api/v1/users/profile"
-   // const [profile, setProfile] = useState({})
-   // const navigate = useNavigate();
 
-//    useEffect(() => {
-//       const apiCall = async () => {
-//           const res = await axios.get(apiURL, { headers: { Authorization: `Bearer ${storedToken}` } })
-//           setProfile(res.data)
-//           console.log(res.data)
-//       }
-//       apiCall()
-//   }, [])
 
    return (
       <div className="App">
         <Toaster />
 
+
          {isLoggedIn &&<Modal
             state= {modal}
-            changeState = {setModal}
-         
-         >
+            changeState = {setModal}>
             <Content>
-               <Navbar/>
+               <Navbar />
             </Content>
          </Modal>}
 
          {isLoggedIn &&<h1 className="navIcon" onClick={() => setModal(!modal)}>
             <svg className="navIcon" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-list" viewBox="0 0 20 20">
-               <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+               <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
             </svg>
          </h1>}       
+
          <Routes>
             <Route path="/home" element={<IsPrivate><Home /></IsPrivate>} />
             <Route path="/" element={<Signup />} />
             <Route path="/login" element={<Login />} />
             <Route path="/private" element={<IsPrivate><PrivateView /></IsPrivate>} />
             <Route path="*" element={<ErrorPage />} />
+
 
             <Route path="/events" element={<IsPrivate><Events /></IsPrivate>} />
             <Route path="/create-event" element={<IsPrivate><CreateEvent /></IsPrivate>} />

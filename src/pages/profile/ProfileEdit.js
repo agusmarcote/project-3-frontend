@@ -17,9 +17,6 @@ function ProfileEdit() {
     const storedToken = localStorage.getItem("authToken");
     const [profile, setProfile] = useState({})
 
-    console.log(profile)
-    console.log(profile.style)
-    console.log(profile.instruments)
 
 
     const [email, setEmail] = useState("")
@@ -46,7 +43,7 @@ function ProfileEdit() {
     const descriptionHandler = (event) => setDescription(event.target.value)
     const instrumentsHandler = (event) => setInstruments(event.target.value)
     const styleHandler = (event) => setStyle(event.target.value)
- 
+
 
 
     const submitHandler = (event) => {
@@ -66,15 +63,15 @@ function ProfileEdit() {
             style: style,
         }
 
-        console.log(newProfile)
+       
 
         const postApi = async () => {
             try {
                 const res = await axios.put(endPoint, newProfile, { headers: { Authorization: `Bearer ${storedToken}` } })
-                console.log(res)
+                
                 navigate("/profile")
             } catch (error) {
-                console.log(error)
+                
             }
         }
 

@@ -8,14 +8,13 @@ const apiURL = "http://localhost:8000/api/v1/users/profile"
 function ProfileLinks() {
     const storedToken = localStorage.getItem("authToken");
     const [profile, setProfile] = useState({})
-    // console.log(profile.presentationCard)
+
 
 
     useEffect(() => {
         const apiCall = async () => {
             const res = await axios.get(apiURL, { headers: { Authorization: `Bearer ${storedToken}` } })
             setProfile(res.data)
-            // console.log(res.data)
         }
         apiCall()
     }, [])
@@ -25,9 +24,9 @@ function ProfileLinks() {
 
     return (
         <div className="presentationCard profileLinksHeight" >
-                <br></br>
-                <br></br>
-                <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
             <div className="listPresentationCard">
                 <div className="musicLinks">
                     {profile.presentationCardSpotify !== "" && <a target='_blank' rel="noreferrer" href={`${profile.presentationCardSpotify}`}>
@@ -76,7 +75,7 @@ function ProfileLinks() {
                 <br></br>
                 <br></br>
                 <Link to={`/profile/links/edit`}> Update Presentation Card
-                    {/* <ProfileLinksEdit/> */}
+
                 </Link>
             </div>
         </div>

@@ -1,11 +1,11 @@
-.presentationCard{
+.presentationCard {
     display: flex;
     flex-flow: column;
     align-items: center;
     height: 95vh;
 }
 
-.createPresentationCard{
+.createPresentationCard {
     display: flex;
     align-items: center;
     border: 0;
@@ -17,16 +17,16 @@
     padding-right: 10px;
     height: 30px;
     background-color: black;
-    
+
 }
 
-.createPresentationCard a{
+.createPresentationCard a {
     text-decoration: none;
     color: white;
     text-transform: uppercase;
 }
 
-.listPresentationCard{
+.listPresentationCard {
     display: flex;
     flex-flow: column;
     background-color: rgb(32, 178, 170, 0.1);
@@ -36,7 +36,7 @@
     box-shadow: 0 0 2px;
 }
 
-.musicLinks{
+.musicLinks {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,22 +44,22 @@
     gap: 10px;
 }
 
-.musicLinks svg{
+.musicLinks svg {
     height: 50px;
     width: 50px;
     gap: 5px;
     flex-wrap: wrap;
 }
 
-.listPresentationCard a{
+.listPresentationCard a {
     display: flex;
 }
 
-.listPresentationCard h4{
+.listPresentationCard h4 {
     display: flex;
     justify-content: center;
 }
 
-.profileLinksHeight{
+.profileLinksHeight {
     height: 50vh;
-    }
+}

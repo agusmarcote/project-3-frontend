@@ -8,7 +8,6 @@ span {
 }
 
 .CardStyle {
-  /* text-align: justify; */
   color: black;
   padding: 0px 0px 0px 0px;
   width: 350px;
@@ -29,7 +28,7 @@ span {
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
   object-fit: cover;
-  /* ALL PHOTOS SHOULL DHAVE THIS TO FIX ISSUE */
+
 
 }
 
@@ -38,7 +37,6 @@ span {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  /* align-items: center; */
   padding: 0px;
   margin: 20px 10px 20px 10px;
   gap: 0px
@@ -48,20 +46,6 @@ p {
   color: gray;
 }
 
-/* .button-class {
-    background:linear-gradient(to top left, #FFD372, #FF99D7);
-    border: 1px solid #33D0FF;
-    border-radius: 4px;
-    color: #fff;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 14px;
-    padding: 8px 16px;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: 0.3s ease background;
-    width: 100%;
-  } */
 .spanPrice {
   color: white;
   font-size: 0.7rem;
