@@ -5,12 +5,12 @@ import { useParams } from "react-router-dom"
 
 const apiURL = "http://localhost:8000/api/v1/events/"
 
-const instrumentsArr = ['DJ', 'Piano', 'Guitar', 'Violin', 'Drums', 'Saxophone', 'Flute', 'Cello',
+const instrumentsArr = ["-", 'DJ', 'Piano', 'Guitar', 'Violin', 'Drums', 'Saxophone', 'Flute', 'Cello',
     'Clarinet', 'Trumpet', 'Harp', 'Ukelele', 'Electric Guitar', 'Banjo', 'Accordion', 'Microphone']
 
-const typeOfEventArr = ["Party", "Concert", "Join a Band", "Hiring a Member", "Jamming"]
+const typeOfEventArr = ["-", "Party", "Concert", "Join a Band", "Hiring a Member", "Jamming"]
 
-const styleArr = ["Dance", "Folk", "Bachata", "Rock", "Reggaeton", "Rap", "Flamenco", "Classic", "Tango",
+const styleArr = ["-", "Dance", "Folk", "Bachata", "Rock", "Reggaeton", "Rap", "Flamenco", "Classic", "Tango",
     "Indie", "Trap", "Pop", "Electronic", "Blues", "Punk", "Jazz", "Techno", "Choir", "Trance"]
 
 

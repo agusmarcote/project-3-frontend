@@ -1,9 +1,21 @@
-import React from 'react'
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
+import { Navigate } from "react-router-dom";
 
-export default function PrivateView() {
-   return (
-      <div>
-         <h5>This view can only be seen if the user is logged in because it's inside the IsPrivate component.</h5>
-      </div>
-   )
+function IsPrivate({ children }) {
+
+  const { isLoggedIn, isLoading } = useContext(AuthContext);
+
+  // If the authentication is still loading 
+  if (isLoading) return <p>Loading ...</p>;
+
+  if (!isLoggedIn) {
+    // If the user is not logged in 
+    return <Navigate to="/login" />;
+  } else {
+    // If the user is logged in, allow to see the page 
+    return children;
+  }
 }
+
+export default IsPrivate

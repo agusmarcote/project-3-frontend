@@ -28,6 +28,7 @@ height: 95vh;
     justify-content: space-around;
     flex-flow: row-reverse;
     align-items: center;
+    margin-left: 20px;
 }
 
 .profileDetails{
@@ -48,6 +49,16 @@ height: 95vh;
     width: 50px;
     align-items: center;
     justify-content: space-between;
+}
+
+.profileDetailsStyle svg{
+    color: black;
+}
+
+.profileStyleIns{
+    font-style: italic;
+    display: flex;
+
 }
 
 .profileStyleInstruments{
@@ -90,6 +101,13 @@ height: 95vh;
     display: flex;
 
 } */
+
+.profileUsername{
+    display: flex;
+    text-align: center;
+    width: 200px;
+    justify-content: center;
+}
 
 .profileEdit button{
     display: flex;
@@ -218,5 +236,13 @@ height: 95vh;
 
 .proPhone svg{
     color: black;
-    
+}
+
+.logoPerfil{
+    display: flex;
+    justify-content: center;
+}
+
+.logoPerfil img{
+    width: 80px;
 }
