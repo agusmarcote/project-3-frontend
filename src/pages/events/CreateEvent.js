@@ -1,3 +1,4 @@
+import "./CreateEvent.css"
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -89,7 +90,7 @@ export default function CreateEvent() {
 
     return (
             <div className=" singleEvent">
-                <h1>Create a new Event</h1>
+                <h1> <span>Create</span> Event</h1>
                 <form className="formEditP" onSubmit={submitHandler}>
                     <div className="divFormEditP">
                         <label>Title</label>
@@ -128,7 +129,7 @@ export default function CreateEvent() {
                         <input type='text' value={picture} onChange={pictureHandler} />
                         <br />
                     </div>
-                    <div className="divFormEditECheckBox">
+                    <div className="divFormEditPCheckBox">
                         <label>Instruments</label>
                         <select onChange={instrumentsHandler}>
                             {instrumentsArr.map((instrument) => {
@@ -139,7 +140,7 @@ export default function CreateEvent() {
                         </select>
                         <br />
                     </div>
-                    <div className="divFormEditECheckBox">
+                    <div className="divFormEditPCheckBox">
                         <label>Type of </label>
                         <select onChange={typeOfEventHandler}>
                             {typeOfArr.map((type) => {
@@ -150,7 +151,7 @@ export default function CreateEvent() {
                         </select>
                         <br />
                     </div>
-                    <div className="divFormEditECheckBox">
+                    <div className="divFormEditPCheckBox">
                         <label>Style</label>
                         <select onChange={styleHandler}>
                             {styleArr.map((style) => {
