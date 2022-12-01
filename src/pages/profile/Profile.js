@@ -72,7 +72,7 @@ function Profile() {
                 <div className="profileDetailsName">
                     <h3>{profile.name}</h3>
                 </div>
-                <h6>{profile.description}</h6>
+                <h6 className="profileDescription">{profile.description}</h6>
                 <div className="profileStyleIns">
                     <p>Favorite Style {profile.style}</p>
                     <br></br>
