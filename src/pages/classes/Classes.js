@@ -42,12 +42,12 @@ export default function Classes() {
                         <Link className="cardLink flex" to={`/classes/${element._id}`}>
                             <div className="CardStyle">
                                 <img className="photoCard" src={element.picture} alt="instrument" />
-                                {element.creator && <Link className="cardLink" to={`/profile/${element.creator._id}`}>
+                                {element.creator && <div className="cardLink">
                                     <div className="userFlex">
                                         {element.creator && <img className="userImage" src={element.creator.picture} alt="Creator"/>}
                                         <p className="userNameStyle">{element.creator && element.creator.name}</p>
                                     </div>
-                                </Link>}
+                                </div>}
                                 <h3 className="textStyle">{element.title}</h3>
                                 <p className="textStyle">{element.instruments}</p>
                                 <p className="textStyle"><i>{element.description}</i></p>

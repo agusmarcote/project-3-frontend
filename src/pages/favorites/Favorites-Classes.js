@@ -32,7 +32,7 @@ export default function Favorites() {
             </div>}
             {user && user.favoriteClass.map((el) => {
                 return (
-                    <div className="favoriteX">
+                    <div key={el._id} className="favoriteX">
                         <h2>Favorites<span> Classes</span></h2>
                     <div className="favoriteClass">
                         <Link to={`/classes/${el._id}`}>

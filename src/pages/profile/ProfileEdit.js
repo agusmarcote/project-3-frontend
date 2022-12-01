@@ -149,7 +149,7 @@ function ProfileEdit() {
                     <select onChange={instrumentsHandler}>
                         {instrumentsArr.map((instrument) => {
                             return (
-                                <option value={instrument}>{instrument}</option>
+                                <option key={instrument} value={instrument}>{instrument}</option>
                             )
                         })}
                     </select>
@@ -160,7 +160,7 @@ function ProfileEdit() {
                     <select onChange={styleHandler}>
                         {styleArr.map((style) => {
                             return (
-                                <option value={style}>{style}</option>
+                                <option key={style} value={style}>{style}</option>
                             )
                         })}
                     </select>

@@ -32,7 +32,7 @@ export default function FavoritesEvents() {
 
             {user && user.favoriteEvent.map((el) => {
                 return (
-                    <div className="favoriteX">
+                    <div key={el._id} className="favoriteX">
                         <h2>Favorites<span> Events</span></h2>
                         <div className="favoriteClass">
                             <Link to={`/events/${el._id}`}>

@@ -136,7 +136,7 @@ export default function CreateEvent() {
                     <select onChange={instrumentsHandler}>
                         {instrumentsArr.map((instrument) => {
                             return (
-                                <option value={instrument}>{instrument}</option>
+                                <option key={instrument} value={instrument}>{instrument}</option>
                             )
                         })}
                     </select>
@@ -147,7 +147,7 @@ export default function CreateEvent() {
                     <select onChange={typeOfEventHandler}>
                         {typeOfArr.map((type) => {
                             return (
-                                <option value={type}>{type}</option>
+                                <option key={type} value={type}>{type}</option>
                             )
                         })}
                     </select>
@@ -158,7 +158,7 @@ export default function CreateEvent() {
                     <select onChange={styleHandler}>
                         {styleArr.map((style) => {
                             return (
-                                <option value={style}>{style}</option>
+                                <option key={style} value={style}>{style}</option>
                             )
                         })}
                     </select>

@@ -102,7 +102,7 @@ export default function CreateClass() {
                     <select onChange={levelHandler}>
                         {levelArr.map((lev) => {
                             return (
-                                <option value={lev}>{lev}</option>
+                                <option key={lev} value={lev}>{lev}</option>
                             )
                         })}
                     </select>
@@ -113,7 +113,7 @@ export default function CreateClass() {
                     <select onChange={instrumentsHandler}>
                         {instrumentsArr.map((instrument) => {
                             return (
-                                <option value={instrument}>{instrument}</option>
+                                <option key={instrument} value={instrument}>{instrument}</option>
                             )
                         })}
                     </select>
