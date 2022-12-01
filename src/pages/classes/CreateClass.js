@@ -98,22 +98,22 @@ export default function CreateClass() {
                     <br />
                 </div>
                 <div className="divFormEditPCheckBox">
-                    <label>Level</label>
-                    <select onChange={levelHandler}>
-                        {levelArr.map((lev) => {
+                    <label>Instruments</label>
+                    <select onChange={instrumentsHandler}>
+                        {instrumentsArr.map((instrument) => {
                             return (
-                                <option key={lev} value={lev}>{lev}</option>
+                                <option key={instrument} value={instrument}>{instrument}</option>
                             )
                         })}
                     </select>
                     <br />
                 </div>
                 <div className="divFormEditPCheckBox">
-                    <label>Instruments</label>
-                    <select onChange={instrumentsHandler}>
-                        {instrumentsArr.map((instrument) => {
+                    <label>Level</label>
+                    <select onChange={levelHandler}>
+                        {levelArr.map((lev) => {
                             return (
-                                <option key={instrument} value={instrument}>{instrument}</option>
+                                <option key={lev} value={lev}>{lev}</option>
                             )
                         })}
                     </select>

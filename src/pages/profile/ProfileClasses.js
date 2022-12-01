@@ -24,6 +24,12 @@ function ProfileClasses() {
 
     return (
         <div className="profileClasses profileClassesHeight">
+            {profile && !profile.classes.length &&
+                    <div className="profileNotFound">
+                        <h2>There are no classes posted yet.</h2>
+                        <a href="/create-class"><h3><span>Create </span>a class</h3></a>
+                        <img className="favLogo" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo" />
+                    </div>}
             {profile && profile.classes.map((pro) => {
                 
                 return (

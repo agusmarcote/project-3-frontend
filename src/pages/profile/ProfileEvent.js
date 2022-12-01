@@ -23,9 +23,14 @@ function ProfileEvent() {
 
     return (
         <div className="profileEvent profileEventHeight">
-
+            {profile && !profile.event.length &&
+                <div className="profileNotFound">
+                    <h2>There are no events posted yet.</h2>
+                    <a href="/create-event"><h3><span>Create </span>an event</h3></a>
+                    <img className="favLogo" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo" />
+                </div>}
             {profile && profile.event.map((pro) => {
-                
+
                 return (
                     <div key={pro._id}>
                         <Link className="cardLink flex" to={`/events/${pro._id}`}>

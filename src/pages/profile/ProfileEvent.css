@@ -3,3 +3,15 @@
     height: 95vh;
 }
 
+.profileNotFound{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profileNotFound a{
+    text-decoration: none;
+    color: black;
+}
+
