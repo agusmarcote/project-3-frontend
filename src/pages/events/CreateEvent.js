@@ -89,8 +89,10 @@ export default function CreateEvent() {
     }
 
     return (
-        <div className=" singleEvent flex">
-            <h1><span>Create</span> a new Event</h1>
+        <div className="createSale">
+            {/* <h2><span>Create</span> Event</h2> */}
+            <h3> <span>CREATE</span> EVENT</h3>
+            <img className="smallLogo" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo" />
             <form className="formEditP" onSubmit={submitHandler}>
                 <div className="divFormEditP">
                     <label>Title</label>

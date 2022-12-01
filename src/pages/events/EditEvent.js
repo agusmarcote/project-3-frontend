@@ -127,21 +127,26 @@ function EditEvent() {
 
 
     return (
-        <div>
-            <h1>Edit your Event!</h1>
-            <form onSubmit={submitHandler}>
+        <div className="createSale">
+            <h3> <span>EDIT</span> EVENT</h3>
+            <img className="smallLogo" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo" />
+            <form className="formEditP" onSubmit={submitHandler}>
+            <div className="divFormEditP">
                 <label>Title</label>
                 <input type='text' value={title} onChange={titleHandler} />
                 <br />
-
+            </div>
+            <div className="divFormEditP">
                 <label>Description</label>
                 <input type='text' value={description} onChange={descriptionHandler} />
                 <br />
-
+            </div>
+            <div className="divFormEditP">
                 <label>Date</label>
                 <textarea type='date' value={date} onChange={dateHandler} />
                 <br />
-
+            </div>
+            <div className="divFormEditPCheckBox">
                 <label>Type of Event</label>
                 <select onChange={typeOfEventHandler}>
                     {typeOfEventArr.map((el) => {
@@ -151,7 +156,8 @@ function EditEvent() {
                     })}
                 </select>
                 <br />
-
+                </div>
+                <div className="divFormEditPCheckBox">
                 <label>Style</label>
                 <select onChange={styleHandler}>
                     {styleArr.map((style) => {
@@ -161,19 +167,23 @@ function EditEvent() {
                     })}
                 </select>
                 <br />
-
+                </div>
+                <div className="divFormEditP">
                 <label>Price</label>
                 <input type='number' value={price} onChange={priceHandler} />
                 <br />
-
+                </div>
+                <div className="divFormEditP">
                 <label>Address</label>
                 <input type='text' value={address} onChange={addressHandler} />
                 <br />
-
+                </div>
+                <div className="divFormEditP">
                 <label>Phone number</label>
                 <input type='text' value={phoneNumber} onChange={phoneNumberHandler} />
                 <br />
-
+                </div>
+                <div className="divFormEditPCheckBox">
                 <label>Instruments</label>
                 <select onChange={instrumentsHandler}>
                     {instrumentsArr.map((instrument) => {
@@ -183,13 +193,18 @@ function EditEvent() {
                     })}
                 </select>
                 <br />
-
+                </div>
+                <div className="divFormEditP">
                 <label>Picture</label>
                 <input type='text' value={picture} onChange={pictureHandler} />
                 <br />
-
+                </div>
+                <div className="formProfileButton">
                 <button type='submit'>Save your edit</button>
-                <button onClick={deleteHandler}>Delete the Event</button>
+                </div>
+                <div className="formProfileButton">
+                <button onClick={deleteHandler}>Delete</button>
+                </div>
             </form>
         </div>
     )

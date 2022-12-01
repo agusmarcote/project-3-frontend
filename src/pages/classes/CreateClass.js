@@ -74,7 +74,8 @@ export default function CreateClass() {
 
     return (
         <div className="createClass">
-            <h1><span>Create</span> Class</h1>
+            <h2> <span>OFFER</span> CLASS</h2>
+            <img className="smallLogo" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo" />
             <form className="formEditP" onSubmit={submitHandler}>
                 <div className="divFormEditP">
                     <label>Title</label>

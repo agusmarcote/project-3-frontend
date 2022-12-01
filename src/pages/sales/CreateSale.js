@@ -72,7 +72,9 @@ function CreateSale() {
 
     return (
         <div className="createSale">
-            <h1> <span>INSTRUMENT</span> SELL</h1>
+            <h3> <span>SELL</span> INSTRUMEN</h3>
+
+            <img className="smallLogo" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo" />
 
             <form onSubmit={submitHandler}>
                 <div className="divFormEditP">
