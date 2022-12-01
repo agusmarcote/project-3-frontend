@@ -12,7 +12,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const apiURL = 'http://localhost:8000/api/v1/sales/instrument/'
 const apiFAV = 'http://localhost:8000/api/v1/favorites/addInstrument/'
 const apifavo = 'http://localhost:8000/api/v1/favorites/favorites'
-
 const apiURLprofile = "http://localhost:8000/api/v1/users/profile"
 
 // const teleph = `https://wa.me/${sale.creator.telephone}?text=My+name+is+${profile.name}+I+got+your+number+from+Harmoney.+May+I+Call+you?`
@@ -60,10 +59,9 @@ function SingleSale(){
 
             try {
                 const res = await axios.post(apiFAV + saleId, {}, { headers: { Authorization: `Bearer ${storedToken}` }})
-                const resUser = await axios.get(apiURL, { headers: { Authorization: `Bearer ${storedToken}` }})
+                const resUser = await axios.get(apifavo, { headers: { Authorization: `Bearer ${storedToken}` }})
                 
-                const userData = resUser.data.favoriteEvent
-                console.log(userData)
+                const userData = resUser.data.favoriteSale
                 
                 const idArr = []
 
@@ -71,11 +69,9 @@ function SingleSale(){
                     idArr.push(userData[i]._id)
                 }
                 console.log(idArr)
-
                 if (idArr.includes(saleId)) {
                     console.log('inside')
                     setFavorite(true)
-                    console.log(favorite)
                 } else {
                     console.log('outside')
                     setFavorite(false)
@@ -106,8 +102,6 @@ function SingleSale(){
                       <h3 className="textStyle">{sale.title}</h3>
                       {favorite ? <FontAwesomeIcon icon ={faStar} onClick={favoriteHandler}>Favorite</FontAwesomeIcon> : <FontAwesomeIcon icon={farStar} onClick={favoriteHandler}>Favorite</FontAwesomeIcon>}
                     </div>
-
-                    {/* <img className="backgroundImg" src = "https://www.pngfind.com/pngs/m/37-374251_lr-wavy-lines-hd-png-download.png" alt="test" /> */}
                     
                     <div>
                     <a className = 'phoneIcon flexContact' href='https://wa.me/${sale.creator.telephone}?text=My+name+is+${sale.creator.name}+I+got+your+number+from+Harmoney.+May+I+Call+you?'>
