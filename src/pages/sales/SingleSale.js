@@ -38,7 +38,7 @@ function SingleSale() {
             const res = await axios.get(apiURL + saleId)
 
             setSale(res.data)
-            setTeleph(`https://wa.me/${res.data.creator.telephone}?text=Hi+${res.data.creator.name}.+I+got+your+number+from+Harmoney.+I+am+interested+in+your+event.+May+I+Call+you?`)
+            setTeleph(`https://wa.me/${res.data.creator.telephone}?text=Hi+${res.data.creator.name}.+I+got+your+number+from+Harmoney.+I+am+interested+in+your+instrument.+May+I+Call+you?`)
         }
 
         apiCall()
