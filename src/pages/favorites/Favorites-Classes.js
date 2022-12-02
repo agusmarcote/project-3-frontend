@@ -25,9 +25,11 @@ export default function Favorites() {
     }, [])
 
     return (
-        <div>
+        <div className="noFavorites">
             {user && user.favoriteClass.length === 0 && <div className="noFav">
                 <h1>There are no favorites saved yet</h1>
+                <br></br>
+                <a href="/classes"><h2><span>Click to see </span>some class</h2></a>
                 <img className="favLogo" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo" />
             </div>}
             {user && user.favoriteClass.map((el) => {

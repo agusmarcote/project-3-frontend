@@ -67,7 +67,7 @@ function CreateSale() {
 
     return (
         <div className="createSale">
-            <h3><span>SELL</span> INSTRUMENT</h3>
+            <h2><span>SELL</span> INSTRUMENT</h2>
 
             <img className="smallLogo" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo" />
 

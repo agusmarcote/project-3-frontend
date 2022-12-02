@@ -41,6 +41,7 @@ function Events() {
                 {!filterEvents[0] &&
                     <div className="noFav">
                         <h1>There are no events</h1>
+                        <a href="/create-event"><h2><span>Create </span>an event</h2></a>
                         <img className="favLogo" src="https://s.tmimgcdn.com/scr/800x500/271800/equalizer-music-sound-logo-symbol-vector-v26_271868-original.jpg" alt="logo" />
                     </div>}
                 {filterEvents.map((event) => {
